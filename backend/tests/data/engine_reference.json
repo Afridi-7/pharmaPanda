@@ -1,0 +1,1474 @@
+{
+ "scenario": {
+  "slug": "sc_headache",
+  "title": "The Headache That Isn’t Simple"
+ },
+ "patient": {
+  "id": "pat_sarah",
+  "name": "Iqra Muhammad",
+  "age": 20,
+  "pronouns": "she/her",
+  "role": "Patient",
+  "mood": "worried",
+  "avatar": "sarah",
+  "chiefComplaint": "Headache",
+  "openingLine": "Hi. I've had a really bad headache since yesterday. Could you recommend something?",
+  "facts": [
+   {
+    "id": "sarah_age",
+    "section": "basic",
+    "label": "Age",
+    "value": "20",
+    "revealedAtStart": true,
+    "triggers": [
+     "age",
+     "how old"
+    ],
+    "patientLine": "I'm 20.",
+    "credits": "historyTaking"
+   },
+   {
+    "id": "sarah_complaint",
+    "section": "basic",
+    "label": "Chief complaint",
+    "value": "Headache",
+    "revealedAtStart": true,
+    "triggers": [
+     "what brings you",
+     "problem",
+     "complaint"
+    ],
+    "patientLine": "It's this headache. It just won't shift.",
+    "credits": "historyTaking"
+   },
+   {
+    "id": "sarah_duration",
+    "section": "symptoms",
+    "label": "Duration",
+    "value": "1 day (since yesterday afternoon)",
+    "revealedAtStart": false,
+    "triggers": [
+     "how long",
+     "when did it start",
+     "since when",
+     "duration",
+     "started"
+    ],
+    "patientLine": "It started yesterday afternoon, so about a day now.",
+    "credits": "historyTaking"
+   },
+   {
+    "id": "sarah_severity",
+    "section": "symptoms",
+    "label": "Severity",
+    "value": "Moderate — 6/10, dull and constant",
+    "revealedAtStart": false,
+    "triggers": [
+     "how bad",
+     "severity",
+     "scale of",
+     "how severe",
+     "how painful",
+     "rate the pain"
+    ],
+    "patientLine": "Maybe a six out of ten? It's dull rather than stabbing, but it never lets up.",
+    "credits": "historyTaking"
+   },
+   {
+    "id": "sarah_site",
+    "section": "symptoms",
+    "label": "Site & character",
+    "value": "Band-like across the forehead and temples",
+    "revealedAtStart": false,
+    "triggers": [
+     "where",
+     "which part of your head",
+     "front or back",
+     "one side",
+     "character"
+    ],
+    "patientLine": "It's like a tight band across my forehead and both temples.",
+    "credits": "historyTaking"
+   },
+   {
+    "id": "sarah_fever",
+    "section": "symptoms",
+    "label": "Fever",
+    "value": "No fever",
+    "revealedAtStart": false,
+    "triggers": [
+     "fever",
+     "temperature",
+     "hot",
+     "chills"
+    ],
+    "patientLine": "No, no temperature. I've been checking.",
+    "credits": "clinicalReasoning"
+   },
+   {
+    "id": "sarah_redflags",
+    "section": "symptoms",
+    "label": "Neurological red flags",
+    "value": "None — no visual changes, weakness, neck stiffness, rash or vomiting",
+    "revealedAtStart": false,
+    "triggers": [
+     "vision",
+     "visual",
+     "weakness",
+     "numb",
+     "neck",
+     "stiff",
+     "rash",
+     "vomit",
+     "confusion",
+     "speech",
+     "worst headache",
+     "sudden",
+     "red flag"
+    ],
+    "patientLine": "No, nothing like that. My vision is fine, my neck moves fine, and I haven't been sick.",
+    "credits": "clinicalReasoning"
+   },
+   {
+    "id": "sarah_allergy",
+    "section": "allergies",
+    "label": "Allergy",
+    "value": "Aspirin — facial swelling and wheeze as a teenager",
+    "revealedAtStart": false,
+    "triggers": [
+     "allerg",
+     "allergic",
+     "react to any",
+     "intolerance",
+     "sensitive to any drug"
+    ],
+    "patientLine": "Yes — aspirin. My face swelled up and I got wheezy when I was a teenager. I've avoided it since.",
+    "credits": "medicationSafety",
+    "safetyCritical": true
+   },
+   {
+    "id": "sarah_meds",
+    "section": "medications",
+    "label": "Current medication",
+    "value": "Warfarin 4 mg daily (for a DVT last year)",
+    "revealedAtStart": false,
+    "triggers": [
+     "medication",
+     "medicine",
+     "medicines",
+     "taking any",
+     "tablets",
+     "prescription",
+     "drugs do you take",
+     "anything else you take",
+     "supplements"
+    ],
+    "patientLine": "I take warfarin every day — 4 milligrams. I had a clot in my leg last year, so I'm on it long term.",
+    "credits": "medicationSafety",
+    "safetyCritical": true
+   },
+   {
+    "id": "sarah_history",
+    "section": "history",
+    "label": "Medical history",
+    "value": "Gastric ulcer 3 years ago (endoscopy-confirmed); DVT last year",
+    "revealedAtStart": false,
+    "triggers": [
+     "medical history",
+     "medical condition",
+     "conditions",
+     "health problems",
+     "past illness",
+     "diagnosed",
+     "been treated",
+     "operations",
+     "surgery"
+    ],
+    "patientLine": "I had a stomach ulcer about three years ago — they found it with a camera test. And the clot in my leg last year.",
+    "credits": "medicationSafety",
+    "safetyCritical": true
+   },
+   {
+    "id": "sarah_tried",
+    "section": "other",
+    "label": "Tried so far",
+    "value": "Nothing yet — waited to ask the pharmacist first",
+    "revealedAtStart": false,
+    "triggers": [
+     "tried",
+     "taken anything",
+     "anything for it",
+     "so far"
+    ],
+    "patientLine": "I haven't taken anything yet. I wanted to ask first because of my warfarin.",
+    "credits": "historyTaking"
+   },
+   {
+    "id": "sarah_context",
+    "section": "other",
+    "label": "Context",
+    "value": "Deadline week, poor sleep, high screen time, low fluid intake",
+    "revealedAtStart": false,
+    "triggers": [
+     "sleep",
+     "stress",
+     "work",
+     "screen",
+     "water",
+     "drink",
+     "caffeine",
+     "anything change"
+    ],
+    "patientLine": "It's been a brutal week at work — late nights on the laptop, barely any water, too much coffee.",
+    "credits": "historyTaking"
+   },
+   {
+    "id": "sarah_pregnancy",
+    "section": "other",
+    "label": "Pregnancy status",
+    "value": "Not pregnant, not breastfeeding",
+    "revealedAtStart": false,
+    "triggers": [
+     "pregnan",
+     "breastfeed",
+     "nursing",
+     "baby on the way"
+    ],
+    "patientLine": "No, definitely not pregnant.",
+    "credits": "historyTaking"
+   }
+  ],
+  "deflections": [
+   "Sorry, I'm not sure what you mean — could you put it another way?",
+   "I don't think so? Nobody's ever asked me that.",
+   "Hmm. I'm not sure that's related, but ask me whatever you need."
+  ],
+  "impatientLines": [
+   "I don't mean to rush you, but I've got to get back to the office soon.",
+   "Is all this needed just for a headache?"
+  ],
+  "followUps": [
+   {
+    "triggers": [
+     "ibuprofen",
+     "nsaid",
+     "naproxen",
+     "diclofenac",
+     "aspirin"
+    ],
+    "line": "Is that one safe with warfarin? My GP mentioned something about painkillers, but I can't remember what."
+   },
+   {
+    "triggers": [
+     "paracetamol",
+     "acetaminophen"
+    ],
+    "line": "Paracetamol is fine for me, I think. How much can I take in a day?"
+   },
+   {
+    "triggers": [
+     "doctor",
+     "gp",
+     "refer",
+     "physician"
+    ],
+    "line": "Do you really think I need to see a doctor? Is something wrong?"
+   }
+  ],
+  "jargon": [
+   "contraindicated",
+   "gastrointestinal",
+   "nsaid",
+   "anticoagulant",
+   "prophylaxis",
+   "analgesia",
+   "hepatic",
+   "peptic"
+  ]
+ },
+ "cases": {
+  "safe": {
+   "input": {
+    "attempt": {
+     "id": "att_qr6sv26",
+     "actions": [
+      {
+       "id": "act_gka1vvc",
+       "at": "2026-08-24T19:18:40.074Z",
+       "type": "question",
+       "content": "Do you have any allergies?",
+       "revealed": [
+        "sarah_allergy"
+       ]
+      },
+      {
+       "id": "act_o4vqcg1",
+       "at": "2026-08-24T19:18:41.145Z",
+       "type": "question",
+       "content": "Are you taking any medications?",
+       "revealed": [
+        "sarah_meds"
+       ]
+      },
+      {
+       "id": "act_i3e8wzx",
+       "at": "2026-08-24T19:18:42.126Z",
+       "type": "question",
+       "content": "Do you have any medical conditions?",
+       "revealed": [
+        "sarah_history"
+       ]
+      },
+      {
+       "id": "act_0whfdb5",
+       "at": "2026-08-24T19:18:43.205Z",
+       "type": "question",
+       "content": "How long have you had it and how bad is it?",
+       "revealed": [
+        "sarah_duration",
+        "sarah_severity"
+       ]
+      },
+      {
+       "id": "act_4zuc9a1",
+       "at": "2026-08-24T19:18:43.811Z",
+       "type": "recommendation",
+       "content": "Paracetamol is safe with warfarin and avoids NSAID bleeding and ulcer risk given her history.",
+       "choice": "Paracetamol"
+      },
+      {
+       "id": "act_2uzhj9u",
+       "at": "2026-08-24T19:18:44.342Z",
+       "type": "counseling",
+       "content": "Take 1g paracetamol up to four times a day, no more than 4g in 24 hours. Come back if it is not settling in three days."
+      },
+      {
+       "id": "act_sr3m7dd",
+       "at": "2026-08-24T19:18:44.814Z",
+       "type": "referral",
+       "content": "INR review given warfarin.",
+       "choice": "Routine physician referral"
+      },
+      {
+       "id": "act_u5jw70i",
+       "at": "2026-08-24T19:18:45.126Z",
+       "type": "finish",
+       "content": "Consultation submitted for evaluation."
+      }
+     ],
+     "messages": [
+      {
+       "id": "msg_6kqc6tp",
+       "author": "system",
+       "text": "Iqra Muhammad approaches the counter.",
+       "at": "2026-08-24T19:18:38.888Z",
+       "tone": "neutral"
+      },
+      {
+       "id": "msg_rrbq0cm",
+       "author": "patient",
+       "text": "Hi. I've had a really bad headache since yesterday. Could you recommend something?",
+       "at": "2026-08-24T19:18:38.888Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_ifq9c7m",
+       "author": "student",
+       "text": "Do you have any allergies?",
+       "at": "2026-08-24T19:18:40.074Z"
+      },
+      {
+       "id": "msg_nfbmki0",
+       "author": "patient",
+       "text": "Yes — aspirin. My face swelled up and I got wheezy when I was a teenager. I've avoided it since.",
+       "at": "2026-08-24T19:18:40.074Z",
+       "revealed": [
+        "sarah_allergy"
+       ],
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_lm27b5b",
+       "author": "system",
+       "text": "A safety-relevant detail has been added to Patient Information.",
+       "at": "2026-08-24T19:18:40.074Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_vyn05yj",
+       "author": "student",
+       "text": "Are you taking any medications?",
+       "at": "2026-08-24T19:18:41.145Z"
+      },
+      {
+       "id": "msg_xww4ti8",
+       "author": "patient",
+       "text": "I take warfarin every day — 4 milligrams. I had a clot in my leg last year, so I'm on it long term.",
+       "at": "2026-08-24T19:18:41.145Z",
+       "revealed": [
+        "sarah_meds"
+       ],
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_5yxhi7o",
+       "author": "system",
+       "text": "A safety-relevant detail has been added to Patient Information.",
+       "at": "2026-08-24T19:18:41.145Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_zgh6tfa",
+       "author": "student",
+       "text": "Do you have any medical conditions?",
+       "at": "2026-08-24T19:18:42.126Z"
+      },
+      {
+       "id": "msg_iun3jul",
+       "author": "patient",
+       "text": "I had a stomach ulcer about three years ago — they found it with a camera test. And the clot in my leg last year.",
+       "at": "2026-08-24T19:18:42.126Z",
+       "revealed": [
+        "sarah_history"
+       ],
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_qvx65hz",
+       "author": "system",
+       "text": "A safety-relevant detail has been added to Patient Information.",
+       "at": "2026-08-24T19:18:42.126Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_gmqe3hz",
+       "author": "student",
+       "text": "How long have you had it and how bad is it?",
+       "at": "2026-08-24T19:18:43.205Z"
+      },
+      {
+       "id": "msg_wd4mtm1",
+       "author": "patient",
+       "text": "It started yesterday afternoon, so about a day now.",
+       "at": "2026-08-24T19:18:43.205Z",
+       "revealed": [
+        "sarah_duration"
+       ],
+       "tone": "neutral"
+      },
+      {
+       "id": "msg_4d8dbqo",
+       "author": "patient",
+       "text": "Maybe a six out of ten? It's dull rather than stabbing, but it never lets up.",
+       "at": "2026-08-24T19:18:43.205Z",
+       "revealed": [
+        "sarah_severity"
+       ],
+       "tone": "neutral"
+      },
+      {
+       "id": "msg_u13q0bl",
+       "author": "system",
+       "text": "You recommended: Paracetamol.",
+       "at": "2026-08-24T19:18:43.811Z",
+       "tone": "neutral"
+      },
+      {
+       "id": "msg_3clbmjx",
+       "author": "patient",
+       "text": "Is that one safe with warfarin? My GP mentioned something about painkillers, but I can't remember what.",
+       "at": "2026-08-24T19:18:43.811Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_iztmpby",
+       "author": "student",
+       "text": "Take 1g paracetamol up to four times a day, no more than 4g in 24 hours. Come back if it is not settling in three days.",
+       "at": "2026-08-24T19:18:44.342Z"
+      },
+      {
+       "id": "msg_flk3ej8",
+       "author": "patient",
+       "text": "That is clear, thank you. I think I know what I am doing now.",
+       "at": "2026-08-24T19:18:44.342Z",
+       "tone": "reassured"
+      },
+      {
+       "id": "msg_067ckck",
+       "author": "system",
+       "text": "Referral decision recorded: Routine physician referral.",
+       "at": "2026-08-24T19:18:44.814Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_2yqn847",
+       "author": "patient",
+       "text": "All right. Where exactly do I go, and how soon?",
+       "at": "2026-08-24T19:18:44.814Z",
+       "tone": "concerned"
+      }
+     ],
+     "revealedFactIds": [
+      "sarah_age",
+      "sarah_complaint",
+      "sarah_allergy",
+      "sarah_meds",
+      "sarah_history",
+      "sarah_duration",
+      "sarah_severity"
+     ],
+     "notes": "Warfarin, prior ulcer, aspirin allergy. Avoid NSAIDs entirely here.",
+     "recommendation": {
+      "choice": "Paracetamol",
+      "reasoning": "Paracetamol is safe with warfarin and avoids NSAID bleeding and ulcer risk given her history."
+     },
+     "counseling": "Take 1g paracetamol up to four times a day, no more than 4g in 24 hours. Come back if it is not settling in three days.",
+     "referral": {
+      "choice": "Routine physician referral",
+      "reasoning": "INR review given warfarin."
+     }
+    }
+   },
+   "output": {
+    "totalScore": 85,
+    "headline": "Strong consultation",
+    "scores": [
+     {
+      "key": "historyTaking",
+      "label": "History Taking",
+      "score": 91
+     },
+     {
+      "key": "clinicalReasoning",
+      "label": "Clinical Reasoning",
+      "score": 94
+     },
+     {
+      "key": "medicationSafety",
+      "label": "Medication Safety",
+      "score": 100
+     },
+     {
+      "key": "counseling",
+      "label": "Counseling",
+      "score": 72
+     },
+     {
+      "key": "communication",
+      "label": "Communication",
+      "score": 54
+     },
+     {
+      "key": "referralDecisions",
+      "label": "Referral Decisions",
+      "score": 68
+     }
+    ],
+    "strengths": [
+     [
+      "Checked for allergies",
+      "You asked directly about drug allergies before choosing a product."
+     ],
+     [
+      "Asked about current medication",
+      "You established the current medication list before recommending anything."
+     ],
+     [
+      "Chose a defensible option",
+      "“Paracetamol” is an appropriate course of action for this patient."
+     ],
+     [
+      "Explained your reasoning",
+      "You justified the decision rather than only naming a product."
+     ],
+     [
+      "Referral decision was appropriate",
+      "“Routine physician referral” matches the risk you uncovered."
+     ],
+     [
+      "Documented your findings",
+      "You kept clinical notes during the consultation."
+     ]
+    ],
+    "missed": [
+     [
+      "Counselling could be more complete",
+      "Aim to cover four things every time: what it is, how to take it, the daily maximum, and when to come back."
+     ],
+     [
+      "Little explicit empathy",
+      "One sentence acknowledging the patient’s concern measurably improves how much of your advice they retain."
+     ]
+    ],
+    "safetyIssues": [
+     [
+      "warning",
+      "Decision made with incomplete information",
+      "You committed to a plan without establishing neurological red flags.",
+      "A recommendation is only as safe as the history behind it. Uncovering these first would not have changed how long the consultation took, but it would have changed how defensible the decision was."
+     ]
+    ],
+    "timeline": [
+     [
+      "student-ask",
+      "Student asked",
+      "“Do you have any allergies?”"
+     ],
+     [
+      "patient-reveal",
+      "Patient revealed",
+      "Allergy: Aspirin — facial swelling and wheeze as a teenager"
+     ],
+     [
+      "student-ask",
+      "Student asked",
+      "“Are you taking any medications?”"
+     ],
+     [
+      "patient-reveal",
+      "Patient revealed",
+      "Current medication: Warfarin 4 mg daily (for a DVT last year)"
+     ],
+     [
+      "student-ask",
+      "Student asked",
+      "“Do you have any medical conditions?”"
+     ],
+     [
+      "patient-reveal",
+      "Patient revealed",
+      "Medical history: Gastric ulcer 3 years ago (endoscopy-confirmed); DVT last year"
+     ],
+     [
+      "student-ask",
+      "Student asked",
+      "“How long have you had it and how bad is it?”"
+     ],
+     [
+      "patient-reveal",
+      "Patient revealed",
+      "Duration: 1 day (since yesterday afternoon)"
+     ],
+     [
+      "patient-reveal",
+      "Patient revealed",
+      "Severity: Moderate — 6/10, dull and constant"
+     ],
+     [
+      "student-decision",
+      "Student recommended",
+      "Paracetamol — “Paracetamol is safe with warfarin and avoids NSAID bleeding and ulcer risk given her history.”"
+     ],
+     [
+      "student-counsel",
+      "Student counselled",
+      "“Take 1g paracetamol up to four times a day, no more than 4g in 24 hours. Come back if it is not settling in three days.”"
+     ],
+     [
+      "student-decision",
+      "Student decided on referral",
+      "Routine physician referral — “INR review given warfarin.”"
+     ],
+     [
+      "system-detect",
+      "System detected",
+      "Decision made with incomplete information"
+     ]
+    ],
+    "betterApproach": [
+     "Gather relevant history.",
+     "Screen for red flags.",
+     "Ask about allergies.",
+     "Review current medications.",
+     "Assess contraindications.",
+     "Determine appropriate treatment.",
+     "Provide counseling."
+    ],
+    "nextScenarioId": "sc_inhaler"
+   }
+  },
+  "unsafe": {
+   "input": {
+    "attempt": {
+     "id": "att_jam73qj",
+     "actions": [
+      {
+       "id": "act_928t36r",
+       "at": "2026-08-24T19:18:48.114Z",
+       "type": "question",
+       "content": "Do you have any allergies?",
+       "revealed": [
+        "sarah_allergy"
+       ]
+      },
+      {
+       "id": "act_4gcake7",
+       "at": "2026-08-24T19:18:49.037Z",
+       "type": "question",
+       "content": "Are you taking any medications?",
+       "revealed": [
+        "sarah_meds"
+       ]
+      },
+      {
+       "id": "act_hb5qwe4",
+       "at": "2026-08-24T19:18:49.522Z",
+       "type": "recommendation",
+       "content": "Ibuprofen should help.",
+       "choice": "NSAID"
+      },
+      {
+       "id": "act_0arv82m",
+       "at": "2026-08-24T19:18:49.834Z",
+       "type": "finish",
+       "content": "Consultation submitted for evaluation."
+      }
+     ],
+     "messages": [
+      {
+       "id": "msg_2bajuue",
+       "author": "system",
+       "text": "Iqra Muhammad approaches the counter.",
+       "at": "2026-08-24T19:18:47.243Z",
+       "tone": "neutral"
+      },
+      {
+       "id": "msg_oubtdfs",
+       "author": "patient",
+       "text": "Hi. I've had a really bad headache since yesterday. Could you recommend something?",
+       "at": "2026-08-24T19:18:47.243Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_9j3z8xn",
+       "author": "student",
+       "text": "Do you have any allergies?",
+       "at": "2026-08-24T19:18:48.114Z"
+      },
+      {
+       "id": "msg_ufdix8w",
+       "author": "patient",
+       "text": "Yes — aspirin. My face swelled up and I got wheezy when I was a teenager. I've avoided it since.",
+       "at": "2026-08-24T19:18:48.114Z",
+       "revealed": [
+        "sarah_allergy"
+       ],
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_1frlcg1",
+       "author": "system",
+       "text": "A safety-relevant detail has been added to Patient Information.",
+       "at": "2026-08-24T19:18:48.114Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_gt898ny",
+       "author": "student",
+       "text": "Are you taking any medications?",
+       "at": "2026-08-24T19:18:49.037Z"
+      },
+      {
+       "id": "msg_5hs0iyi",
+       "author": "patient",
+       "text": "I take warfarin every day — 4 milligrams. I had a clot in my leg last year, so I'm on it long term.",
+       "at": "2026-08-24T19:18:49.037Z",
+       "revealed": [
+        "sarah_meds"
+       ],
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_lya6rx5",
+       "author": "system",
+       "text": "A safety-relevant detail has been added to Patient Information.",
+       "at": "2026-08-24T19:18:49.037Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_fliv00z",
+       "author": "system",
+       "text": "You recommended: NSAID.",
+       "at": "2026-08-24T19:18:49.522Z",
+       "tone": "neutral"
+      },
+      {
+       "id": "msg_3lu5o3j",
+       "author": "patient",
+       "text": "Is that one safe with warfarin? My GP mentioned something about painkillers, but I can't remember what.",
+       "at": "2026-08-24T19:18:49.522Z",
+       "tone": "concerned"
+      }
+     ],
+     "revealedFactIds": [
+      "sarah_age",
+      "sarah_complaint",
+      "sarah_allergy",
+      "sarah_meds"
+     ],
+     "notes": "",
+     "recommendation": {
+      "choice": "NSAID",
+      "reasoning": "Ibuprofen should help."
+     }
+    }
+   },
+   "output": {
+    "totalScore": 45,
+    "headline": "Safety issue identified",
+    "scores": [
+     {
+      "key": "historyTaking",
+      "label": "History Taking",
+      "score": 46
+     },
+     {
+      "key": "clinicalReasoning",
+      "label": "Clinical Reasoning",
+      "score": 38
+     },
+     {
+      "key": "medicationSafety",
+      "label": "Medication Safety",
+      "score": 60
+     },
+     {
+      "key": "counseling",
+      "label": "Counseling",
+      "score": 26
+     },
+     {
+      "key": "communication",
+      "label": "Communication",
+      "score": 54
+     },
+     {
+      "key": "referralDecisions",
+      "label": "Referral Decisions",
+      "score": 40
+     }
+    ],
+    "strengths": [
+     [
+      "Checked for allergies",
+      "You asked directly about drug allergies before choosing a product."
+     ],
+     [
+      "Asked about current medication",
+      "You established the current medication list before recommending anything."
+     ]
+    ],
+    "missed": [
+     [
+      "You could have explored medical history earlier",
+      "Past conditions frequently decide whether an over-the-counter option is safe. Asking “any conditions you see a doctor about?” usually surfaces it."
+     ],
+     [
+      "You did not assess symptom severity early",
+      "Severity shapes both urgency and product choice. A quick 0–10 scale in your first two questions gives you a baseline to counsel against."
+     ],
+     [
+      "The consultation was short",
+      "Four to eight focused questions is typical before committing to a plan. You reached a decision with fewer."
+     ],
+     [
+      "Your reasoning was brief",
+      "Spelling out why you excluded the alternatives is what an examiner marks. Name the risk you were avoiding."
+     ],
+     [
+      "The patient left without counselling",
+      "Even a referral needs counselling: what you found, what happens next, and what to watch for meanwhile."
+     ],
+     [
+      "No explicit referral decision",
+      "Deciding that referral is *not* needed is still a decision. State it, so the patient knows where they stand."
+     ]
+    ],
+    "safetyIssues": [
+     [
+      "critical",
+      "NSAID recommended despite significant contraindications",
+      "You recommended an NSAID for a patient taking warfarin, with a previous gastric ulcer and an aspirin allergy.",
+      "NSAIDs increase bleeding risk substantially on warfarin, they are directly implicated in peptic ulcer recurrence, and cross-reactivity with an aspirin allergy is well described. Paracetamol is the appropriate first-line analgesic here, alongside advice on hydration, sleep and screen breaks."
+     ]
+    ],
+    "timeline": [
+     [
+      "student-ask",
+      "Student asked",
+      "“Do you have any allergies?”"
+     ],
+     [
+      "patient-reveal",
+      "Patient revealed",
+      "Allergy: Aspirin — facial swelling and wheeze as a teenager"
+     ],
+     [
+      "student-ask",
+      "Student asked",
+      "“Are you taking any medications?”"
+     ],
+     [
+      "patient-reveal",
+      "Patient revealed",
+      "Current medication: Warfarin 4 mg daily (for a DVT last year)"
+     ],
+     [
+      "student-decision",
+      "Student recommended",
+      "NSAID — “Ibuprofen should help.”"
+     ],
+     [
+      "system-detect",
+      "System detected",
+      "NSAID recommended despite significant contraindications"
+     ]
+    ],
+    "betterApproach": [
+     "Gather relevant history.",
+     "Screen for red flags.",
+     "Ask about allergies.",
+     "Review current medications.",
+     "Assess contraindications.",
+     "Determine appropriate treatment.",
+     "Provide counseling."
+    ],
+    "nextScenarioId": "sc_inhaler"
+   }
+  },
+  "jargon": {
+   "input": {
+    "attempt": {
+     "id": "att_rkw5d3l",
+     "actions": [
+      {
+       "id": "act_rcmoezx",
+       "at": "2026-08-24T19:18:52.777Z",
+       "type": "question",
+       "content": "Any contraindications?",
+       "revealed": []
+      },
+      {
+       "id": "act_3rwxijg",
+       "at": "2026-08-24T19:18:53.653Z",
+       "type": "question",
+       "content": "Do you have any allergies?",
+       "revealed": [
+        "sarah_allergy"
+       ]
+      },
+      {
+       "id": "act_mjfpxe9",
+       "at": "2026-08-24T19:18:54.584Z",
+       "type": "question",
+       "content": "Are you taking any medications?",
+       "revealed": [
+        "sarah_meds"
+       ]
+      },
+      {
+       "id": "act_qev0drp",
+       "at": "2026-08-24T19:18:55.566Z",
+       "type": "question",
+       "content": "Do you have any medical conditions?",
+       "revealed": [
+        "sarah_history"
+       ]
+      },
+      {
+       "id": "act_izydktx",
+       "at": "2026-08-24T19:18:56.361Z",
+       "type": "question",
+       "content": "How bad is the pain?",
+       "revealed": [
+        "sarah_severity"
+       ]
+      },
+      {
+       "id": "act_96u79qo",
+       "at": "2026-08-24T19:18:56.970Z",
+       "type": "recommendation",
+       "content": "Safe option.",
+       "choice": "Paracetamol"
+      },
+      {
+       "id": "act_c1cd8wv",
+       "at": "2026-08-24T19:18:57.502Z",
+       "type": "counseling",
+       "content": "Take one gram, max four grams daily."
+      },
+      {
+       "id": "act_o3vgdka",
+       "at": "2026-08-24T19:18:57.970Z",
+       "type": "referral",
+       "content": "Self care is fine.",
+       "choice": "No referral"
+      },
+      {
+       "id": "act_u9njuvl",
+       "at": "2026-08-24T19:18:58.285Z",
+       "type": "finish",
+       "content": "Consultation submitted for evaluation."
+      }
+     ],
+     "messages": [
+      {
+       "id": "msg_lq0usag",
+       "author": "system",
+       "text": "Iqra Muhammad approaches the counter.",
+       "at": "2026-08-24T19:18:51.951Z",
+       "tone": "neutral"
+      },
+      {
+       "id": "msg_hba43h5",
+       "author": "patient",
+       "text": "Hi. I've had a really bad headache since yesterday. Could you recommend something?",
+       "at": "2026-08-24T19:18:51.951Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_8wybn99",
+       "author": "student",
+       "text": "Any contraindications?",
+       "at": "2026-08-24T19:18:52.777Z"
+      },
+      {
+       "id": "msg_8cuyjnj",
+       "author": "patient",
+       "text": "Sorry, I'm not sure what you mean — could you put it another way?",
+       "at": "2026-08-24T19:18:52.777Z",
+       "tone": "neutral"
+      },
+      {
+       "id": "msg_sdr8mun",
+       "author": "student",
+       "text": "Do you have any allergies?",
+       "at": "2026-08-24T19:18:53.653Z"
+      },
+      {
+       "id": "msg_nhdgku6",
+       "author": "patient",
+       "text": "Yes — aspirin. My face swelled up and I got wheezy when I was a teenager. I've avoided it since.",
+       "at": "2026-08-24T19:18:53.653Z",
+       "revealed": [
+        "sarah_allergy"
+       ],
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_wwnvyu4",
+       "author": "system",
+       "text": "A safety-relevant detail has been added to Patient Information.",
+       "at": "2026-08-24T19:18:53.653Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_slxkjma",
+       "author": "student",
+       "text": "Are you taking any medications?",
+       "at": "2026-08-24T19:18:54.584Z"
+      },
+      {
+       "id": "msg_tk3atax",
+       "author": "patient",
+       "text": "I take warfarin every day — 4 milligrams. I had a clot in my leg last year, so I'm on it long term.",
+       "at": "2026-08-24T19:18:54.584Z",
+       "revealed": [
+        "sarah_meds"
+       ],
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_a6bdcrv",
+       "author": "system",
+       "text": "A safety-relevant detail has been added to Patient Information.",
+       "at": "2026-08-24T19:18:54.584Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_8idp9m4",
+       "author": "student",
+       "text": "Do you have any medical conditions?",
+       "at": "2026-08-24T19:18:55.566Z"
+      },
+      {
+       "id": "msg_s4k1ers",
+       "author": "patient",
+       "text": "I had a stomach ulcer about three years ago — they found it with a camera test. And the clot in my leg last year.",
+       "at": "2026-08-24T19:18:55.566Z",
+       "revealed": [
+        "sarah_history"
+       ],
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_xo6uljs",
+       "author": "system",
+       "text": "A safety-relevant detail has been added to Patient Information.",
+       "at": "2026-08-24T19:18:55.566Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_4h1zn70",
+       "author": "student",
+       "text": "How bad is the pain?",
+       "at": "2026-08-24T19:18:56.361Z"
+      },
+      {
+       "id": "msg_ilmq0rn",
+       "author": "patient",
+       "text": "Maybe a six out of ten? It's dull rather than stabbing, but it never lets up.",
+       "at": "2026-08-24T19:18:56.361Z",
+       "revealed": [
+        "sarah_severity"
+       ],
+       "tone": "neutral"
+      },
+      {
+       "id": "msg_xf6t0ze",
+       "author": "system",
+       "text": "You recommended: Paracetamol.",
+       "at": "2026-08-24T19:18:56.970Z",
+       "tone": "neutral"
+      },
+      {
+       "id": "msg_y3boxno",
+       "author": "patient",
+       "text": "Paracetamol is fine for me, I think. How much can I take in a day?",
+       "at": "2026-08-24T19:18:56.970Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_374t0u4",
+       "author": "student",
+       "text": "Take one gram, max four grams daily.",
+       "at": "2026-08-24T19:18:57.502Z"
+      },
+      {
+       "id": "msg_c7u9xft",
+       "author": "patient",
+       "text": "That is clear, thank you. I think I know what I am doing now.",
+       "at": "2026-08-24T19:18:57.502Z",
+       "tone": "reassured"
+      },
+      {
+       "id": "msg_3jis0t6",
+       "author": "system",
+       "text": "Referral decision recorded: No referral.",
+       "at": "2026-08-24T19:18:57.970Z",
+       "tone": "neutral"
+      }
+     ],
+     "revealedFactIds": [
+      "sarah_age",
+      "sarah_complaint",
+      "sarah_allergy",
+      "sarah_meds",
+      "sarah_history",
+      "sarah_severity"
+     ],
+     "notes": "short",
+     "recommendation": {
+      "choice": "Paracetamol",
+      "reasoning": "Safe option."
+     },
+     "counseling": "Take one gram, max four grams daily.",
+     "referral": {
+      "choice": "No referral",
+      "reasoning": "Self care is fine."
+     }
+    }
+   },
+   "output": {
+    "totalScore": 79,
+    "headline": "Competent consultation",
+    "scores": [
+     {
+      "key": "historyTaking",
+      "label": "History Taking",
+      "score": 76
+     },
+     {
+      "key": "clinicalReasoning",
+      "label": "Clinical Reasoning",
+      "score": 83
+     },
+     {
+      "key": "medicationSafety",
+      "label": "Medication Safety",
+      "score": 100
+     },
+     {
+      "key": "counseling",
+      "label": "Counseling",
+      "score": 65
+     },
+     {
+      "key": "communication",
+      "label": "Communication",
+      "score": 54
+     },
+     {
+      "key": "referralDecisions",
+      "label": "Referral Decisions",
+      "score": 68
+     }
+    ],
+    "strengths": [
+     [
+      "Checked for allergies",
+      "You asked directly about drug allergies before choosing a product."
+     ],
+     [
+      "Asked about current medication",
+      "You established the current medication list before recommending anything."
+     ],
+     [
+      "Chose a defensible option",
+      "“Paracetamol” is an appropriate course of action for this patient."
+     ],
+     [
+      "Referral decision was appropriate",
+      "“No referral” matches the risk you uncovered."
+     ]
+    ],
+    "missed": [
+     [
+      "Your reasoning was brief",
+      "Spelling out why you excluded the alternatives is what an examiner marks. Name the risk you were avoiding."
+     ],
+     [
+      "Counselling could be more complete",
+      "Aim to cover four things every time: what it is, how to take it, the daily maximum, and when to come back."
+     ],
+     [
+      "Little explicit empathy",
+      "One sentence acknowledging the patient’s concern measurably improves how much of your advice they retain."
+     ]
+    ],
+    "safetyIssues": [
+     [
+      "warning",
+      "Decision made with incomplete information",
+      "You committed to a plan without establishing neurological red flags.",
+      "A recommendation is only as safe as the history behind it. Uncovering these first would not have changed how long the consultation took, but it would have changed how defensible the decision was."
+     ]
+    ],
+    "timeline": [
+     [
+      "student-ask",
+      "Student asked",
+      "“Any contraindications?”"
+     ],
+     [
+      "student-ask",
+      "Student asked",
+      "“Do you have any allergies?”"
+     ],
+     [
+      "patient-reveal",
+      "Patient revealed",
+      "Allergy: Aspirin — facial swelling and wheeze as a teenager"
+     ],
+     [
+      "student-ask",
+      "Student asked",
+      "“Are you taking any medications?”"
+     ],
+     [
+      "patient-reveal",
+      "Patient revealed",
+      "Current medication: Warfarin 4 mg daily (for a DVT last year)"
+     ],
+     [
+      "student-ask",
+      "Student asked",
+      "“Do you have any medical conditions?”"
+     ],
+     [
+      "patient-reveal",
+      "Patient revealed",
+      "Medical history: Gastric ulcer 3 years ago (endoscopy-confirmed); DVT last year"
+     ],
+     [
+      "student-ask",
+      "Student asked",
+      "“How bad is the pain?”"
+     ],
+     [
+      "patient-reveal",
+      "Patient revealed",
+      "Severity: Moderate — 6/10, dull and constant"
+     ],
+     [
+      "student-decision",
+      "Student recommended",
+      "Paracetamol — “Safe option.”"
+     ],
+     [
+      "student-counsel",
+      "Student counselled",
+      "“Take one gram, max four grams daily.”"
+     ],
+     [
+      "student-decision",
+      "Student decided on referral",
+      "No referral — “Self care is fine.”"
+     ],
+     [
+      "system-detect",
+      "System detected",
+      "Decision made with incomplete information"
+     ]
+    ],
+    "betterApproach": [
+     "Gather relevant history.",
+     "Screen for red flags.",
+     "Ask about allergies.",
+     "Review current medications.",
+     "Assess contraindications.",
+     "Determine appropriate treatment.",
+     "Provide counseling."
+    ],
+    "nextScenarioId": "sc_inhaler"
+   }
+  },
+  "thin": {
+   "input": {
+    "attempt": {
+     "id": "att_kkvmtn3",
+     "actions": [
+      {
+       "id": "act_gazemh2",
+       "at": "2026-08-24T19:19:01.121Z",
+       "type": "question",
+       "content": "How are you?",
+       "revealed": []
+      },
+      {
+       "id": "act_i8xj6g9",
+       "at": "2026-08-24T19:19:01.433Z",
+       "type": "finish",
+       "content": "Consultation submitted for evaluation."
+      }
+     ],
+     "messages": [
+      {
+       "id": "msg_jcjuor7",
+       "author": "system",
+       "text": "Iqra Muhammad approaches the counter.",
+       "at": "2026-08-24T19:19:00.417Z",
+       "tone": "neutral"
+      },
+      {
+       "id": "msg_gs7waf3",
+       "author": "patient",
+       "text": "Hi. I've had a really bad headache since yesterday. Could you recommend something?",
+       "at": "2026-08-24T19:19:00.417Z",
+       "tone": "concerned"
+      },
+      {
+       "id": "msg_faafl9k",
+       "author": "student",
+       "text": "How are you?",
+       "at": "2026-08-24T19:19:01.121Z"
+      },
+      {
+       "id": "msg_23ntl1l",
+       "author": "patient",
+       "text": "Yes, thank you. It has been a bit of a day.",
+       "at": "2026-08-24T19:19:01.121Z",
+       "tone": "reassured"
+      }
+     ],
+     "revealedFactIds": [
+      "sarah_age",
+      "sarah_complaint"
+     ],
+     "notes": ""
+    }
+   },
+   "output": {
+    "totalScore": 32,
+    "headline": "Significant gaps",
+    "scores": [
+     {
+      "key": "historyTaking",
+      "label": "History Taking",
+      "score": 44
+     },
+     {
+      "key": "clinicalReasoning",
+      "label": "Clinical Reasoning",
+      "score": 26
+     },
+     {
+      "key": "medicationSafety",
+      "label": "Medication Safety",
+      "score": 22
+     },
+     {
+      "key": "counseling",
+      "label": "Counseling",
+      "score": 26
+     },
+     {
+      "key": "communication",
+      "label": "Communication",
+      "score": 54
+     },
+     {
+      "key": "referralDecisions",
+      "label": "Referral Decisions",
+      "score": 40
+     }
+    ],
+    "strengths": [],
+    "missed": [
+     [
+      "You did not ask about allergies",
+      "Allergy status changes which agents are available to you. Ask it early — it takes one sentence and it can rule out an entire drug class."
+     ],
+     [
+      "Current medication was never established",
+      "Without the medication list you cannot screen for interactions. In this case there was something in it that mattered."
+     ],
+     [
+      "You could have explored medical history earlier",
+      "Past conditions frequently decide whether an over-the-counter option is safe. Asking “any conditions you see a doctor about?” usually surfaces it."
+     ],
+     [
+      "You did not assess symptom severity early",
+      "Severity shapes both urgency and product choice. A quick 0–10 scale in your first two questions gives you a baseline to counsel against."
+     ],
+     [
+      "The consultation was short",
+      "Four to eight focused questions is typical before committing to a plan. You reached a decision with fewer."
+     ],
+     [
+      "No recommendation was recorded",
+      "Patients need a decision, not only questions. Commit to a course of action and say why."
+     ]
+    ],
+    "safetyIssues": [],
+    "timeline": [
+     [
+      "student-ask",
+      "Student asked",
+      "“How are you?”"
+     ]
+    ],
+    "betterApproach": [
+     "Gather relevant history.",
+     "Screen for red flags.",
+     "Ask about allergies.",
+     "Review current medications.",
+     "Assess contraindications.",
+     "Determine appropriate treatment.",
+     "Provide counseling."
+    ],
+    "nextScenarioId": "sc_inhaler"
+   }
+  }
+ }
+}

@@ -1,30 +1,32 @@
 import type { Achievement, Competency, CompetencyKey } from '@/types'
-import { notFound, request } from './api'
-import { getDb } from './store'
+import { achievements as achievementDefinitions } from '@/data/achievements'
+import { ApiError } from './api'
+import { dashboardService } from './dashboardService'
 
+/**
+ * Competency and achievement progress.
+ *
+ * Derived from the caller's own consultation reports via `dashboardService`.
+ * A dedicated `/api/progress` endpoint is the natural next step; the call
+ * surface here will not change when it lands.
+ */
 export const competencyService = {
   async list(): Promise<Competency[]> {
-    return request(() => getDb().competencies, { latency: 280, label: 'competencyService.list' })
+    return (await dashboardService.snapshot()).competencies
   },
 
   async get(key: CompetencyKey): Promise<Competency> {
-    return request(() => getDb().competencies.find((c) => c.key === key) ?? notFound('competency'), {
-      latency: 240,
-      label: 'competencyService.get',
-    })
+    const found = (await this.list()).find((c) => c.key === key)
+    if (!found) throw new ApiError('competency not found', 404, 'We couldn’t find that competency.')
+    return found
   },
 
   async overall(): Promise<number> {
-    return request(
-      () => {
-        const items = getDb().competencies
-        return Math.round(items.reduce((sum, c) => sum + c.score, 0) / Math.max(1, items.length))
-      },
-      { latency: 160, label: 'competencyService.overall' },
-    )
+    return (await dashboardService.snapshot()).overallScore
   },
 
+  /** Definitions only until achievement state is tracked server-side. */
   async achievements(): Promise<Achievement[]> {
-    return request(() => getDb().achievements, { latency: 260, label: 'competencyService.achievements' })
+    return achievementDefinitions
   },
 }

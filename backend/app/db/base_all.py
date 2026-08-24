@@ -7,6 +7,8 @@ metadata.
 """
 
 from app.db.base import Base
+from app.models.attempt import Attempt, Evaluation  # noqa: F401
+from app.models.catalogue import Patient, PatientFact, Scenario  # noqa: F401
 from app.models.user import User  # noqa: F401
 
-__all__ = ["Base", "User"]
+__all__ = ["Base", "User", "Scenario", "Patient", "PatientFact", "Attempt", "Evaluation"]

@@ -9,9 +9,10 @@ The repository holds two independently-run applications:
 | `src/`     | React 18 · TypeScript · Vite · Tailwind | `5173`   |
 | `backend/` | FastAPI · SQLAlchemy 2 · PostgreSQL 16  | `8000`   |
 
-Authentication runs against the backend and PostgreSQL. The remaining domain
-data (scenarios, attempts, evaluations) still runs on the frontend's local
-service layer and is migrating to the API incrementally.
+Authentication, the scenario catalogue, consultations and their reports all run
+against the backend and PostgreSQL. The deterministic patient and evaluation
+engines run server-side, so a student's progress follows their account rather
+than the browser.
 
 ---
 
@@ -84,7 +85,8 @@ cd backend
 alembic upgrade head
 ```
 
-This creates the `users` table. To add further tables later:
+This creates the `users`, `scenarios`, `patients`, `patient_facts`, `attempts`
+and `evaluations` tables. To add further tables later:
 
 ```bash
 alembic revision --autogenerate -m "add users table"
@@ -101,7 +103,18 @@ placeholder, and staging/production refuse to start with it):
 python -c "import secrets; print(secrets.token_urlsafe(64))"
 ```
 
-### 7b. Seed the development demo account (optional)
+### 7b. Load the scenario catalogue (required)
+
+```bash
+cd backend
+python -m scripts.seed_catalogue
+```
+
+Loads the ten scenarios, their patients and 97 disclosable facts. Idempotent —
+existing rows are updated in place, so it is safe to re-run after content
+changes. **The app has no cases until this is run.**
+
+### 7c. Seed the development demo account (optional)
 
 ```bash
 cd backend
@@ -196,12 +209,41 @@ on the page. The intended end state is an httpOnly `SameSite` refresh cookie
 plus a short-lived in-memory access token; that change is contained to
 `src/services/http.ts`.
 
-Only authentication has been migrated. Scenarios, attempts, evaluations,
-progress, drugs and settings still run on the frontend's local service layer,
-backed by `localStorage`.
-
 No progress is seeded. Competency scores, achievements, attempt history and
 scenario completion all start empty and are only written by real consultations.
+
+## Simulations
+
+Consultations are backend-owned. Every attempt is a row in `attempts` with a
+`user_id`, and every report a row in `evaluations`.
+
+| Endpoint | Purpose |
+| --- | --- |
+| `GET /api/scenarios` | Catalogue, with this user's progress on each case |
+| `POST /api/attempts` | Start a consultation |
+| `GET /api/attempts/{id}/patient` | Patient, **only the facts discovered so far** |
+| `POST /api/attempts/{id}/messages` | Ask the patient a question |
+| `POST /api/attempts/{id}/{recommendation,counseling,referral}` | Record a decision |
+| `POST /api/attempts/{id}/finish` | Submit for evaluation |
+| `POST /api/attempts/{id}/evaluate` | Score it (idempotent) |
+| `GET /api/attempts/{id}/evaluation` | The report |
+| `GET /api/attempts` | Consultation history |
+
+**Hidden information is enforced server-side.** Undiscovered patient facts are
+filtered out before serialisation, so they never reach the browser and cannot be
+read out of a network response.
+
+**Every attempt route is scoped by owner.** Another user's consultation returns
+404, not 403 — an id that is not yours is indistinguishable from one that does
+not exist.
+
+**The engines are a behaviour-preserving port.** `tests/test_engine_parity.py`
+replays real consultations captured from the original TypeScript engine and
+asserts the Python port still returns byte-identical reports, down to the
+wording of each piece of feedback. A scoring drift would be invisible in the UI
+but would silently change every student's grade.
+
+Calculations, drugs and settings still run on the frontend's local layer.
 
 ## Notes
 

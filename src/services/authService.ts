@@ -1,7 +1,6 @@
 import type { ExperienceLevel, LearningGoal, User, YearOfStudy } from '@/types'
 import { ApiError } from './api'
 import { clearToken, getToken, http, setToken } from './http'
-import { resetDb } from './store'
 
 export interface RegisterInput {
   firstName: string
@@ -22,11 +21,7 @@ export interface OnboardingInput {
  *
  * Users live in PostgreSQL; passwords are Argon2id-hashed server-side and never
  * touch this layer beyond being posted once over the wire. The backend is the
- * source of truth — the mock store's `user`/`authenticated` fields are no longer
- * consulted for auth.
- *
- * The public method signatures are unchanged from the mock implementation, so
- * `useAuth`, LoginPage, RegisterPage and OnboardingPage did not need rewriting.
+ * source of truth for the session.
  */
 
 /** The backend's camelCase user payload — mirrors the React `User` type. */
@@ -141,8 +136,17 @@ export const authService = {
     }
   },
 
-  /** Wipes local mock progress. Does not touch the user's backend account. */
+  /**
+   * Clears local device preferences.
+   *
+   * Consultation progress lives in PostgreSQL against the account and is not
+   * affected — deleting real results would need its own explicit endpoint.
+   */
   async resetProgress(): Promise<void> {
-    resetDb()
+    try {
+      window.localStorage.removeItem('pharmapanda.settings.v1')
+    } catch {
+      // Nothing to clear.
+    }
   },
 }

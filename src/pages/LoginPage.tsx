@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Field'
 import { useAuth } from '@/hooks/useAuth'
 import { ApiError } from '@/services/api'
-import { demoCredentials } from '@/services/store'
+import { demoCredentials } from '@/services/demo'
 
 function GoogleMark() {
   return (

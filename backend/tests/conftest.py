@@ -135,3 +135,26 @@ def anon_client() -> Generator[TestClient, None, None]:
     """Client with no database override — for tests that must not hit PostgreSQL."""
     with TestClient(app, raise_server_exceptions=False) as test_client:
         yield test_client
+
+
+@pytest.fixture()
+def seeded_catalogue(db_session: Session) -> None:
+    """
+    Load the scenario/patient catalogue into the test transaction.
+
+    Catalogue rows are content, not fixtures, so the tests use the same seed
+    path production does — a divergence between them would be a real bug.
+    """
+    import json
+    from pathlib import Path
+
+    from scripts.seed_catalogue import _upsert_patient, _upsert_scenario
+
+    source = Path(__file__).parent.parent / "scripts" / "data" / "catalogue.json"
+    data = json.loads(source.read_text(encoding="utf-8"))
+
+    patients = {raw["id"]: _upsert_patient(db_session, raw) for raw in data["patients"]}
+    db_session.flush()
+    for position, raw in enumerate(data["scenarios"]):
+        _upsert_scenario(db_session, raw, patients[raw["patientId"]], position)
+    db_session.flush()

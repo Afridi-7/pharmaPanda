@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { ClipboardList, ListChecks, MessageSquare, NotebookPen } from 'lucide-react'
 import type {
   Patient,
+  PatientFact,
   RecommendationOption,
   ReferralOption,
   Scenario,
@@ -79,7 +80,9 @@ export function SimulationPlayerPage() {
     try {
       const attempt = await attemptService.get(id)
       const scenario = await scenarioService.get(attempt.scenarioId)
-      const patient = await scenarioService.getPatient(scenario.patientId)
+      // Fetched per attempt: the server returns only the facts this
+      // consultation has uncovered, so hidden detail never reaches the client.
+      const patient = await scenarioService.getPatientForAttempt(attempt.id)
       setLoaded({ attempt, scenario, patient })
       setNotes(attempt.notes)
       setSeconds(attempt.durationSeconds)
@@ -159,18 +162,39 @@ export function SimulationPlayerPage() {
   }, [notes, notesSaved, active, id])
 
   // --- Actions ------------------------------------------------------------
-  const applyResult = useCallback((updated: ScenarioAttempt, revealedIds: string[]) => {
-    setLoaded((prev) => (prev ? { ...prev, attempt: updated } : prev))
-    setJustRevealed(revealedIds)
-  }, [])
+  /**
+   * Fold a service result back into page state.
+   *
+   * Newly revealed facts are merged into the loaded patient: the server only
+   * ever sends facts this attempt has uncovered, so the patient loaded at mount
+   * does not yet contain them and the panel would otherwise stay empty.
+   */
+  const applyResult = useCallback(
+    (updated: ScenarioAttempt, revealed: PatientFact[]) => {
+      setLoaded((prev) => {
+        if (!prev) return prev
+        const known = new Set(prev.patient.facts.map((fact) => fact.id))
+        const fresh = revealed.filter((fact) => !known.has(fact.id))
+        return {
+          ...prev,
+          attempt: updated,
+          patient: fresh.length
+            ? { ...prev.patient, facts: [...prev.patient.facts, ...fresh] }
+            : prev.patient,
+        }
+      })
+      setJustRevealed(revealed.map((fact) => fact.id))
+    },
+    [],
+  )
 
   const runAction = useCallback(
-    async (fn: () => Promise<{ attempt: ScenarioAttempt; revealed: { id: string }[] }>) => {
+    async (fn: () => Promise<{ attempt: ScenarioAttempt; revealed: PatientFact[] }>) => {
       setBusy(true)
       setActionError(null)
       try {
         const result = await fn()
-        applyResult(result.attempt, result.revealed.map((fact) => fact.id))
+        applyResult(result.attempt, result.revealed)
       } catch (error) {
         setActionError(
           error instanceof ApiError
@@ -190,7 +214,7 @@ export function SimulationPlayerPage() {
       setActionError(null)
       try {
         const result = await attemptService.ask(id, question)
-        applyResult(result.attempt, result.revealed.map((fact) => fact.id))
+        applyResult(result.attempt, result.revealed)
       } catch (error) {
         setActionError(
           error instanceof ApiError

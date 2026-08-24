@@ -8,7 +8,7 @@ import { ScenarioCard } from '@/components/common/ScenarioCard'
 import { CardSkeletonGrid, EmptyState, ErrorState, PageHeader } from '@/components/common/States'
 import { useAsync } from '@/hooks/useAsync'
 import { scenarioService } from '@/services'
-import { scenarioCategories } from '@/data/scenarios'
+import { scenarioCategories } from '@/data/categories'
 import { cn } from '@/lib/utils'
 
 const difficulties: Difficulty[] = ['Beginner', 'Intermediate', 'Advanced']

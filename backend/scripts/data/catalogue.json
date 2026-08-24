@@ -1,0 +1,2417 @@
+{
+ "patients": [
+  {
+   "id": "pat_sarah",
+   "name": "Iqra Muhammad",
+   "age": 20,
+   "pronouns": "she/her",
+   "role": "Patient",
+   "mood": "worried",
+   "avatar": "sarah",
+   "chiefComplaint": "Headache",
+   "openingLine": "Hi. I've had a really bad headache since yesterday. Could you recommend something?",
+   "facts": [
+    {
+     "id": "sarah_age",
+     "section": "basic",
+     "label": "Age",
+     "value": "20",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old"
+     ],
+     "patientLine": "I'm 20.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "sarah_complaint",
+     "section": "basic",
+     "label": "Chief complaint",
+     "value": "Headache",
+     "revealedAtStart": true,
+     "triggers": [
+      "what brings you",
+      "problem",
+      "complaint"
+     ],
+     "patientLine": "It's this headache. It just won't shift.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "sarah_duration",
+     "section": "symptoms",
+     "label": "Duration",
+     "value": "1 day (since yesterday afternoon)",
+     "revealedAtStart": false,
+     "triggers": [
+      "how long",
+      "when did it start",
+      "since when",
+      "duration",
+      "started"
+     ],
+     "patientLine": "It started yesterday afternoon, so about a day now.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "sarah_severity",
+     "section": "symptoms",
+     "label": "Severity",
+     "value": "Moderate — 6/10, dull and constant",
+     "revealedAtStart": false,
+     "triggers": [
+      "how bad",
+      "severity",
+      "scale of",
+      "how severe",
+      "how painful",
+      "rate the pain"
+     ],
+     "patientLine": "Maybe a six out of ten? It's dull rather than stabbing, but it never lets up.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "sarah_site",
+     "section": "symptoms",
+     "label": "Site & character",
+     "value": "Band-like across the forehead and temples",
+     "revealedAtStart": false,
+     "triggers": [
+      "where",
+      "which part of your head",
+      "front or back",
+      "one side",
+      "character"
+     ],
+     "patientLine": "It's like a tight band across my forehead and both temples.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "sarah_fever",
+     "section": "symptoms",
+     "label": "Fever",
+     "value": "No fever",
+     "revealedAtStart": false,
+     "triggers": [
+      "fever",
+      "temperature",
+      "hot",
+      "chills"
+     ],
+     "patientLine": "No, no temperature. I've been checking.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "sarah_redflags",
+     "section": "symptoms",
+     "label": "Neurological red flags",
+     "value": "None — no visual changes, weakness, neck stiffness, rash or vomiting",
+     "revealedAtStart": false,
+     "triggers": [
+      "vision",
+      "visual",
+      "weakness",
+      "numb",
+      "neck",
+      "stiff",
+      "rash",
+      "vomit",
+      "confusion",
+      "speech",
+      "worst headache",
+      "sudden",
+      "red flag"
+     ],
+     "patientLine": "No, nothing like that. My vision is fine, my neck moves fine, and I haven't been sick.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "sarah_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "Aspirin — facial swelling and wheeze as a teenager",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug"
+     ],
+     "patientLine": "Yes — aspirin. My face swelled up and I got wheezy when I was a teenager. I've avoided it since.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "sarah_meds",
+     "section": "medications",
+     "label": "Current medication",
+     "value": "Warfarin 4 mg daily (for a DVT last year)",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "drugs do you take",
+      "anything else you take",
+      "supplements"
+     ],
+     "patientLine": "I take warfarin every day — 4 milligrams. I had a clot in my leg last year, so I'm on it long term.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "sarah_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "Gastric ulcer 3 years ago (endoscopy-confirmed); DVT last year",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery"
+     ],
+     "patientLine": "I had a stomach ulcer about three years ago — they found it with a camera test. And the clot in my leg last year.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "sarah_tried",
+     "section": "other",
+     "label": "Tried so far",
+     "value": "Nothing yet — waited to ask the pharmacist first",
+     "revealedAtStart": false,
+     "triggers": [
+      "tried",
+      "taken anything",
+      "anything for it",
+      "so far"
+     ],
+     "patientLine": "I haven't taken anything yet. I wanted to ask first because of my warfarin.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "sarah_context",
+     "section": "other",
+     "label": "Context",
+     "value": "Deadline week, poor sleep, high screen time, low fluid intake",
+     "revealedAtStart": false,
+     "triggers": [
+      "sleep",
+      "stress",
+      "work",
+      "screen",
+      "water",
+      "drink",
+      "caffeine",
+      "anything change"
+     ],
+     "patientLine": "It's been a brutal week at work — late nights on the laptop, barely any water, too much coffee.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "sarah_pregnancy",
+     "section": "other",
+     "label": "Pregnancy status",
+     "value": "Not pregnant, not breastfeeding",
+     "revealedAtStart": false,
+     "triggers": [
+      "pregnan",
+      "breastfeed",
+      "nursing",
+      "baby on the way"
+     ],
+     "patientLine": "No, definitely not pregnant.",
+     "credits": "historyTaking"
+    }
+   ],
+   "deflections": [
+    "Sorry, I'm not sure what you mean — could you put it another way?",
+    "I don't think so? Nobody's ever asked me that.",
+    "Hmm. I'm not sure that's related, but ask me whatever you need."
+   ],
+   "impatientLines": [
+    "I don't mean to rush you, but I've got to get back to the office soon.",
+    "Is all this needed just for a headache?"
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "ibuprofen",
+      "nsaid",
+      "naproxen",
+      "diclofenac",
+      "aspirin"
+     ],
+     "line": "Is that one safe with warfarin? My GP mentioned something about painkillers, but I can't remember what."
+    },
+    {
+     "triggers": [
+      "paracetamol",
+      "acetaminophen"
+     ],
+     "line": "Paracetamol is fine for me, I think. How much can I take in a day?"
+    },
+    {
+     "triggers": [
+      "doctor",
+      "gp",
+      "refer",
+      "physician"
+     ],
+     "line": "Do you really think I need to see a doctor? Is something wrong?"
+    }
+   ],
+   "jargon": [
+    "contraindicated",
+    "gastrointestinal",
+    "nsaid",
+    "anticoagulant",
+    "prophylaxis",
+    "analgesia",
+    "hepatic",
+    "peptic"
+   ]
+  },
+  {
+   "id": "pat_thomas",
+   "name": "Thomas Byrne",
+   "age": 58,
+   "pronouns": "he/him",
+   "role": "Patient",
+   "mood": "tired",
+   "avatar": "thomas",
+   "chiefComplaint": "Persistent cough",
+   "openingLine": "Morning. I've had this cough for weeks now. Something strong for it, please.",
+   "facts": [
+    {
+     "id": "thomas_age",
+     "section": "basic",
+     "label": "Age",
+     "value": "58",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old"
+     ],
+     "patientLine": "I'm 58.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "thomas_complaint",
+     "section": "basic",
+     "label": "Chief complaint",
+     "value": "Persistent dry cough",
+     "revealedAtStart": true,
+     "triggers": [
+      "complaint",
+      "what brings you"
+     ],
+     "patientLine": "It's the cough. Dry, tickly, all day.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "thomas_duration",
+     "section": "symptoms",
+     "label": "Duration",
+     "value": "5 weeks, gradually worsening",
+     "revealedAtStart": false,
+     "triggers": [
+      "how long",
+      "when did it start",
+      "since when",
+      "duration",
+      "started"
+     ],
+     "patientLine": "Five weeks or so. It crept up on me.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "thomas_sputum",
+     "section": "symptoms",
+     "label": "Sputum / blood",
+     "value": "Dry cough, no sputum, no haemoptysis",
+     "revealedAtStart": false,
+     "triggers": [
+      "phlegm",
+      "sputum",
+      "mucus",
+      "blood",
+      "coughing up"
+     ],
+     "patientLine": "Nothing comes up. No blood, if that is what you mean.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "thomas_weight",
+     "section": "symptoms",
+     "label": "Weight & night sweats",
+     "value": "Unintentional 4 kg loss over 2 months, occasional night sweats",
+     "revealedAtStart": false,
+     "triggers": [
+      "weight",
+      "appetite",
+      "night sweats",
+      "sweating",
+      "fever"
+     ],
+     "patientLine": "Now you mention it, my trousers are loose. I've lost maybe four kilos without trying. Some sweaty nights too.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "thomas_smoking",
+     "section": "history",
+     "label": "Smoking",
+     "value": "30 pack-years, still smoking 15/day",
+     "revealedAtStart": false,
+     "triggers": [
+      "smoke",
+      "smoking",
+      "cigarette",
+      "tobacco",
+      "vape"
+     ],
+     "patientLine": "Fifteen a day since I was about twenty. I know, I know.",
+     "credits": "historyTaking",
+     "safetyCritical": true
+    },
+    {
+     "id": "thomas_meds",
+     "section": "medications",
+     "label": "Current medication",
+     "value": "Ramipril 5 mg daily (started 6 months ago), atorvastatin 20 mg nightly",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "drugs do you take",
+      "anything else you take",
+      "supplements"
+     ],
+     "patientLine": "Ramipril for the blood pressure — started that six months back — and a statin at night.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "thomas_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "Hypertension, high cholesterol",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery"
+     ],
+     "patientLine": "Blood pressure and cholesterol. Nothing else they have told me about.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "thomas_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "No known drug allergies",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug"
+     ],
+     "patientLine": "No allergies that I know of.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "thomas_tried",
+     "section": "other",
+     "label": "Tried so far",
+     "value": "Two bottles of pharmacy cough syrup, honey and lemon — no benefit",
+     "revealedAtStart": false,
+     "triggers": [
+      "tried",
+      "taken anything",
+      "so far"
+     ],
+     "patientLine": "I've been through two bottles of cough syrup. Waste of money.",
+     "credits": "historyTaking"
+    }
+   ],
+   "deflections": [
+    "Not sure I follow, sorry.",
+    "Couldn't tell you, honestly.",
+    "Ask away, I just want this cough gone."
+   ],
+   "impatientLines": [
+    "Look, can you just give me something strong?",
+    "I've a bus to catch, if we can be quick."
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "ramipril",
+      "ace",
+      "blood pressure tablet"
+     ],
+     "line": "The blood pressure tablet? Could that really be causing a cough?"
+    },
+    {
+     "triggers": [
+      "doctor",
+      "gp",
+      "refer",
+      "chest x"
+     ],
+     "line": "A doctor? You think it's something serious, don't you."
+    }
+   ],
+   "jargon": [
+    "ace inhibitor",
+    "haemoptysis",
+    "bronchodilator",
+    "malignancy",
+    "red flag",
+    "productive cough"
+   ]
+  },
+  {
+   "id": "pat_amina",
+   "name": "Amina Haddad",
+   "age": 41,
+   "pronouns": "she/her",
+   "role": "Patient",
+   "mood": "calm",
+   "avatar": "amina",
+   "chiefComplaint": "Heartburn after evening meals",
+   "openingLine": "Hello. I get burning in my chest most evenings after dinner. What do you suggest?",
+   "facts": [
+    {
+     "id": "amina_age",
+     "section": "basic",
+     "label": "Age",
+     "value": "41",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old"
+     ],
+     "patientLine": "Forty-one.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "amina_complaint",
+     "section": "basic",
+     "label": "Chief complaint",
+     "value": "Burning retrosternal discomfort after meals",
+     "revealedAtStart": true,
+     "triggers": [
+      "complaint",
+      "what brings you"
+     ],
+     "patientLine": "A burning feeling, here, behind my breastbone.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "amina_duration",
+     "section": "symptoms",
+     "label": "Duration & pattern",
+     "value": "3 months, 4–5 evenings per week, worse lying down",
+     "revealedAtStart": false,
+     "triggers": [
+      "how long",
+      "when did it start",
+      "since when",
+      "duration",
+      "started",
+      "how often",
+      "pattern"
+     ],
+     "patientLine": "Three months maybe. Four or five nights a week, and worse when I lie down.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "amina_alarm",
+     "section": "symptoms",
+     "label": "Alarm features",
+     "value": "No dysphagia, no weight loss, no vomiting, no melaena",
+     "revealedAtStart": false,
+     "triggers": [
+      "swallow",
+      "weight",
+      "vomit",
+      "black stool",
+      "blood",
+      "alarm"
+     ],
+     "patientLine": "Swallowing is fine, weight is the same, no blood, nothing like that.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "amina_meds",
+     "section": "medications",
+     "label": "Current medication",
+     "value": "Naproxen 500 mg twice daily for knee osteoarthritis (own supply, 4 months)",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "drugs do you take",
+      "anything else you take",
+      "supplements"
+     ],
+     "patientLine": "I take naproxen twice a day for my knee — I've had it from the doctor for about four months.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "amina_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "Knee osteoarthritis; no cardiac history",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery"
+     ],
+     "patientLine": "Just my knee. My heart is fine, they checked last year.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "amina_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "Penicillin — rash",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug"
+     ],
+     "patientLine": "Penicillin gives me a rash.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "amina_lifestyle",
+     "section": "other",
+     "label": "Lifestyle",
+     "value": "Late heavy dinners, strong coffee after meals, occasional wine",
+     "revealedAtStart": false,
+     "triggers": [
+      "diet",
+      "food",
+      "eat",
+      "coffee",
+      "alcohol",
+      "smoke",
+      "lifestyle"
+     ],
+     "patientLine": "We eat late, and I always have a coffee after. A glass of wine at weekends.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "amina_tried",
+     "section": "other",
+     "label": "Tried so far",
+     "value": "Antacid tablets — brief relief only",
+     "revealedAtStart": false,
+     "triggers": [
+      "tried",
+      "taken anything",
+      "antacid",
+      "so far"
+     ],
+     "patientLine": "Chewable antacids help for twenty minutes, then it comes back.",
+     "credits": "historyTaking"
+    }
+   ],
+   "deflections": [
+    "I am not sure, sorry.",
+    "Could you explain that a little?",
+    "No, nothing like that."
+   ],
+   "impatientLines": [
+    "I do have to collect my daughter shortly."
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "naproxen",
+      "nsaid",
+      "ibuprofen"
+     ],
+     "line": "Should I stop the naproxen? My knee is bad without it."
+    },
+    {
+     "triggers": [
+      "omeprazole",
+      "ppi",
+      "proton"
+     ],
+     "line": "How long would I need to take that for?"
+    }
+   ],
+   "jargon": [
+    "dyspepsia",
+    "ppi",
+    "nsaid",
+    "gord",
+    "reflux prophylaxis",
+    "melaena"
+   ]
+  },
+  {
+   "id": "pat_george",
+   "name": "George Whitlock",
+   "age": 27,
+   "pronouns": "he/him",
+   "role": "Patient",
+   "mood": "impatient",
+   "avatar": "george",
+   "chiefComplaint": "Seasonal allergy symptoms",
+   "openingLine": "Hey — hay fever is destroying me. Sneezing, itchy eyes. Give me the strongest thing you have.",
+   "facts": [
+    {
+     "id": "george_age",
+     "section": "basic",
+     "label": "Age",
+     "value": "27",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old"
+     ],
+     "patientLine": "Twenty-seven.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "george_complaint",
+     "section": "basic",
+     "label": "Chief complaint",
+     "value": "Sneezing, rhinorrhoea, itchy eyes",
+     "revealedAtStart": true,
+     "triggers": [
+      "complaint",
+      "symptoms"
+     ],
+     "patientLine": "Sneezing fits, runny nose, eyes like sandpaper.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "george_duration",
+     "section": "symptoms",
+     "label": "Duration & pattern",
+     "value": "Every spring for 6 years; 3 weeks so far this season",
+     "revealedAtStart": false,
+     "triggers": [
+      "how long",
+      "when did it start",
+      "since when",
+      "duration",
+      "started",
+      "every year",
+      "seasonal"
+     ],
+     "patientLine": "Every spring since university. Three weeks in this year.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "george_chest",
+     "section": "symptoms",
+     "label": "Chest symptoms",
+     "value": "Mild wheeze and night cough during pollen peaks",
+     "revealedAtStart": false,
+     "triggers": [
+      "chest",
+      "wheeze",
+      "breath",
+      "asthma",
+      "cough"
+     ],
+     "patientLine": "I do get a bit wheezy at night when the pollen is bad. Never thought much of it.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "george_meds",
+     "section": "medications",
+     "label": "Current medication",
+     "value": "Salbutamol inhaler (rarely used, expired), no preventer inhaler",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "drugs do you take",
+      "anything else you take",
+      "supplements",
+      "inhaler"
+     ],
+     "patientLine": "I have a blue inhaler somewhere. Pretty sure it is out of date.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "george_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "Mild asthma diagnosed age 14, considered \"grown out of\"",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery"
+     ],
+     "patientLine": "They said asthma when I was fourteen, but I grew out of it. Mostly.",
+     "credits": "historyTaking",
+     "safetyCritical": true
+    },
+    {
+     "id": "george_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "No known drug allergies; pollen and cat dander",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug"
+     ],
+     "patientLine": "No drug allergies. Pollen and cats, obviously.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "george_job",
+     "section": "other",
+     "label": "Occupation",
+     "value": "Delivery driver — sedation would be a safety issue",
+     "revealedAtStart": false,
+     "triggers": [
+      "work",
+      "job",
+      "drive",
+      "driving",
+      "occupation",
+      "machinery"
+     ],
+     "patientLine": "I drive a delivery van all day, so I cannot be falling asleep.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "george_tried",
+     "section": "other",
+     "label": "Tried so far",
+     "value": "Sedating antihistamine from a supermarket — too drowsy to drive",
+     "revealedAtStart": false,
+     "triggers": [
+      "tried",
+      "taken anything",
+      "antihistamine",
+      "so far"
+     ],
+     "patientLine": "I tried some tablets from the supermarket and nearly fell asleep at the wheel.",
+     "credits": "historyTaking"
+    }
+   ],
+   "deflections": [
+    "Does that matter? Fine, ask.",
+    "No idea, mate.",
+    "Not sure what you mean."
+   ],
+   "impatientLines": [
+    "Any chance we can speed this up? Van is on double yellows.",
+    "Can I just take the tablets and go?"
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "inhaler",
+      "asthma",
+      "preventer"
+     ],
+     "line": "Do I actually need to sort the inhaler out? It is only hay fever."
+    },
+    {
+     "triggers": [
+      "drowsy",
+      "sedating",
+      "cetirizine",
+      "loratadine"
+     ],
+     "line": "Will this one make me sleepy? I cannot risk that."
+    }
+   ],
+   "jargon": [
+    "antihistamine",
+    "rhinitis",
+    "sedating",
+    "intranasal corticosteroid",
+    "preventer"
+   ]
+  },
+  {
+   "id": "pat_lena",
+   "name": "Lena Farkas",
+   "age": 23,
+   "pronouns": "she/her",
+   "role": "Patient",
+   "mood": "worried",
+   "avatar": "lena",
+   "chiefComplaint": "Itchy rash on both forearms",
+   "openingLine": "Hi, I've got this itchy rash on my arms. Is there a cream for it?",
+   "facts": [
+    {
+     "id": "lena_age",
+     "section": "basic",
+     "label": "Age",
+     "value": "23",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old"
+     ],
+     "patientLine": "Twenty-three.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "lena_complaint",
+     "section": "basic",
+     "label": "Chief complaint",
+     "value": "Itchy rash, both forearms",
+     "revealedAtStart": true,
+     "triggers": [
+      "complaint",
+      "rash"
+     ],
+     "patientLine": "This rash on both arms. It itches constantly.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "lena_appearance",
+     "section": "symptoms",
+     "label": "Appearance",
+     "value": "Dry, scaly, poorly demarcated plaques in flexures; no blistering, no pus",
+     "revealedAtStart": false,
+     "triggers": [
+      "look like",
+      "appearance",
+      "describe",
+      "blister",
+      "weeping",
+      "pus",
+      "spreading"
+     ],
+     "patientLine": "Dry and flaky, mostly in the creases of my elbows. No blisters or pus.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "lena_duration",
+     "section": "symptoms",
+     "label": "Duration",
+     "value": "2 weeks, flares since childhood",
+     "revealedAtStart": false,
+     "triggers": [
+      "how long",
+      "when did it start",
+      "since when",
+      "duration",
+      "started"
+     ],
+     "patientLine": "Two weeks this time. I got patches like this as a kid too.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "lena_infection",
+     "section": "symptoms",
+     "label": "Signs of infection",
+     "value": "No fever, no warmth, no yellow crusting",
+     "revealedAtStart": false,
+     "triggers": [
+      "fever",
+      "infected",
+      "hot",
+      "crust",
+      "yellow",
+      "temperature"
+     ],
+     "patientLine": "No temperature, and it is not hot to touch.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "lena_trigger",
+     "section": "other",
+     "label": "Possible trigger",
+     "value": "Started a hospital placement — frequent hand and forearm washing, new soap",
+     "revealedAtStart": false,
+     "triggers": [
+      "new",
+      "change",
+      "soap",
+      "detergent",
+      "trigger",
+      "work",
+      "placement",
+      "cause"
+     ],
+     "patientLine": "I started a hospital placement two weeks ago. I wash my arms constantly and the soap there is harsh.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "lena_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "Childhood atopic eczema, mild hay fever",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery"
+     ],
+     "patientLine": "I had eczema as a child, and I get hay fever.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "lena_meds",
+     "section": "medications",
+     "label": "Current medication",
+     "value": "Combined oral contraceptive; no topical treatments currently",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "drugs do you take",
+      "anything else you take",
+      "supplements"
+     ],
+     "patientLine": "Just the pill. Nothing on my skin at the moment.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "lena_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "No known drug allergies",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug"
+     ],
+     "patientLine": "None that I know of.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "lena_tried",
+     "section": "other",
+     "label": "Tried so far",
+     "value": "Body lotion with fragrance — stung and worsened itch",
+     "revealedAtStart": false,
+     "triggers": [
+      "tried",
+      "cream",
+      "used anything",
+      "so far"
+     ],
+     "patientLine": "I used a scented body lotion and it stung badly.",
+     "credits": "historyTaking"
+    }
+   ],
+   "deflections": [
+    "Sorry, what do you mean?",
+    "I do not think so.",
+    "Maybe? I honestly cannot remember."
+   ],
+   "impatientLines": [
+    "My shift starts in half an hour, sorry to rush."
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "steroid",
+      "hydrocortisone"
+     ],
+     "line": "Is a steroid cream safe? I have heard they thin your skin."
+    },
+    {
+     "triggers": [
+      "emollient",
+      "moisturiser",
+      "moisturizer"
+     ],
+     "line": "How often would I need to put that on?"
+    }
+   ],
+   "jargon": [
+    "atopic",
+    "emollient",
+    "topical corticosteroid",
+    "flexural",
+    "demarcated",
+    "excoriation"
+   ]
+  },
+  {
+   "id": "pat_mateo",
+   "name": "Mateo Rossi",
+   "age": 33,
+   "pronouns": "he/him",
+   "role": "Parent of Elena, 3 years old",
+   "mood": "worried",
+   "avatar": "mateo",
+   "chiefComplaint": "Feverish 3-year-old",
+   "openingLine": "Please, my daughter Elena has a fever since last night. She's three. What can I give her?",
+   "facts": [
+    {
+     "id": "mateo_age",
+     "section": "basic",
+     "label": "Child age",
+     "value": "Elena, 3 years old",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old"
+     ],
+     "patientLine": "She is three, just turned.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "mateo_complaint",
+     "section": "basic",
+     "label": "Chief complaint",
+     "value": "Fever since last night",
+     "revealedAtStart": true,
+     "triggers": [
+      "complaint",
+      "fever"
+     ],
+     "patientLine": "A fever, since about bedtime yesterday.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "mateo_weight",
+     "section": "basic",
+     "label": "Child weight",
+     "value": "14 kg",
+     "revealedAtStart": false,
+     "triggers": [
+      "weight",
+      "how heavy",
+      "kilos",
+      "kg"
+     ],
+     "patientLine": "She was 14 kilos at her check-up last month.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "mateo_temp",
+     "section": "symptoms",
+     "label": "Temperature",
+     "value": "38.6 °C tympanic this morning",
+     "revealedAtStart": false,
+     "triggers": [
+      "temperature",
+      "how high",
+      "measured",
+      "thermometer"
+     ],
+     "patientLine": "It was 38.6 in her ear this morning.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "mateo_redflags",
+     "section": "symptoms",
+     "label": "Red flags",
+     "value": "No rash, no neck stiffness, no breathing difficulty, no seizure, alert and drinking",
+     "revealedAtStart": false,
+     "triggers": [
+      "rash",
+      "neck",
+      "breathing",
+      "drowsy",
+      "fit",
+      "seizure",
+      "drinking",
+      "nappy",
+      "wet",
+      "red flag",
+      "floppy"
+     ],
+     "patientLine": "No rash, she moves her neck fine, breathing normally. She is drinking and still playing a bit.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "mateo_duration",
+     "section": "symptoms",
+     "label": "Duration",
+     "value": "Approximately 14 hours",
+     "revealedAtStart": false,
+     "triggers": [
+      "how long",
+      "when did it start",
+      "since when",
+      "duration",
+      "started"
+     ],
+     "patientLine": "About fourteen hours now.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "mateo_meds",
+     "section": "medications",
+     "label": "Given so far",
+     "value": "One dose of paracetamol suspension 4 hours ago (dose uncertain — used a kitchen teaspoon)",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "drugs do you take",
+      "anything else you take",
+      "supplements",
+      "given",
+      "tried"
+     ],
+     "patientLine": "I gave her paracetamol four hours ago, but I used a kitchen spoon. I am not sure how much.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "mateo_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "Term birth, fully immunised, no chronic conditions",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery"
+     ],
+     "patientLine": "She is healthy, all her vaccines are done.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "mateo_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "No known allergies",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug"
+     ],
+     "patientLine": "No allergies.",
+     "credits": "medicationSafety"
+    }
+   ],
+   "deflections": [
+    "Sorry — I am not thinking straight. What do you mean?",
+    "I did not check that, sorry."
+   ],
+   "impatientLines": [
+    "She is crying in the car with her mum. Can we be quick?"
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "ibuprofen",
+      "nurofen"
+     ],
+     "line": "Can I give both paracetamol and ibuprofen? My mother says never mix them."
+    },
+    {
+     "triggers": [
+      "doctor",
+      "gp",
+      "hospital",
+      "refer"
+     ],
+     "line": "Do we need a doctor? Should I be scared?"
+    },
+    {
+     "triggers": [
+      "dose",
+      "ml",
+      "how much"
+     ],
+     "line": "How do I measure it properly? I only have the kitchen spoon."
+    }
+   ],
+   "jargon": [
+    "antipyretic",
+    "tympanic",
+    "mg/kg",
+    "suspension",
+    "safety netting"
+   ]
+  },
+  {
+   "id": "pat_ruth",
+   "name": "Ruth Nagy",
+   "age": 71,
+   "pronouns": "she/her",
+   "role": "Patient",
+   "mood": "calm",
+   "avatar": "ruth",
+   "chiefComplaint": "Missed doses of regular medication",
+   "openingLine": "Good afternoon. I've been away for a week and I left my tablets at home. What should I do now?",
+   "facts": [
+    {
+     "id": "ruth_age",
+     "section": "basic",
+     "label": "Age",
+     "value": "71",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old"
+     ],
+     "patientLine": "Seventy-one.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "ruth_complaint",
+     "section": "basic",
+     "label": "Chief complaint",
+     "value": "One week of missed medication",
+     "revealedAtStart": true,
+     "triggers": [
+      "complaint",
+      "what brings you"
+     ],
+     "patientLine": "I have not taken my tablets for a week.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "ruth_meds",
+     "section": "medications",
+     "label": "Current medication",
+     "value": "Metformin 1 g twice daily, ramipril 5 mg daily, levothyroxine 75 mcg daily",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "drugs do you take",
+      "anything else you take",
+      "supplements"
+     ],
+     "patientLine": "Metformin twice a day, ramipril in the morning, and levothyroxine for my thyroid.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "ruth_which",
+     "section": "medications",
+     "label": "Doses missed",
+     "value": "All three medicines missed for 7 days",
+     "revealedAtStart": false,
+     "triggers": [
+      "which one",
+      "all of them",
+      "how many doses",
+      "how many days",
+      "missed"
+     ],
+     "patientLine": "All of them, for the whole week I was away.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "ruth_symptoms",
+     "section": "symptoms",
+     "label": "Current symptoms",
+     "value": "Thirst, frequent urination, mild fatigue; no confusion, no chest pain, no breathlessness",
+     "revealedAtStart": false,
+     "triggers": [
+      "symptoms",
+      "how do you feel",
+      "thirst",
+      "urin",
+      "tired",
+      "unwell",
+      "dizzy",
+      "chest"
+     ],
+     "patientLine": "I have been thirsty and up in the night to the toilet. Tired, but no chest pain or dizziness.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "ruth_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "Type 2 diabetes (12 years), hypertension, hypothyroidism",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery"
+     ],
+     "patientLine": "Diabetes for twelve years, blood pressure, and an underactive thyroid.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "ruth_monitoring",
+     "section": "other",
+     "label": "Home monitoring",
+     "value": "Blood glucose 14.2 mmol/L this morning (usual 7–9)",
+     "revealedAtStart": false,
+     "triggers": [
+      "glucose",
+      "sugar",
+      "monitor",
+      "reading",
+      "blood test",
+      "check"
+     ],
+     "patientLine": "I tested this morning — 14.2. Normally I am seven or eight.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "ruth_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "Sulfonamides — rash",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug"
+     ],
+     "patientLine": "Sulfa tablets bring me out in a rash.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "ruth_supply",
+     "section": "other",
+     "label": "Supply situation",
+     "value": "Repeat prescription due in 3 days; has 2 days of tablets at home",
+     "revealedAtStart": false,
+     "triggers": [
+      "prescription",
+      "supply",
+      "repeat",
+      "how many left",
+      "at home"
+     ],
+     "patientLine": "My repeat is due in three days. There are maybe two days of tablets at home.",
+     "credits": "historyTaking"
+    }
+   ],
+   "deflections": [
+    "I am not sure, dear.",
+    "Could you say that again more simply?"
+   ],
+   "impatientLines": [
+    "I do not want to be a nuisance, but my bus is at four."
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "double",
+      "catch up",
+      "two doses"
+     ],
+     "line": "Should I take double today to catch up?"
+    },
+    {
+     "triggers": [
+      "doctor",
+      "gp",
+      "refer"
+     ],
+     "line": "Do I need to trouble the doctor with this?"
+    }
+   ],
+   "jargon": [
+    "adherence",
+    "hyperglycaemia",
+    "euthyroid",
+    "titration",
+    "emergency supply"
+   ]
+  },
+  {
+   "id": "pat_nadia",
+   "name": "Nadia Okonkwo",
+   "age": 19,
+   "pronouns": "she/her",
+   "role": "Patient",
+   "mood": "tired",
+   "avatar": "nadia",
+   "chiefComplaint": "Asthma inhaler not helping",
+   "openingLine": "Hi. My brown inhaler doesn't seem to do anything. Can I get a stronger one?",
+   "facts": [
+    {
+     "id": "nadia_age",
+     "section": "basic",
+     "label": "Age",
+     "value": "19",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old"
+     ],
+     "patientLine": "Nineteen.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "nadia_complaint",
+     "section": "basic",
+     "label": "Chief complaint",
+     "value": "Preventer inhaler perceived as ineffective",
+     "revealedAtStart": true,
+     "triggers": [
+      "complaint",
+      "inhaler"
+     ],
+     "patientLine": "The brown one just does nothing for me.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "nadia_technique",
+     "section": "other",
+     "label": "Inhaler technique",
+     "value": "No shaking, no exhalation first, fires and inhales simultaneously but too fast, no breath-hold, no spacer",
+     "revealedAtStart": false,
+     "triggers": [
+      "technique",
+      "show me",
+      "how do you use",
+      "demonstrate",
+      "steps",
+      "spacer"
+     ],
+     "patientLine": "I just put it in my mouth, press, and breathe in quickly. Was I meant to do more?",
+     "credits": "counseling",
+     "safetyCritical": true
+    },
+    {
+     "id": "nadia_adherence",
+     "section": "medications",
+     "label": "Adherence",
+     "value": "Uses preventer only when symptomatic, roughly twice a week",
+     "revealedAtStart": false,
+     "triggers": [
+      "how often",
+      "every day",
+      "adherence",
+      "remember",
+      "twice a day",
+      "when do you use"
+     ],
+     "patientLine": "I only use the brown one when I feel wheezy. Maybe twice a week.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "nadia_reliever",
+     "section": "medications",
+     "label": "Reliever use",
+     "value": "Salbutamol 8–10 puffs per week, 2 canisters in 3 months",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "drugs do you take",
+      "anything else you take",
+      "supplements",
+      "blue inhaler",
+      "reliever",
+      "salbutamol"
+     ],
+     "patientLine": "The blue one I use loads — maybe eight or ten puffs a week. I have been through two in three months.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "nadia_control",
+     "section": "symptoms",
+     "label": "Asthma control",
+     "value": "Night waking 3 nights/week, exercise limitation, no A&E visits",
+     "revealedAtStart": false,
+     "triggers": [
+      "night",
+      "wake",
+      "exercise",
+      "sport",
+      "control",
+      "symptoms",
+      "how often do you wheeze"
+     ],
+     "patientLine": "I wake up coughing about three nights a week and I cannot finish a training session.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "nadia_rinse",
+     "section": "other",
+     "label": "Mouth care",
+     "value": "Does not rinse mouth after preventer; occasional oral thrush",
+     "revealedAtStart": false,
+     "triggers": [
+      "rinse",
+      "mouth",
+      "thrush",
+      "after using",
+      "brush"
+     ],
+     "patientLine": "I do not rinse afterwards. I did have a sore white patch in my mouth once.",
+     "credits": "counseling"
+    },
+    {
+     "id": "nadia_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "Asthma since age 8, eczema",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery"
+     ],
+     "patientLine": "Asthma since I was eight, and eczema.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "nadia_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "No known drug allergies",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug"
+     ],
+     "patientLine": "No allergies to medicines.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "nadia_smoking",
+     "section": "other",
+     "label": "Smoking / vaping",
+     "value": "Vapes socially at weekends",
+     "revealedAtStart": false,
+     "triggers": [
+      "smoke",
+      "vape",
+      "cigarette"
+     ],
+     "patientLine": "I vape a bit at weekends. Not much.",
+     "credits": "historyTaking"
+    }
+   ],
+   "deflections": [
+    "Er, I do not know?",
+    "Nobody has ever shown me that."
+   ],
+   "impatientLines": [
+    "I have a lecture in fifteen minutes."
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "show",
+      "technique",
+      "demonstrate"
+     ],
+     "line": "Okay, show me. I genuinely thought I was doing it right."
+    },
+    {
+     "triggers": [
+      "every day",
+      "daily",
+      "preventer"
+     ],
+     "line": "Every single day? Even when I feel fine?"
+    }
+   ],
+   "jargon": [
+    "preventer",
+    "corticosteroid",
+    "inhaled",
+    "exacerbation",
+    "candidiasis",
+    "peak flow"
+   ]
+  },
+  {
+   "id": "pat_derek",
+   "name": "Derek Ostrowski",
+   "age": 64,
+   "pronouns": "he/him",
+   "role": "Patient",
+   "mood": "cheerful",
+   "avatar": "thomas",
+   "chiefComplaint": "Requesting St John’s wort for low mood",
+   "openingLine": "Afternoon! My neighbour swears by St John's wort. I'd like a box, please — nothing wrong with natural, is there?",
+   "facts": [
+    {
+     "id": "derek_age",
+     "section": "basic",
+     "label": "Age",
+     "value": "64",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old"
+     ],
+     "patientLine": "Sixty-four next month.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "derek_complaint",
+     "section": "basic",
+     "label": "Request",
+     "value": "St John's wort for low mood",
+     "revealedAtStart": true,
+     "triggers": [
+      "complaint",
+      "what for",
+      "why"
+     ],
+     "patientLine": "Bit flat lately. My neighbour says it lifted her right up.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "derek_meds",
+     "section": "medications",
+     "label": "Current medication",
+     "value": "Warfarin 3 mg daily, simvastatin 40 mg nightly, sertraline 50 mg daily",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "drugs do you take",
+      "anything else you take",
+      "supplements"
+     ],
+     "patientLine": "Warfarin daily, a statin at night, and sertraline — the doctor started that in spring.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "derek_mood",
+     "section": "symptoms",
+     "label": "Mood assessment",
+     "value": "Low mood 6 weeks, poor sleep, no self-harm thoughts, sertraline started 5 months ago",
+     "revealedAtStart": false,
+     "triggers": [
+      "mood",
+      "how do you feel",
+      "sleep",
+      "depress",
+      "harm",
+      "thoughts",
+      "appetite",
+      "how long have you felt"
+     ],
+     "patientLine": "Flat for about six weeks, sleeping badly. No dark thoughts, nothing like that — I just want a lift.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "derek_inr",
+     "section": "other",
+     "label": "Anticoagulation monitoring",
+     "value": "INR stable at 2.6, checked every 8 weeks",
+     "revealedAtStart": false,
+     "triggers": [
+      "inr",
+      "blood test",
+      "monitor",
+      "clinic",
+      "anticoag"
+     ],
+     "patientLine": "My INR was 2.6 last time. They check me every couple of months.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "derek_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "Atrial fibrillation, high cholesterol, depression",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery"
+     ],
+     "patientLine": "Irregular heartbeat, cholesterol, and the low mood.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "derek_supplements",
+     "section": "medications",
+     "label": "Supplements",
+     "value": "Cod liver oil, high-dose vitamin E, cranberry juice daily",
+     "revealedAtStart": false,
+     "triggers": [
+      "supplement",
+      "vitamin",
+      "herbal",
+      "over the counter",
+      "anything else",
+      "natural"
+     ],
+     "patientLine": "Cod liver oil, a big vitamin E, and a glass of cranberry juice every morning.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "derek_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "No known drug allergies",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug"
+     ],
+     "patientLine": "None at all.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "derek_gp",
+     "section": "other",
+     "label": "Prescriber contact",
+     "value": "GP review already booked for next week",
+     "revealedAtStart": false,
+     "triggers": [
+      "doctor",
+      "gp",
+      "review",
+      "appointment",
+      "told your doctor"
+     ],
+     "patientLine": "I see the doctor next week anyway, as it happens.",
+     "credits": "referralDecisions"
+    }
+   ],
+   "deflections": [
+    "Is that important? Ask away.",
+    "Not that I recall."
+   ],
+   "impatientLines": [
+    "So can I have the box or not?"
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "interact",
+      "warfarin",
+      "inr",
+      "bleed"
+     ],
+     "line": "Hold on — a herbal thing can affect my warfarin? Nobody told me that."
+    },
+    {
+     "triggers": [
+      "sertraline",
+      "serotonin",
+      "antidepressant"
+     ],
+     "line": "And it clashes with my sertraline too? Blimey."
+    }
+   ],
+   "jargon": [
+    "cyp450",
+    "inducer",
+    "serotonin syndrome",
+    "inr",
+    "anticoagulant",
+    "pharmacokinetic"
+   ]
+  },
+  {
+   "id": "pat_priya",
+   "name": "Priya Raman",
+   "age": 29,
+   "pronouns": "she/her",
+   "role": "Patient",
+   "mood": "calm",
+   "avatar": "amina",
+   "chiefComplaint": "Cut on the palm from a garden tool",
+   "openingLine": "Hi — I sliced my palm on a rusty garden fork this morning. Could you dress it for me?",
+   "facts": [
+    {
+     "id": "priya_age",
+     "section": "basic",
+     "label": "Age",
+     "value": "29",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old"
+     ],
+     "patientLine": "Twenty-nine.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "priya_complaint",
+     "section": "basic",
+     "label": "Chief complaint",
+     "value": "Laceration to left palm",
+     "revealedAtStart": true,
+     "triggers": [
+      "complaint",
+      "wound",
+      "cut"
+     ],
+     "patientLine": "A cut across my left palm.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "priya_wound",
+     "section": "symptoms",
+     "label": "Wound assessment",
+     "value": "3 cm clean-edged laceration, 4 mm deep, edges gape slightly, bleeding controlled with pressure",
+     "revealedAtStart": false,
+     "triggers": [
+      "how deep",
+      "how big",
+      "describe",
+      "look at",
+      "bleeding",
+      "gape",
+      "assess"
+     ],
+     "patientLine": "About three centimetres, and it opens up a bit when I stretch my hand. The bleeding stopped with pressure.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "priya_contamination",
+     "section": "other",
+     "label": "Contamination",
+     "value": "Rusty tool, soil-contaminated; rinsed briefly under tap only",
+     "revealedAtStart": false,
+     "triggers": [
+      "dirty",
+      "rust",
+      "soil",
+      "clean",
+      "washed",
+      "contamin"
+     ],
+     "patientLine": "The fork was rusty and covered in soil. I ran it under the tap for a few seconds.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "priya_tetanus",
+     "section": "history",
+     "label": "Tetanus status",
+     "value": "Last booster uncertain — likely over 12 years ago",
+     "revealedAtStart": false,
+     "triggers": [
+      "tetanus",
+      "booster",
+      "vaccin",
+      "immunis",
+      "immuniz",
+      "jab"
+     ],
+     "patientLine": "Tetanus? I honestly cannot remember. School, probably — twelve years ago at least.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "priya_function",
+     "section": "symptoms",
+     "label": "Neurovascular check",
+     "value": "Full finger movement, normal sensation, no foreign body felt",
+     "revealedAtStart": false,
+     "triggers": [
+      "move",
+      "movement",
+      "numb",
+      "sensation",
+      "feel your fingers",
+      "tendon",
+      "foreign body",
+      "glass"
+     ],
+     "patientLine": "I can move all my fingers and feel everything normally. Nothing stuck in it.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "priya_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "Healthy; no diabetes, no immunosuppression",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery"
+     ],
+     "patientLine": "I am healthy. No diabetes or anything.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "priya_meds",
+     "section": "medications",
+     "label": "Current medication",
+     "value": "None regular",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "drugs do you take",
+      "anything else you take",
+      "supplements"
+     ],
+     "patientLine": "Nothing regular, no.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "priya_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "Elastoplast adhesive — contact dermatitis",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug",
+      "plaster",
+      "dressing"
+     ],
+     "patientLine": "Ordinary plasters make my skin red and itchy.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    }
+   ],
+   "deflections": [
+    "Sorry, what do you mean?",
+    "I did not think to check."
+   ],
+   "impatientLines": [
+    "It is throbbing a bit now, if we can get on."
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "stitch",
+      "suture",
+      "a&e",
+      "hospital",
+      "minor injuries",
+      "refer"
+     ],
+     "line": "Stitches? Really? Cannot you just tape it up?"
+    },
+    {
+     "triggers": [
+      "tetanus"
+     ],
+     "line": "Where would I go for a tetanus booster?"
+    }
+   ],
+   "jargon": [
+    "laceration",
+    "primary closure",
+    "debridement",
+    "neurovascular",
+    "prophylaxis",
+    "approximate the edges"
+   ]
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "sc_headache",
+   "title": "The Headache That Isn’t Simple",
+   "tagline": "A routine request that deserves a careful conversation.",
+   "description": "A 20-year-old walks in asking for something for a headache. Straightforward on the surface — but the right answer depends entirely on what you think to ask.",
+   "mission": "A 20-year-old patient enters the pharmacy asking for something for a headache.\n\nYour job is to determine whether self-care is appropriate.\n\nThe patient will not tell you everything automatically.\n\nAsk the right questions.",
+   "category": "Pain",
+   "setting": "Community Pharmacy",
+   "difficulty": "Intermediate",
+   "durationMinutes": [
+    8,
+    10
+   ],
+   "skills": [
+    "History Taking",
+    "Red Flag Detection",
+    "Medication Safety"
+   ],
+   "objectives": [
+    "Take a structured headache history, including onset, severity and character.",
+    "Screen actively for neurological and systemic red flags.",
+    "Uncover allergy, medication and relevant past medical history before recommending.",
+    "Choose an analgesic that is safe for this specific patient.",
+    "Counsel on dose, maximum daily dose and when to seek further help."
+   ],
+   "status": "not-started",
+   "patientId": "pat_sarah"
+  },
+  {
+   "id": "sc_cough",
+   "title": "The Persistent Cough",
+   "tagline": "Five weeks of coughing, and a request for “something strong”.",
+   "description": "A 58-year-old wants a stronger cough medicine. Deciding whether that is the right response means separating a self-limiting cough from one that needs investigation.",
+   "mission": "A 58-year-old patient asks for a stronger cough medicine.\n\nDecide whether an over-the-counter product is appropriate, or whether this cough needs someone else to see it.\n\nThe details that matter will not be offered unprompted.",
+   "category": "Cough & Cold",
+   "setting": "Community Pharmacy",
+   "difficulty": "Advanced",
+   "durationMinutes": [
+    10,
+    12
+   ],
+   "skills": [
+    "Red Flag Detection",
+    "Clinical Reasoning",
+    "Referral Decisions"
+   ],
+   "objectives": [
+    "Establish cough duration, character and associated symptoms.",
+    "Screen for weight loss, haemoptysis, night sweats and smoking history.",
+    "Consider medication-induced cough as a differential.",
+    "Reach a clear, justified referral decision and communicate its urgency."
+   ],
+   "status": "not-started",
+   "patientId": "pat_thomas"
+  },
+  {
+   "id": "sc_heartburn",
+   "title": "Heartburn After Dinner",
+   "tagline": "Antacids are not working. Find out why.",
+   "description": "Three months of evening reflux in a 41-year-old. The cause may already be in her medicine cabinet.",
+   "mission": "A 41-year-old patient describes burning chest discomfort most evenings.\n\nWork out what is driving it, whether alarm features are present, and what should happen next.",
+   "category": "Gastrointestinal",
+   "setting": "Community Pharmacy",
+   "difficulty": "Intermediate",
+   "durationMinutes": [
+    8,
+    10
+   ],
+   "skills": [
+    "History Taking",
+    "Medication Safety",
+    "Counseling"
+   ],
+   "objectives": [
+    "Characterise the reflux symptoms and their pattern.",
+    "Screen for alarm features requiring referral.",
+    "Identify the NSAID as a likely contributing cause.",
+    "Give lifestyle and treatment advice the patient can actually follow."
+   ],
+   "status": "not-started",
+   "patientId": "pat_amina"
+  },
+  {
+   "id": "sc_allergy",
+   "title": "Seasonal Allergy Trouble",
+   "tagline": "The strongest option is not always the right one.",
+   "description": "A 27-year-old with hay fever wants the strongest antihistamine available. His job — and his chest — should change your answer.",
+   "mission": "A 27-year-old patient asks for the strongest hay fever treatment you have.\n\nEstablish what he actually needs, what he must avoid, and whether anything else deserves attention today.",
+   "category": "Allergy",
+   "setting": "Community Pharmacy",
+   "difficulty": "Beginner",
+   "durationMinutes": [
+    6,
+    8
+   ],
+   "skills": [
+    "History Taking",
+    "Medication Safety",
+    "Counseling"
+   ],
+   "objectives": [
+    "Confirm the pattern and severity of allergic rhinitis.",
+    "Identify occupational reasons to avoid sedating antihistamines.",
+    "Recognise poorly controlled asthma hiding behind hay fever symptoms.",
+    "Recommend a non-sedating option with clear counselling."
+   ],
+   "status": "not-started",
+   "patientId": "pat_george"
+  },
+  {
+   "id": "sc_rash",
+   "title": "The Itchy Rash",
+   "tagline": "Two weeks of itching, and a new hospital placement.",
+   "description": "A 23-year-old student asks for a cream. Distinguishing eczema from infection — and finding the trigger — is the real task.",
+   "mission": "A 23-year-old patient asks whether you have a cream for an itchy rash.\n\nAssess the rash, exclude infection, find the trigger, and decide what is appropriate to supply.",
+   "category": "Dermatology",
+   "setting": "Community Pharmacy",
+   "difficulty": "Beginner",
+   "durationMinutes": [
+    6,
+    8
+   ],
+   "skills": [
+    "History Taking",
+    "Clinical Reasoning",
+    "Counseling"
+   ],
+   "objectives": [
+    "Describe the rash: site, appearance, distribution and duration.",
+    "Exclude signs of secondary bacterial infection.",
+    "Identify the occupational trigger and advise on avoidance.",
+    "Counsel on emollient and topical steroid use, including quantity and duration."
+   ],
+   "status": "not-started",
+   "patientId": "pat_lena"
+  },
+  {
+   "id": "sc_fever_child",
+   "title": "A Parent With a Feverish Child",
+   "tagline": "A worried father, a kitchen teaspoon, and a dose you must get right.",
+   "description": "A three-year-old has had a fever since last night. You need red flags, an accurate weight-based dose, and a parent who leaves knowing exactly what to do.",
+   "mission": "A father asks what he can give his three-year-old daughter for a fever.\n\nScreen for red flags, establish what has already been given, and make sure the dose leaving this pharmacy is correct and clearly explained.",
+   "category": "Calculations",
+   "setting": "Community Pharmacy",
+   "difficulty": "Intermediate",
+   "durationMinutes": [
+    8,
+    10
+   ],
+   "skills": [
+    "Red Flag Detection",
+    "Weight-Based Dosing",
+    "Counseling"
+   ],
+   "objectives": [
+    "Screen systematically for paediatric red flags.",
+    "Establish the child’s weight and what has already been administered.",
+    "Calculate a correct weight-based paracetamol dose.",
+    "Provide safety netting: what to watch for and when to seek urgent help."
+   ],
+   "status": "not-started",
+   "patientId": "pat_mateo"
+  },
+  {
+   "id": "sc_missed_meds",
+   "title": "The Patient Who Forgot Their Medication",
+   "tagline": "A week away, three medicines missed.",
+   "description": "A 71-year-old returns from a trip having missed a week of medication. Which omissions matter most, and what should happen today?",
+   "mission": "A 71-year-old patient tells you she has not taken her tablets for a week.\n\nFind out what was missed, assess the consequences, and agree a safe plan for today.",
+   "category": "Medication Counseling",
+   "setting": "Community Pharmacy",
+   "difficulty": "Intermediate",
+   "durationMinutes": [
+    8,
+    10
+   ],
+   "skills": [
+    "Medication Safety",
+    "Clinical Reasoning",
+    "Referral Decisions"
+   ],
+   "objectives": [
+    "Establish exactly which medicines were missed and for how long.",
+    "Assess for symptoms and signs of consequence, including hyperglycaemia.",
+    "Advise correctly on restarting — without dose doubling.",
+    "Decide whether the prescriber needs to be involved, and how urgently."
+   ],
+   "status": "not-started",
+   "patientId": "pat_ruth"
+  },
+  {
+   "id": "sc_inhaler",
+   "title": "The Difficult Inhaler",
+   "tagline": "The inhaler is not failing. The technique is.",
+   "description": "A 19-year-old wants a stronger preventer inhaler. This case is won or lost on how well you can teach.",
+   "mission": "A 19-year-old patient says her preventer inhaler does not work and asks for something stronger.\n\nAssess her control, her technique and her understanding — then teach in a way she will remember tomorrow.",
+   "category": "Medication Counseling",
+   "setting": "Community Pharmacy",
+   "difficulty": "Intermediate",
+   "durationMinutes": [
+    10,
+    12
+   ],
+   "skills": [
+    "Counseling",
+    "Communication",
+    "Medication Safety"
+   ],
+   "objectives": [
+    "Assess asthma control using symptom and reliever-use questions.",
+    "Elicit and correct inhaler technique step by step.",
+    "Explain the difference between preventer and reliever in plain language.",
+    "Check understanding with teach-back, and arrange appropriate follow-up."
+   ],
+   "status": "not-started",
+   "patientId": "pat_nadia"
+  },
+  {
+   "id": "sc_interaction",
+   "title": "The Unexpected Drug Interaction",
+   "tagline": "“Natural” is not the same as safe.",
+   "description": "A 64-year-old wants St John’s wort. His current medicines make that request a genuine safety event.",
+   "mission": "A 64-year-old patient asks to buy St John’s wort.\n\nEstablish what else he takes, judge the risk, and handle the refusal — if you decide on one — without losing his trust.",
+   "category": "Drug Interactions",
+   "setting": "Community Pharmacy",
+   "difficulty": "Advanced",
+   "durationMinutes": [
+    10,
+    12
+   ],
+   "skills": [
+    "Medication Safety",
+    "Clinical Reasoning",
+    "Communication"
+   ],
+   "objectives": [
+    "Take a complete medication history, including supplements and herbals.",
+    "Identify the interactions with warfarin and sertraline and explain the mechanism.",
+    "Assess mood safely, including risk screening.",
+    "Redirect to the prescriber while maintaining rapport."
+   ],
+   "status": "not-started",
+   "patientId": "pat_derek"
+  },
+  {
+   "id": "sc_wound",
+   "title": "The Minor Wound",
+   "tagline": "Decide what you can dress — and what you cannot.",
+   "description": "A 29-year-old has cut her palm on a rusty garden fork. Wound assessment, tetanus status and referral thresholds all matter here.",
+   "mission": "A 29-year-old patient asks you to dress a cut on her palm.\n\nAssess the wound properly, consider contamination and immunisation, and decide whether this belongs in your pharmacy or elsewhere.",
+   "category": "Minor Injuries",
+   "setting": "Community Pharmacy",
+   "difficulty": "Beginner",
+   "durationMinutes": [
+    6,
+    8
+   ],
+   "skills": [
+    "Clinical Reasoning",
+    "Referral Decisions",
+    "Counseling"
+   ],
+   "objectives": [
+    "Assess wound size, depth, contamination and neurovascular status.",
+    "Establish tetanus immunisation status.",
+    "Recognise wounds requiring closure or medical review.",
+    "Advise on dressing choice, taking adhesive sensitivity into account."
+   ],
+   "status": "not-started",
+   "patientId": "pat_priya"
+  }
+ ]
+}
