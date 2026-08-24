@@ -10,6 +10,7 @@ import { LoginPage } from '@/pages/LoginPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 import { OnboardingPage } from '@/pages/OnboardingPage'
 import { RegisterPage } from '@/pages/RegisterPage'
+import { ResultsPage } from '@/pages/ResultsPage'
 import { SimulationDetailPage } from '@/pages/SimulationDetailPage'
 import { SimulationsPage } from '@/pages/SimulationsPage'
 
@@ -61,17 +62,9 @@ export function App() {
           <Route path="/simulations" element={<SimulationsPage />} />
           <Route path="/simulations/:id" element={<SimulationDetailPage />} />
 
+          <Route path="/results/:id" element={<ResultsPage />} />
+
           {/* Built services and data, no screen yet. See ComingSoonPage. */}
-          <Route
-            path="/results/:id"
-            element={
-              <ComingSoonPage
-                title="Consultation Results"
-                description="Your score, competency breakdown and reasoning timeline for a finished case."
-                groundwork="The evaluation engine already scores six competencies and builds the full report — evaluationService.getByAttempt() returns it today."
-              />
-            }
-          />
           <Route
             path="/progress"
             element={
