@@ -43,7 +43,6 @@ const navGroups = [
   {
     label: 'Personal',
     items: [
-      { to: '/achievements', label: 'Achievements', icon: Flame },
       { to: '/profile', label: 'Profile', icon: UserIcon },
       { to: '/settings', label: 'Settings', icon: SettingsIcon },
     ],

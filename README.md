@@ -250,6 +250,9 @@ they cannot drift out of step with the reports behind them. Achievement rules
 check exactly what their description claims — "five in a row without a critical
 safety issue" walks the actual run of reports rather than trusting a counter.
 
+Progress and History are live at `/progress` and `/history`; `/achievements`
+redirects to the Progress page, where achievements live as a tab.
+
 Calculations, drugs and settings still run on the frontend's local layer.
 
 ## Notes

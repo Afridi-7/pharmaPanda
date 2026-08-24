@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle2, Clock, PlayCircle } from 'lucide-react'
 import type { AttemptSummary, Scenario } from '@/types'
 import { Badge } from '@/components/ui/Badge'
 import { buttonVariants } from '@/components/ui/Button'
-import { cn, scoreBand } from '@/lib/utils'
+import { cn, relativeDay, scoreBand } from '@/lib/utils'
 
 const difficultyTone = {
   Beginner: 'sage',
@@ -116,7 +116,7 @@ export function AttemptTable({ attempts, caption }: { attempts: AttemptSummary[]
                   <span className="font-medium text-forest">{attempt.score}</span>
                   <span className="ml-1.5 text-[11px] text-ink-muted">{band.label}</span>
                 </td>
-                <td className="py-3 pr-4 text-ink-muted">{attempt.date}</td>
+                <td className="py-3 pr-4 text-ink-muted">{relativeDay(attempt.date)}</td>
                 <td className="py-3 pr-4 text-ink-muted">{attempt.durationLabel}</td>
                 <td className="py-3 pr-4">
                   <Badge tone={attemptStatusTone[attempt.status]}>{attempt.status}</Badge>

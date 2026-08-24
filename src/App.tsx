@@ -3,24 +3,30 @@ import { useAuth } from '@/hooks/useAuth'
 import { AppLayout } from '@/layouts/AppLayout'
 import { AuthLayout, FocusLayout, PublicLayout, RequireAuth } from '@/layouts/Shells'
 import { SimulationPlayerPage } from '@/pages/SimulationPlayerPage'
-import { ComingSoonPage } from '@/pages/ComingSoonPage'
+import { CalculationProblemPage } from '@/pages/CalculationProblemPage'
+import { CalculationsPage } from '@/pages/CalculationsPage'
 import { DashboardPage } from '@/pages/DashboardPage'
+import { DrugDetailPage } from '@/pages/DrugDetailPage'
+import { DrugsPage } from '@/pages/DrugsPage'
 import { LandingPage } from '@/pages/LandingPage'
 import { LoginPage } from '@/pages/LoginPage'
+import { HistoryPage } from '@/pages/HistoryPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 import { OnboardingPage } from '@/pages/OnboardingPage'
+import { ProfilePage } from '@/pages/ProfilePage'
+import { ProgressPage } from '@/pages/ProgressPage'
 import { RegisterPage } from '@/pages/RegisterPage'
 import { ResultsPage } from '@/pages/ResultsPage'
 import { SimulationDetailPage } from '@/pages/SimulationDetailPage'
+import { SettingsPage } from '@/pages/SettingsPage'
 import { SimulationsPage } from '@/pages/SimulationsPage'
 
 /**
  * Route table.
  *
- * Every destination the sidebar links to is registered here. Sections without a
- * screen yet render `ComingSoonPage` *inside* AppLayout rather than being left
- * unrouted: an unrouted path fell through to the catch-all and redirected to the
- * public landing page, which looked exactly like being signed out.
+ * Every destination the sidebar links to is registered here. Nothing falls
+ * through to the catch-all: an unrouted path used to redirect to the public
+ * landing page, which looked exactly like being signed out.
  */
 /**
  * Terminal route for anything unmatched.
@@ -64,97 +70,17 @@ export function App() {
 
           <Route path="/results/:id" element={<ResultsPage />} />
 
-          {/* Built services and data, no screen yet. See ComingSoonPage. */}
-          <Route
-            path="/progress"
-            element={
-              <ComingSoonPage
-                title="My Progress"
-                description="How your six competencies are trending across every consultation."
-                groundwork="competencyService and the radar, bar and trend charts are implemented."
-              />
-            }
-          />
-          <Route
-            path="/history"
-            element={
-              <ComingSoonPage
-                title="History"
-                description="Every consultation you have completed, with scores and dates."
-                groundwork="dashboardService.history() and the AttemptTable component are implemented."
-              />
-            }
-          />
-          <Route
-            path="/achievements"
-            element={
-              <ComingSoonPage
-                title="Achievements"
-                description="Milestones you have unlocked as your practice deepens."
-                groundwork="competencyService.achievements() already reacts to real consultation behaviour."
-              />
-            }
-          />
-          <Route
-            path="/calculations"
-            element={
-              <ComingSoonPage
-                title="Pharmacy Calculations"
-                description="Dosing, concentration, dilution and infusion-rate practice with worked explanations."
-                groundwork="calculationService and a full problem set with step-by-step solutions are implemented."
-              />
-            }
-          />
-          <Route
-            path="/calculations/:id"
-            element={
-              <ComingSoonPage
-                title="Calculation Problem"
-                description="A single worked calculation with marking and an explanation."
-                groundwork="calculationService.get() and .check() already mark answers and detect factor-of-ten errors."
-              />
-            }
-          />
-          <Route
-            path="/drugs"
-            element={
-              <ComingSoonPage
-                title="Drug Knowledge"
-                description="Counselling points, interactions and safety considerations."
-                groundwork="drugService.search() and the drug dataset are implemented."
-              />
-            }
-          />
-          <Route
-            path="/drugs/:id"
-            element={
-              <ComingSoonPage
-                title="Drug Monograph"
-                description="A single drug entry with counselling and safety detail."
-                groundwork="drugService.get() and .related() are implemented."
-              />
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <ComingSoonPage
-                title="Profile"
-                description="Your account details and learning goals."
-                groundwork="Backed by real auth — PATCH /api/auth/profile updates the PostgreSQL row today."
-              />
-            }
-          />
-          <Route
-            path="/settings"
-            element={
-              <ComingSoonPage
-                title="Settings"
-                description="Practice preferences, notifications and account controls."
-                groundwork="settingsService is implemented against the local store."
-              />
-            }
-          />
+          <Route path="/progress" element={<ProgressPage />} />
+          <Route path="/history" element={<HistoryPage />} />
+          {/* Achievements live on the Progress page rather than their own screen. */}
+          <Route path="/achievements" element={<Navigate to="/progress" replace />} />
+
+          <Route path="/calculations" element={<CalculationsPage />} />
+          <Route path="/calculations/:id" element={<CalculationProblemPage />} />
+          <Route path="/drugs" element={<DrugsPage />} />
+          <Route path="/drugs/:id" element={<DrugDetailPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/settings" element={<SettingsPage />} />
 
         </Route>
 
