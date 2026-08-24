@@ -1,0 +1,37 @@
+# Local development services for PharmaPanda.
+#
+# The credentials below are development-only and intentionally trivial: this
+# database is disposable and is never exposed beyond localhost. Real deployments
+# must supply their own values through the environment.
+#
+#   docker compose up -d db     # start PostgreSQL
+#   docker compose down         # stop (data survives in the named volume)
+#   docker compose down -v      # stop and destroy the data
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: pharmapanda-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: pharmapanda
+      POSTGRES_USER: pharmapanda
+      POSTGRES_PASSWORD: pharmapanda
+      # Deterministic collation, so index behaviour matches across machines.
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+    ports:
+      # Bound to loopback only — not reachable from the local network.
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pharmapanda_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      # `docker compose up -d --wait db` blocks until this passes.
+      test: ["CMD-SHELL", "pg_isready -U pharmapanda -d pharmapanda"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+volumes:
+  pharmapanda_pgdata:
+    name: pharmapanda_pgdata

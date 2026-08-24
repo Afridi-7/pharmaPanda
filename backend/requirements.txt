@@ -1,0 +1,23 @@
+# PharmaPanda API — pinned for reproducible development installs.
+
+# Web framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# Configuration
+pydantic==2.10.4
+pydantic-settings==2.7.1
+
+# Database
+SQLAlchemy==2.0.36
+psycopg[binary]==3.2.3
+alembic==1.14.0
+
+# Auth — Argon2id hashing and JWT access tokens
+pwdlib[argon2]==0.2.1
+PyJWT==2.10.1
+email-validator==2.2.0
+
+# Tests
+pytest==8.3.4
+httpx==0.28.1

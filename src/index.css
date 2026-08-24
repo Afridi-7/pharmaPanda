@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-cream text-ink antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-forest;
+    letter-spacing: -0.01em;
+  }
+
+  /* Visible, brand-consistent focus ring everywhere. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-moss ring-offset-2 ring-offset-cream-light;
+  }
+
+  ::selection {
+    @apply bg-honey/50 text-forest;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-beige bg-cream-light shadow-soft;
+  }
+
+  .card-quiet {
+    @apply rounded-2xl border border-beige/70 bg-cream-light/70;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-forest;
+  }
+
+  .hint {
+    @apply text-sm text-ink-muted;
+  }
+
+  .divider {
+    @apply h-px w-full bg-beige;
+  }
+
+  /* Understated scrollbars that match the warm palette. */
+  .scroll-slim {
+    scrollbar-width: thin;
+    scrollbar-color: #d8cdb8 transparent;
+  }
+
+  .scroll-slim::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scroll-slim::-webkit-scrollbar-thumb {
+    background-color: #d8cdb8;
+    border-radius: 9999px;
+  }
+
+  .scroll-slim::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .paper-grain {
+    background-image: radial-gradient(rgba(38, 51, 46, 0.045) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

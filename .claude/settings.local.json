@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(cp \"/c/Users/qkafr/AppData/Local/Temp/claude/c--Users-qkafr-Desktop-pharmaPanda/b96c9c29-417e-4557-a72b-f770ff6b1695/scratchpad/runner.mjs\" ./__runner.mjs)",
+      "Bash(node ./__runner.mjs)",
+      "Bash(npm ls *)",
+      "Bash(grep -iE \"^\\(jsdom|@testing-library|react-test-renderer|happy-dom\\)$\")",
+      "Bash(echo \"exit:$?\")",
+      "Bash(sed -i \"s|globalThis.matchMedia = \\(\\) => \\({ matches:true, addEventListener\\(\\){}, removeEventListener\\(\\){} }\\)|globalThis.matchMedia = \\(\\) => \\({ matches:true, addEventListener\\(\\){}, removeEventListener\\(\\){} }\\)\\\\nclass SVGElement {}\\\\nclass HTMLElement {}\\\\nglobalThis.SVGElement = SVGElement\\\\nglobalThis.HTMLElement = HTMLElement\\\\nglobalThis.document = { createElement: \\(\\) => \\({ style:{} }\\), documentElement: { style:{} } }|\" __render.mjs)",
+      "Bash(node __render.mjs)",
+      "Bash(python -m venv .venv)",
+      "Bash(.venv/Scripts/python.exe -m pip install --upgrade pip -q)",
+      "Bash(.venv/Scripts/python.exe -m pip install -q -r requirements.txt)",
+      "Bash(.venv/Scripts/python.exe -m pip list)",
+      "Bash(.venv/Scripts/python.exe -c ' *)",
+      "Bash(.venv/Scripts/python.exe -m pytest -v)"
+    ]
+  }
+}
