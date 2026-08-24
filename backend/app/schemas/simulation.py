@@ -219,3 +219,50 @@ class AttemptSummaryResponse(CamelModel):
     date: datetime
     duration_label: str
     status: Literal["Completed", "Needs review", "Abandoned"]
+
+
+# --- Progress -------------------------------------------------------------
+
+
+class CompetencyResponse(CamelModel):
+    key: str
+    label: str
+    description: str
+    score: int
+    previous_score: int
+    attempts: int
+    trend_label: str
+    history: list[dict]
+    focus_areas: list[str]
+
+
+class AchievementProgress(CamelModel):
+    current: int
+    target: int
+
+
+class AchievementResponse(CamelModel):
+    id: str
+    title: str
+    description: str
+    icon: str
+    unlocked: bool
+    progress: AchievementProgress | None = None
+
+
+class WeeklyActivityEntry(CamelModel):
+    label: str
+    consultations: int
+
+
+class ProgressResponse(CamelModel):
+    """Everything the dashboard and progress views need, in one response."""
+
+    overall_score: int
+    competencies: list[CompetencyResponse]
+    achievements: list[AchievementResponse]
+    weekly_activity: list[WeeklyActivityEntry]
+    streak_days: int
+    consultations_completed: int
+    recommended_scenario_slug: str
+    recommendation_reason: str

@@ -228,6 +228,7 @@ Consultations are backend-owned. Every attempt is a row in `attempts` with a
 | `POST /api/attempts/{id}/evaluate` | Score it (idempotent) |
 | `GET /api/attempts/{id}/evaluation` | The report |
 | `GET /api/attempts` | Consultation history |
+| `GET /api/progress` | Competencies, achievements, activity and streak |
 
 **Hidden information is enforced server-side.** Undiscovered patient facts are
 filtered out before serialisation, so they never reach the browser and cannot be
@@ -242,6 +243,12 @@ replays real consultations captured from the original TypeScript engine and
 asserts the Python port still returns byte-identical reports, down to the
 wording of each piece of feedback. A scoring drift would be invisible in the UI
 but would silently change every student's grade.
+
+**Progress is derived, not accumulated.** Competency scores and achievements
+are recomputed from stored evaluations on each request, in one joined query, so
+they cannot drift out of step with the reports behind them. Achievement rules
+check exactly what their description claims — "five in a row without a critical
+safety issue" walks the actual run of reports rather than trusting a counter.
 
 Calculations, drugs and settings still run on the frontend's local layer.
 

@@ -1,18 +1,11 @@
 import type { Achievement, Competency, CompetencyKey } from '@/types'
-import { achievements as achievementDefinitions } from '@/data/achievements'
 import { ApiError } from './api'
-import { dashboardService } from './dashboardService'
+import { progressService } from './progressService'
 
-/**
- * Competency and achievement progress.
- *
- * Derived from the caller's own consultation reports via `dashboardService`.
- * A dedicated `/api/progress` endpoint is the natural next step; the call
- * surface here will not change when it lands.
- */
+/** Competency and achievement progress, served by `/api/progress`. */
 export const competencyService = {
   async list(): Promise<Competency[]> {
-    return (await dashboardService.snapshot()).competencies
+    return progressService.competencies()
   },
 
   async get(key: CompetencyKey): Promise<Competency> {
@@ -22,11 +15,10 @@ export const competencyService = {
   },
 
   async overall(): Promise<number> {
-    return (await dashboardService.snapshot()).overallScore
+    return (await progressService.snapshot()).overallScore
   },
 
-  /** Definitions only until achievement state is tracked server-side. */
   async achievements(): Promise<Achievement[]> {
-    return achievementDefinitions
+    return progressService.achievements()
   },
 }
