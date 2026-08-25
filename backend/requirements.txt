@@ -1,23 +1,26 @@
-# PharmaPanda API — pinned for reproducible development installs.
+# PharmaPanda API — runtime dependencies.
+#
+# Versions are chosen to have prebuilt wheels on modern Python. pydantic-core
+# below 2.33 has no wheel for 3.13+, so pip falls back to compiling it from
+# Rust — which fails on hosts with a read-only cargo cache.
+#
+# Test-only packages live in requirements-dev.txt and are deliberately not
+# installed in production.
 
 # Web framework
-fastapi==0.115.6
+fastapi==0.115.12
 uvicorn[standard]==0.34.0
 
 # Configuration
-pydantic==2.10.4
-pydantic-settings==2.7.1
+pydantic==2.11.3
+pydantic-settings==2.8.1
 
 # Database
-SQLAlchemy==2.0.36
-psycopg[binary]==3.2.3
-alembic==1.14.0
+SQLAlchemy==2.0.40
+psycopg[binary]==3.2.6
+alembic==1.15.2
 
 # Auth — Argon2id hashing and JWT access tokens
 pwdlib[argon2]==0.2.1
 PyJWT==2.10.1
 email-validator==2.2.0
-
-# Tests
-pytest==8.3.4
-httpx==0.28.1
