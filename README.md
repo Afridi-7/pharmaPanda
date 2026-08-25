@@ -173,9 +173,23 @@ it is not.
 Frontend:
 
 ```bash
+npm test              # Vitest, jsdom, Testing Library
+npm run test:watch
+npm run test:coverage
 npm run typecheck
 npm run build
 ```
+
+Tests mock `fetch` rather than the service modules, so the real HTTP layer —
+auth headers, error mapping, 401 handling — runs on every test. Shared helpers
+live in `src/test/`:
+
+- `harness.tsx` — `renderPage()`, `mockApi()`/`reply()`, and `expectNotLeaked()`
+- `fixtures.ts` — canonical API payloads that mirror what FastAPI returns
+
+`expectNotLeaked()` exists because hiding undiscovered patient facts is the
+product's core rule: it asserts against the rendered markup, so a fact that is
+merely visually hidden still fails.
 
 ---
 
