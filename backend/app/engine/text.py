@@ -1,15 +1,19 @@
 """
 Text helpers.
 
-Ported from `src/lib/utils.ts`. The behaviour must match the TypeScript
-character for character: these decide which facts a question unlocks, so any
-divergence changes what patients disclose and therefore how students score.
+These decide which facts a question unlocks, so their behaviour is the
+difference between a patient who answers sensibly and one who does not.
 """
 
 import re
 
 _NON_ALNUM = re.compile(r"[^a-z0-9\s]")
 _WHITESPACE = re.compile(r"\s+")
+
+# Keywords at or below this length must match whole words. Without this, "hi"
+# matches inside "this"/"which"/"anything" and turns ordinary clinical
+# questions into greetings.
+_SHORT_KEYWORD = 4
 
 
 def normalise(text: str) -> str:
@@ -21,18 +25,38 @@ def normalise(text: str) -> str:
 
 def matches_any(text: str, keywords: list[str]) -> bool:
     """
-    Keyword match with the original's two-stage test.
+    Match a question against trigger keywords.
 
-    The TypeScript checks a space-padded match first and then a bare substring
-    match, so a stem such as "allerg" still matches "allergies". Reproduced as
-    written rather than tightened — changing it would alter which questions
-    unlock which facts.
+    Two rules, and the split matters:
+
+    * Short keywords ("hi", "hot", "call") match only as whole words. They are
+      common letter sequences and would otherwise fire inside longer words.
+    * Longer keywords match as a prefix of a word, so authored stems such as
+      "allerg" still catch "allergy", "allergies" and "allergic", and
+      "medication" catches "medications".
     """
     haystack = f" {normalise(text)} "
+
     for keyword in keywords:
         needle = normalise(keyword)
-        if f" {needle} " in haystack or needle in haystack:
+        if not needle:
+            continue
+
+        # Multi-word phrases are matched literally.
+        if " " in needle:
+            if f" {needle} " in haystack or needle in haystack:
+                return True
+            continue
+
+        if len(needle) <= _SHORT_KEYWORD:
+            if f" {needle} " in haystack:
+                return True
+            continue
+
+        # Prefix-of-a-word match: " allerg" catches "allergies".
+        if f" {needle}" in haystack:
             return True
+
     return False
 
 

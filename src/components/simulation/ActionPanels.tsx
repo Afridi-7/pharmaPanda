@@ -23,7 +23,8 @@ interface ActionBarProps {
 
 export function ActionBar({ mode, onMode, onFinish, done }: ActionBarProps) {
   return (
-    <div className="flex flex-wrap items-center gap-2 border-t border-beige bg-cream px-4 py-2.5 sm:px-5">
+    <div className="flex items-center gap-2 border-t border-beige bg-cream px-4 py-2 sm:flex-wrap sm:px-5 sm:py-2.5">
+      <div className="flex flex-1 items-center gap-2 overflow-x-auto scroll-slim sm:flex-none sm:overflow-visible">
       {modeButtons.map((item) => {
         const active = mode === item.mode
         const complete = item.mode !== 'ask' && done[item.mode as 'recommend' | 'counsel' | 'refer']
@@ -34,20 +35,23 @@ export function ActionBar({ mode, onMode, onFinish, done }: ActionBarProps) {
             onClick={() => onMode(item.mode)}
             aria-pressed={active}
             className={cn(
-              'inline-flex items-center gap-1.5 rounded-xl border px-3 py-1.5 text-[13px] font-medium transition-colors',
+              'inline-flex shrink-0 items-center gap-1.5 rounded-xl border px-2.5 py-1.5 text-[13px] font-medium transition-colors sm:px-3',
               active
                 ? 'border-forest bg-forest text-cream-light'
                 : 'border-beige-dark bg-cream-light text-forest hover:border-sage',
             )}
           >
-            <item.icon className="h-4 w-4" strokeWidth={1.9} />
-            {item.label}
+            <item.icon className="h-4 w-4 shrink-0" strokeWidth={1.9} />
+            <span className="whitespace-nowrap">{item.label}</span>
             {complete && <CheckCircle2 className="h-3.5 w-3.5 text-moss" strokeWidth={2.2} />}
           </button>
         )
       })}
-      <Button variant="moss" size="sm" onClick={onFinish} className="ml-auto">
-        Finish Consultation
+      </div>
+      {/* Always reachable: never pushed off-screen by the mode buttons. */}
+      <Button variant="moss" size="sm" onClick={onFinish} className="shrink-0 sm:ml-auto">
+        <span className="sm:hidden">Finish</span>
+        <span className="hidden sm:inline">Finish Consultation</span>
       </Button>
     </div>
   )

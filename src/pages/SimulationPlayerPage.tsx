@@ -365,7 +365,11 @@ export function SimulationPlayerPage() {
   ]
 
   return (
-    <div className="flex min-h-screen flex-col bg-cream">
+    /* Desktop pins the workspace to exactly one viewport so nothing scrolls
+       off the bottom; mobile keeps natural flow so the on-screen keyboard can
+       push content instead of fighting a fixed height. dvh accounts for mobile
+       browser chrome that vh gets wrong. */
+    <div className="flex min-h-[100dvh] flex-col bg-cream lg:h-[100dvh] lg:min-h-0 lg:overflow-hidden">
       <SimulationTopBar
         title={scenario.title}
         subtitle={`${patient.name} · ${scenario.setting}`}
@@ -406,7 +410,7 @@ export function SimulationPlayerPage() {
         </nav>
       )}
 
-      <div className="mx-auto flex w-full max-w-[1400px] flex-1 flex-col gap-4 px-0 py-0 lg:flex-row lg:px-6 lg:py-4">
+      <div className="mx-auto flex w-full max-w-[1400px] flex-1 flex-col gap-4 px-0 py-0 lg:min-h-0 lg:flex-row lg:px-6 lg:py-4">
         {/* Patient consultation — 65% on desktop. */}
         <section
           aria-label="Patient consultation"
@@ -420,7 +424,7 @@ export function SimulationPlayerPage() {
             patient={patient}
             messages={attempt.messages}
             thinking={thinking}
-            className="min-h-[42vh] lg:min-h-0"
+            className="min-h-[38vh] flex-1 lg:min-h-0"
           />
 
           {actionError && (
@@ -439,7 +443,7 @@ export function SimulationPlayerPage() {
         <aside
           aria-label="Clinical workspace"
           className={cn(
-            'flex min-w-0 flex-col gap-3 px-4 pb-6 lg:basis-[35%] lg:overflow-y-auto lg:px-0 lg:pb-0',
+            'flex min-w-0 flex-col gap-3 px-4 pb-6 lg:min-h-0 lg:basis-[35%] lg:overflow-y-auto lg:scroll-slim lg:px-0 lg:pb-0',
             !isDesktop && tab === 'conversation' && 'hidden',
           )}
         >

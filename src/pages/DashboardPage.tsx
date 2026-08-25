@@ -108,10 +108,13 @@ export function DashboardPage() {
             {data.competencies.map((competency) => {
               const band = scoreBand(competency.score)
               return (
-                <li key={competency.key} className="flex items-center gap-3">
-                  <span className="w-[132px] shrink-0 truncate text-xs text-ink">{competency.label}</span>
+                <li
+                  key={competency.key}
+                  className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3"
+                >
+                  <span className="truncate text-xs text-ink sm:w-[132px] sm:shrink-0">{competency.label}</span>
                   <Progress value={competency.score} size="sm" label={competency.label} className="flex-1" />
-                  <span className="w-[86px] shrink-0 text-right text-xs text-ink-muted">
+                  <span className="text-xs text-ink-muted sm:w-[86px] sm:shrink-0 sm:text-right">
                     <span className="font-medium text-forest">{competency.score}%</span> {band.label}
                   </span>
                 </li>

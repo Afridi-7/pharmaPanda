@@ -194,8 +194,11 @@ export function ProgressPage() {
               {data.competencies.map((competency) => {
                 const band = scoreBand(competency.score)
                 return (
-                  <li key={competency.key} className="flex items-center gap-3">
-                    <span className="w-[136px] shrink-0 truncate text-xs text-ink">
+                  <li
+                    key={competency.key}
+                    className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3"
+                  >
+                    <span className="truncate text-xs text-ink sm:w-[136px] sm:shrink-0">
                       {competency.label}
                     </span>
                     <Progress
@@ -204,7 +207,7 @@ export function ProgressPage() {
                       label={competency.label}
                       className="flex-1"
                     />
-                    <span className="w-[104px] shrink-0 text-right text-xs text-ink-muted">
+                    <span className="text-xs text-ink-muted sm:w-[104px] sm:shrink-0 sm:text-right">
                       <span className="font-medium text-forest">{competency.score}%</span>{' '}
                       {competency.attempts > 0 ? band.label : 'n/a'}
                     </span>

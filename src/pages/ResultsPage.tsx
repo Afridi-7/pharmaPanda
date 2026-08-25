@@ -178,8 +178,10 @@ export function ResultsPage() {
           {evaluation.scores.map((entry) => {
             const entryBand = scoreBand(entry.score)
             return (
-              <li key={entry.key} className="flex items-center gap-3">
-                <span className="w-[136px] shrink-0 truncate text-sm text-ink">{entry.label}</span>
+              /* Stacked on mobile: three fixed columns leave the bar almost
+                 no room on a narrow screen. */
+              <li key={entry.key} className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
+                <span className="truncate text-sm text-ink sm:w-[136px] sm:shrink-0">{entry.label}</span>
                 <span className="h-2 flex-1 overflow-hidden rounded-full bg-beige" aria-hidden>
                   <span
                     className={cn(
@@ -193,7 +195,7 @@ export function ResultsPage() {
                   />
                 </span>
                 {/* Score and band as text, so status never depends on colour. */}
-                <span className="w-[112px] shrink-0 text-right text-xs text-ink-muted">
+                <span className="text-xs text-ink-muted sm:w-[112px] sm:shrink-0 sm:text-right">
                   <span className="font-medium text-forest">{entry.score}%</span> {entryBand.label}
                 </span>
               </li>

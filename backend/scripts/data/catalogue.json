@@ -137,7 +137,11 @@
       "allergic",
       "react to any",
       "intolerance",
-      "sensitive to any drug"
+      "sensitive to any drug",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
      ],
      "patientLine": "Yes — aspirin. My face swelled up and I got wheezy when I was a teenager. I've avoided it since.",
      "credits": "medicationSafety",
@@ -158,7 +162,15 @@
       "prescription",
       "drugs do you take",
       "anything else you take",
-      "supplements"
+      "supplements",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "inhaler",
+      "over the counter"
      ],
      "patientLine": "I take warfarin every day — 4 milligrams. I had a clot in my leg last year, so I'm on it long term.",
      "credits": "medicationSafety",
@@ -179,7 +191,13 @@
       "diagnosed",
       "been treated",
       "operations",
-      "surgery"
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
      ],
      "patientLine": "I had a stomach ulcer about three years ago — they found it with a camera test. And the clot in my leg last year.",
      "credits": "medicationSafety",
@@ -380,7 +398,13 @@
       "smoking",
       "cigarette",
       "tobacco",
-      "vape"
+      "vape",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
      ],
      "patientLine": "Fifteen a day since I was about twenty. I know, I know.",
      "credits": "historyTaking",
@@ -401,7 +425,15 @@
       "prescription",
       "drugs do you take",
       "anything else you take",
-      "supplements"
+      "supplements",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "inhaler",
+      "over the counter"
      ],
      "patientLine": "Ramipril for the blood pressure — started that six months back — and a statin at night.",
      "credits": "medicationSafety",
@@ -422,7 +454,13 @@
       "diagnosed",
       "been treated",
       "operations",
-      "surgery"
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
      ],
      "patientLine": "Blood pressure and cholesterol. Nothing else they have told me about.",
      "credits": "historyTaking"
@@ -438,7 +476,11 @@
       "allergic",
       "react to any",
       "intolerance",
-      "sensitive to any drug"
+      "sensitive to any drug",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
      ],
      "patientLine": "No allergies that I know of.",
      "credits": "medicationSafety"
@@ -582,7 +624,15 @@
       "prescription",
       "drugs do you take",
       "anything else you take",
-      "supplements"
+      "supplements",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "inhaler",
+      "over the counter"
      ],
      "patientLine": "I take naproxen twice a day for my knee — I've had it from the doctor for about four months.",
      "credits": "medicationSafety",
@@ -603,7 +653,13 @@
       "diagnosed",
       "been treated",
       "operations",
-      "surgery"
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
      ],
      "patientLine": "Just my knee. My heart is fine, they checked last year.",
      "credits": "historyTaking"
@@ -619,7 +675,11 @@
       "allergic",
       "react to any",
       "intolerance",
-      "sensitive to any drug"
+      "sensitive to any drug",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
      ],
      "patientLine": "Penicillin gives me a rash.",
      "credits": "medicationSafety"
@@ -781,7 +841,14 @@
       "drugs do you take",
       "anything else you take",
       "supplements",
-      "inhaler"
+      "inhaler",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "over the counter"
      ],
      "patientLine": "I have a blue inhaler somewhere. Pretty sure it is out of date.",
      "credits": "medicationSafety",
@@ -802,7 +869,13 @@
       "diagnosed",
       "been treated",
       "operations",
-      "surgery"
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
      ],
      "patientLine": "They said asthma when I was fourteen, but I grew out of it. Mostly.",
      "credits": "historyTaking",
@@ -819,7 +892,11 @@
       "allergic",
       "react to any",
       "intolerance",
-      "sensitive to any drug"
+      "sensitive to any drug",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
      ],
      "patientLine": "No drug allergies. Pollen and cats, obviously.",
      "credits": "medicationSafety"
@@ -1016,7 +1093,13 @@
       "diagnosed",
       "been treated",
       "operations",
-      "surgery"
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
      ],
      "patientLine": "I had eczema as a child, and I get hay fever.",
      "credits": "historyTaking"
@@ -1036,7 +1119,15 @@
       "prescription",
       "drugs do you take",
       "anything else you take",
-      "supplements"
+      "supplements",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "inhaler",
+      "over the counter"
      ],
      "patientLine": "Just the pill. Nothing on my skin at the moment.",
      "credits": "medicationSafety"
@@ -1052,7 +1143,11 @@
       "allergic",
       "react to any",
       "intolerance",
-      "sensitive to any drug"
+      "sensitive to any drug",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
      ],
      "patientLine": "None that I know of.",
      "credits": "medicationSafety"
@@ -1231,7 +1326,15 @@
       "anything else you take",
       "supplements",
       "given",
-      "tried"
+      "tried",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "inhaler",
+      "over the counter"
      ],
      "patientLine": "I gave her paracetamol four hours ago, but I used a kitchen spoon. I am not sure how much.",
      "credits": "medicationSafety",
@@ -1252,7 +1355,13 @@
       "diagnosed",
       "been treated",
       "operations",
-      "surgery"
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
      ],
      "patientLine": "She is healthy, all her vaccines are done.",
      "credits": "historyTaking"
@@ -1268,7 +1377,11 @@
       "allergic",
       "react to any",
       "intolerance",
-      "sensitive to any drug"
+      "sensitive to any drug",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
      ],
      "patientLine": "No allergies.",
      "credits": "medicationSafety"
@@ -1367,7 +1480,15 @@
       "prescription",
       "drugs do you take",
       "anything else you take",
-      "supplements"
+      "supplements",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "inhaler",
+      "over the counter"
      ],
      "patientLine": "Metformin twice a day, ramipril in the morning, and levothyroxine for my thyroid.",
      "credits": "medicationSafety",
@@ -1384,7 +1505,15 @@
       "all of them",
       "how many doses",
       "how many days",
-      "missed"
+      "missed",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "inhaler",
+      "over the counter"
      ],
      "patientLine": "All of them, for the whole week I was away.",
      "credits": "clinicalReasoning",
@@ -1425,7 +1554,13 @@
       "diagnosed",
       "been treated",
       "operations",
-      "surgery"
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
      ],
      "patientLine": "Diabetes for twelve years, blood pressure, and an underactive thyroid.",
      "credits": "historyTaking"
@@ -1459,7 +1594,11 @@
       "allergic",
       "react to any",
       "intolerance",
-      "sensitive to any drug"
+      "sensitive to any drug",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
      ],
      "patientLine": "Sulfa tablets bring me out in a rash.",
      "credits": "medicationSafety"
@@ -1581,7 +1720,15 @@
       "adherence",
       "remember",
       "twice a day",
-      "when do you use"
+      "when do you use",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "inhaler",
+      "over the counter"
      ],
      "patientLine": "I only use the brown one when I feel wheezy. Maybe twice a week.",
      "credits": "medicationSafety",
@@ -1605,7 +1752,15 @@
       "supplements",
       "blue inhaler",
       "reliever",
-      "salbutamol"
+      "salbutamol",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "inhaler",
+      "over the counter"
      ],
      "patientLine": "The blue one I use loads — maybe eight or ten puffs a week. I have been through two in three months.",
      "credits": "medicationSafety",
@@ -1661,7 +1816,13 @@
       "diagnosed",
       "been treated",
       "operations",
-      "surgery"
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
      ],
      "patientLine": "Asthma since I was eight, and eczema.",
      "credits": "historyTaking"
@@ -1677,7 +1838,11 @@
       "allergic",
       "react to any",
       "intolerance",
-      "sensitive to any drug"
+      "sensitive to any drug",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
      ],
      "patientLine": "No allergies to medicines.",
      "credits": "medicationSafety"
@@ -1784,7 +1949,15 @@
       "prescription",
       "drugs do you take",
       "anything else you take",
-      "supplements"
+      "supplements",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "inhaler",
+      "over the counter"
      ],
      "patientLine": "Warfarin daily, a statin at night, and sertraline — the doctor started that in spring.",
      "credits": "medicationSafety",
@@ -1842,7 +2015,13 @@
       "diagnosed",
       "been treated",
       "operations",
-      "surgery"
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
      ],
      "patientLine": "Irregular heartbeat, cholesterol, and the low mood.",
      "credits": "historyTaking"
@@ -1859,7 +2038,14 @@
       "herbal",
       "over the counter",
       "anything else",
-      "natural"
+      "natural",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "inhaler"
      ],
      "patientLine": "Cod liver oil, a big vitamin E, and a glass of cranberry juice every morning.",
      "credits": "medicationSafety",
@@ -1876,7 +2062,11 @@
       "allergic",
       "react to any",
       "intolerance",
-      "sensitive to any drug"
+      "sensitive to any drug",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
      ],
      "patientLine": "None at all.",
      "credits": "medicationSafety"
@@ -2020,7 +2210,13 @@
       "vaccin",
       "immunis",
       "immuniz",
-      "jab"
+      "jab",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
      ],
      "patientLine": "Tetanus? I honestly cannot remember. School, probably — twelve years ago at least.",
      "credits": "medicationSafety",
@@ -2060,7 +2256,13 @@
       "diagnosed",
       "been treated",
       "operations",
-      "surgery"
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
      ],
      "patientLine": "I am healthy. No diabetes or anything.",
      "credits": "historyTaking"
@@ -2080,7 +2282,15 @@
       "prescription",
       "drugs do you take",
       "anything else you take",
-      "supplements"
+      "supplements",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "inhaler",
+      "over the counter"
      ],
      "patientLine": "Nothing regular, no.",
      "credits": "medicationSafety"
@@ -2098,7 +2308,11 @@
       "intolerance",
       "sensitive to any drug",
       "plaster",
-      "dressing"
+      "dressing",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
      ],
      "patientLine": "Ordinary plasters make my skin red and itchy.",
      "credits": "medicationSafety",

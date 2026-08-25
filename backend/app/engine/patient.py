@@ -84,6 +84,45 @@ def _next_unrevealed(patient: dict, revealed_ids: list[str], sections: list[str]
     return None
 
 
+# Sections mapped to the plain-language area a student would recognise.
+_SECTION_HINTS = {
+    "allergies": "allergies",
+    "medications": "current medication",
+    "history": "past medical history",
+    "symptoms": "the symptoms themselves",
+    "other": "what else is going on",
+}
+
+
+def _coaching_hint(patient: dict, revealed_ids: list[str]) -> str | None:
+    """
+    Nudge toward an unexplored area without disclosing what is in it.
+
+    Deliberately names a topic, not a fact: "you have not asked about current
+    medication yet" is a prompt to ask; naming the warfarin would be the answer.
+    """
+    outstanding: list[str] = []
+    for section in ("allergies", "medications", "history", "symptoms", "other"):
+        has_hidden = any(
+            f["section"] == section
+            and not f["revealedAtStart"]
+            and f["id"] not in revealed_ids
+            for f in patient["facts"]
+        )
+        if has_hidden:
+            outstanding.append(_SECTION_HINTS[section])
+
+    if not outstanding:
+        return None
+
+    areas = outstanding[:2]
+    joined = areas[0] if len(areas) == 1 else f"{areas[0]} and {areas[1]}"
+    return (
+        f"The patient did not follow that. Try asking a direct question about {joined} "
+        f"— for example, \"Do you take any medicines regularly?\""
+    )
+
+
 def respond(patient: dict, question: str, state: PatientEngineState) -> PatientTurn:
     text = normalise(question)
     seed = state.question_count + len(text)
@@ -144,6 +183,15 @@ def respond(patient: dict, question: str, state: PatientEngineState) -> PatientT
             messages.append(_message("patient", pick(patient["impatientLines"], seed), tone="impatient"))
         else:
             messages.append(_message("patient", pick(patient["deflections"], seed), tone="neutral"))
+
+        # After a run of questions that uncovered nothing, say so plainly. A
+        # student whose phrasing the patient does not follow otherwise has no
+        # signal to change approach. The hint names the *area* still unexplored,
+        # never the finding itself.
+        if state.unproductive_streak >= 2:
+            hint = _coaching_hint(patient, state.revealed_fact_ids)
+            if hint:
+                messages.append(_message("system", hint, tone="neutral"))
 
     if any(f.get("safetyCritical") for f in revealed):
         messages.append(_message(

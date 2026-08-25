@@ -29,9 +29,9 @@ export function SimulationTopBar({
   const overrun = softLimitSeconds !== undefined && seconds > softLimitSeconds
   return (
     <header className="sticky top-0 z-30 border-b border-beige bg-cream-light/95 backdrop-blur">
-      <div className="mx-auto flex max-w-[1400px] flex-col gap-2 px-4 py-3 sm:px-6 lg:flex-row lg:items-center lg:gap-6">
+      <div className="mx-auto flex max-w-[1400px] flex-col gap-1.5 px-4 py-2 sm:gap-2 sm:px-6 sm:py-3 lg:flex-row lg:items-center lg:gap-6">
         <div className="min-w-0 flex-1">
-          <h1 className="truncate font-display text-base text-forest sm:text-lg">{title}</h1>
+          <h1 className="truncate font-display text-[15px] text-forest sm:text-lg">{title}</h1>
           {subtitle && <p className="truncate text-xs text-ink-muted">{subtitle}</p>}
         </div>
         <div className="flex items-center gap-3 sm:gap-5">
@@ -62,7 +62,7 @@ export function SimulationTopBar({
           </button>
         </div>
       </div>
-      <div className="px-4 pb-2 sm:hidden">
+      <div className="px-4 pb-1.5 sm:hidden">
         <Progress value={progress} size="sm" label={progressLabel} />
       </div>
     </header>

@@ -269,6 +269,32 @@ redirects to the Progress page, where achievements live as a tab.
 
 Calculations, drugs and settings still run on the frontend's local layer.
 
+## Authoring cases
+
+Cases are content, not code. Adding one touches no engine logic.
+
+```bash
+cd backend
+python -m scripts.new_case --slug sc_sore_throat --patient "Amir Haddad" --age 24
+# fill in the TODOs in scripts/data/catalogue.json
+# add a scoring rule for the slug in app/engine/rules.py
+python -m scripts.check_catalogue   # validate before seeding
+python -m scripts.seed_catalogue    # load into PostgreSQL
+```
+
+`new_case` emits the full structure — patient, the ten standard facts, trigger
+vocabulary — with clinical fields left as `TODO`. `check_catalogue` refuses to
+pass on unfilled fields, a hidden fact no question can unlock, or a scenario
+with no scoring rule.
+
+**How questions are matched.** Each hidden fact carries trigger keywords.
+Keywords longer than four characters match as a word prefix, so the authored
+stem `allerg` catches "allergy", "allergies" and "allergic". Shorter keywords
+match whole words only — otherwise `hi` fires inside "this" and "anything".
+Students do not have to use exact wording, and after two questions that uncover
+nothing the patient says so and names an unexplored area, without disclosing
+what is in it.
+
 ## Notes
 
 **CORS over a dev proxy.** The backend allows the Vite origin explicitly
