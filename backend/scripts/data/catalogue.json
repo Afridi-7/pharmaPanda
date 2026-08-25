@@ -3837,7 +3837,8 @@
     "Counsel on dose, maximum daily dose and when to seek further help."
    ],
    "status": "not-started",
-   "patientId": "pat_sarah"
+   "patientId": "pat_sarah",
+   "reviewStatus": "in-use"
   },
   {
    "id": "sc_cough",
@@ -3864,7 +3865,8 @@
     "Reach a clear, justified referral decision and communicate its urgency."
    ],
    "status": "not-started",
-   "patientId": "pat_thomas"
+   "patientId": "pat_thomas",
+   "reviewStatus": "in-use"
   },
   {
    "id": "sc_heartburn",
@@ -3891,7 +3893,8 @@
     "Give lifestyle and treatment advice the patient can actually follow."
    ],
    "status": "not-started",
-   "patientId": "pat_amina"
+   "patientId": "pat_amina",
+   "reviewStatus": "in-use"
   },
   {
    "id": "sc_allergy",
@@ -3918,7 +3921,8 @@
     "Recommend a non-sedating option with clear counselling."
    ],
    "status": "not-started",
-   "patientId": "pat_george"
+   "patientId": "pat_george",
+   "reviewStatus": "in-use"
   },
   {
    "id": "sc_rash",
@@ -3945,7 +3949,8 @@
     "Counsel on emollient and topical steroid use, including quantity and duration."
    ],
    "status": "not-started",
-   "patientId": "pat_lena"
+   "patientId": "pat_lena",
+   "reviewStatus": "in-use"
   },
   {
    "id": "sc_fever_child",
@@ -3972,7 +3977,8 @@
     "Provide safety netting: what to watch for and when to seek urgent help."
    ],
    "status": "not-started",
-   "patientId": "pat_mateo"
+   "patientId": "pat_mateo",
+   "reviewStatus": "in-use"
   },
   {
    "id": "sc_missed_meds",
@@ -3999,7 +4005,8 @@
     "Decide whether the prescriber needs to be involved, and how urgently."
    ],
    "status": "not-started",
-   "patientId": "pat_ruth"
+   "patientId": "pat_ruth",
+   "reviewStatus": "in-use"
   },
   {
    "id": "sc_inhaler",
@@ -4026,7 +4033,8 @@
     "Check understanding with teach-back, and arrange appropriate follow-up."
    ],
    "status": "not-started",
-   "patientId": "pat_nadia"
+   "patientId": "pat_nadia",
+   "reviewStatus": "in-use"
   },
   {
    "id": "sc_interaction",
@@ -4053,7 +4061,8 @@
     "Redirect to the prescriber while maintaining rapport."
    ],
    "status": "not-started",
-   "patientId": "pat_derek"
+   "patientId": "pat_derek",
+   "reviewStatus": "in-use"
   },
   {
    "id": "sc_wound",
@@ -4080,7 +4089,8 @@
     "Advise on dressing choice, taking adhesive sensitivity into account."
    ],
    "status": "not-started",
-   "patientId": "pat_priya"
+   "patientId": "pat_priya",
+   "reviewStatus": "in-use"
   },
   {
    "id": "sc_sore_throat",
@@ -4108,7 +4118,9 @@
     "Refer with a clearly stated urgency and safety-net advice."
    ],
    "status": "not-started",
-   "patientId": "pat_amir"
+   "patientId": "pat_amir",
+   "reviewStatus": "draft",
+   "reviewNote": "Authored by tooling. Requires pharmacist sign-off before assessment use."
   },
   {
    "id": "sc_uti",
@@ -4136,7 +4148,9 @@
     "Refer appropriately and explain why, without alarming the patient."
    ],
    "status": "not-started",
-   "patientId": "pat_bea"
+   "patientId": "pat_bea",
+   "reviewStatus": "draft",
+   "reviewNote": "Authored by tooling. Requires pharmacist sign-off before assessment use."
   },
   {
    "id": "sc_chest_pain",
@@ -4164,7 +4178,9 @@
     "Recognise that this needs emergency assessment, not an antacid."
    ],
    "status": "not-started",
-   "patientId": "pat_colin"
+   "patientId": "pat_colin",
+   "reviewStatus": "draft",
+   "reviewNote": "Authored by tooling. Requires pharmacist sign-off before assessment use."
   },
   {
    "id": "sc_red_eye",
@@ -4192,7 +4208,9 @@
     "Refer for same-day assessment and advise on stopping lens wear."
    ],
    "status": "not-started",
-   "patientId": "pat_dana"
+   "patientId": "pat_dana",
+   "reviewStatus": "draft",
+   "reviewNote": "Authored by tooling. Requires pharmacist sign-off before assessment use."
   },
   {
    "id": "sc_teething",
@@ -4220,7 +4238,9 @@
     "Counsel on dose, maximum in 24 hours, measurement and when to seek help."
    ],
    "status": "not-started",
-   "patientId": "pat_erin"
+   "patientId": "pat_erin",
+   "reviewStatus": "draft",
+   "reviewNote": "Authored by tooling. Requires pharmacist sign-off before assessment use."
   }
  ]
 }
