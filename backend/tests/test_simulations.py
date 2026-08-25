@@ -60,8 +60,11 @@ def test_lists_scenarios(client: TestClient, student: dict) -> None:
     response = client.get(f"{PREFIX}/scenarios", headers=student["headers"])
     assert response.status_code == 200
     scenarios = response.json()
-    assert len(scenarios) == 10
+    # Asserted as a floor, not an exact count: adding a case is content work
+    # and must not break the suite.
+    assert len(scenarios) >= 10
     assert all(s["status"] == "not-started" for s in scenarios)
+    assert {"sc_headache", "sc_sore_throat", "sc_uti"} <= {s["id"] for s in scenarios}
 
 
 def test_gets_one_scenario(client: TestClient, student: dict) -> None:

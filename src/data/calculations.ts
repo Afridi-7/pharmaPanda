@@ -1,20 +1,20 @@
 import type { CalculationProblem, CalculationTopic } from '@/types'
+import { extraCalculationProblems } from './calculationsExtra'
 
 export const calculationTopics: {
   topic: CalculationTopic
   blurb: string
-  problemCount: number
   skills: string[]
 }[] = [
-  { topic: 'Dose Calculation', blurb: 'Convert a prescribed dose into what you actually hand over.', problemCount: 2, skills: ['Unit conversion', 'Strength'] },
-  { topic: 'Concentration', blurb: 'Percentages, ratios and mg/mL — without losing a decimal place.', problemCount: 1, skills: ['% w/v', 'Ratio strength'] },
-  { topic: 'Dilution', blurb: 'Make a weaker preparation from a stronger one, accurately.', problemCount: 1, skills: ['C1V1 = C2V2'] },
-  { topic: 'Infusion Rate', blurb: 'Millilitres per hour, drops per minute, and time to completion.', problemCount: 1, skills: ['mL/h', 'Rate'] },
-  { topic: 'Weight-Based Dosing', blurb: 'Paediatric and weight-banded dosing where accuracy is safety.', problemCount: 2, skills: ['mg/kg', 'Max dose'] },
-  { topic: 'Quantity to Dispense', blurb: 'Work out days of supply and the pack you should reach for.', problemCount: 1, skills: ['Days supply', 'Pack size'] },
+  { topic: 'Dose Calculation', blurb: 'Convert a prescribed dose into what you actually hand over.', skills: ['Unit conversion', 'Strength'] },
+  { topic: 'Concentration', blurb: 'Percentages, ratios and mg/mL — without losing a decimal place.', skills: ['% w/v', 'Ratio strength'] },
+  { topic: 'Dilution', blurb: 'Make a weaker preparation from a stronger one, accurately.', skills: ['C1V1 = C2V2'] },
+  { topic: 'Infusion Rate', blurb: 'Millilitres per hour, drops per minute, and time to completion.', skills: ['mL/h', 'Rate'] },
+  { topic: 'Weight-Based Dosing', blurb: 'Paediatric and weight-banded dosing where accuracy is safety.', skills: ['mg/kg', 'Max dose'] },
+  { topic: 'Quantity to Dispense', blurb: 'Work out days of supply and the pack you should reach for.', skills: ['Days supply', 'Pack size'] },
 ]
 
-export const calculationProblems: CalculationProblem[] = [
+const baseCalculationProblems: CalculationProblem[] = [
   {
     id: 'calc_paed_amox',
     title: 'Pediatric Dose Challenge',
@@ -201,6 +201,12 @@ export const calculationProblems: CalculationProblem[] = [
     ],
     pitfall: 'Supplying 15 leaves the course two days short, a classic driver of antibiotic non-completion.',
   },
+]
+
+/** The full practice set. Split across two files purely for reviewability. */
+export const calculationProblems: CalculationProblem[] = [
+  ...baseCalculationProblems,
+  ...extraCalculationProblems,
 ]
 
 export function problemsForTopic(topic: CalculationTopic) {

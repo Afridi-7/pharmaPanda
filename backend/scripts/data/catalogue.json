@@ -2353,6 +2353,1461 @@
     "prophylaxis",
     "approximate the edges"
    ]
+  },
+  {
+   "id": "pat_amir",
+   "name": "Amir Haddad",
+   "age": 19,
+   "pronouns": "he/him",
+   "role": "Patient",
+   "mood": "tired",
+   "avatar": "thomas",
+   "chiefComplaint": "Sore throat",
+   "openingLine": "Hi — my throat has been really sore for about five days. Can I get some antibiotics?",
+   "facts": [
+    {
+     "id": "amir_age",
+     "section": "basic",
+     "label": "Age",
+     "value": "19",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old"
+     ],
+     "patientLine": "I'm 19.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "amir_complaint",
+     "section": "basic",
+     "label": "Chief complaint",
+     "value": "Sore throat",
+     "revealedAtStart": true,
+     "triggers": [
+      "what brings you",
+      "problem",
+      "complaint"
+     ],
+     "patientLine": "It's my throat. Swallowing really hurts.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "amir_duration",
+     "section": "symptoms",
+     "label": "Duration",
+     "value": "5 days, worsening",
+     "revealedAtStart": false,
+     "triggers": [
+      "how long",
+      "when did it start",
+      "since when",
+      "duration",
+      "started"
+     ],
+     "patientLine": "About five days now, and it's got worse rather than better.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "amir_severity",
+     "section": "symptoms",
+     "label": "Severity",
+     "value": "Severe — 8/10, painful to swallow fluids",
+     "revealedAtStart": false,
+     "triggers": [
+      "how bad",
+      "severity",
+      "scale of",
+      "how severe",
+      "how painful",
+      "rate the pain"
+     ],
+     "patientLine": "Honestly an eight out of ten. It hurts to swallow even water.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "amir_fever",
+     "section": "symptoms",
+     "label": "Fever",
+     "value": "Feverish, measured 38.6°C this morning",
+     "revealedAtStart": false,
+     "triggers": [
+      "fever",
+      "temperature",
+      "hot",
+      "chills",
+      "shiver"
+     ],
+     "patientLine": "Yeah, I've been hot and shivery. It was 38.6 when I checked this morning.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "amir_exudate",
+     "section": "symptoms",
+     "label": "Throat appearance",
+     "value": "Tonsils enlarged with white exudate; no rash",
+     "revealedAtStart": false,
+     "triggers": [
+      "look at your throat",
+      "throat look",
+      "white patch",
+      "tonsil",
+      "exudate",
+      "spots",
+      "appearance",
+      "swollen glands",
+      "look inside"
+     ],
+     "patientLine": "There's white patches on my tonsils — I had a look with my phone torch.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "amir_nodes",
+     "section": "symptoms",
+     "label": "Lymph nodes",
+     "value": "Tender, enlarged anterior cervical nodes",
+     "revealedAtStart": false,
+     "triggers": [
+      "gland",
+      "lymph",
+      "neck",
+      "lump",
+      "swelling in your neck"
+     ],
+     "patientLine": "The glands in my neck are up and sore to touch.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "amir_cough",
+     "section": "symptoms",
+     "label": "Cough",
+     "value": "No cough",
+     "revealedAtStart": false,
+     "triggers": [
+      "cough",
+      "chesty",
+      "phlegm"
+     ],
+     "patientLine": "No, no cough at all. It's just the throat.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "amir_breathing",
+     "section": "symptoms",
+     "label": "Breathing and drooling",
+     "value": "No stridor or drooling, but struggling to swallow saliva comfortably",
+     "revealedAtStart": false,
+     "triggers": [
+      "breath",
+      "stridor",
+      "drool",
+      "swallow",
+      "airway",
+      "voice",
+      "muffled"
+     ],
+     "patientLine": "I can breathe fine, but swallowing my own spit is getting hard.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "amir_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "Penicillin — widespread rash as a child",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
+     ],
+     "patientLine": "I'm allergic to penicillin — I came out in a rash when I was little.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "amir_meds",
+     "section": "medications",
+     "label": "Current medication",
+     "value": "None regular",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "supplements",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "over the counter"
+     ],
+     "patientLine": "Nothing regular, no.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "amir_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "No significant past medical history",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
+     ],
+     "patientLine": "Nothing really. I'm usually pretty healthy.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "amir_tried",
+     "section": "other",
+     "label": "Tried so far",
+     "value": "Paracetamol 1 g twice daily, minimal relief; no throat lozenges",
+     "revealedAtStart": false,
+     "triggers": [
+      "tried",
+      "taken anything",
+      "anything for it",
+      "so far"
+     ],
+     "patientLine": "Just paracetamol, a couple of times a day. It barely touches it.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "amir_context",
+     "section": "other",
+     "label": "Context",
+     "value": "University student, exams next week, lives in halls",
+     "revealedAtStart": false,
+     "triggers": [
+      "work",
+      "study",
+      "uni",
+      "school",
+      "anyone else",
+      "contact",
+      "around you",
+      "living",
+      "stress"
+     ],
+     "patientLine": "I'm at uni, exams next week, and half my flat has been ill too.",
+     "credits": "historyTaking"
+    }
+   ],
+   "deflections": [
+    "Sorry, I'm not sure what you mean — could you say that differently?",
+    "Not that I know of. Nobody's asked me that before.",
+    "Hmm, I don't think so — but ask me whatever you need."
+   ],
+   "impatientLines": [
+    "Look, can I just get antibiotics? I've got exams.",
+    "Is all this needed? My mate got antibiotics straight away for this."
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "antibiotic",
+      "penicillin",
+      "amoxicillin",
+      "phenoxymethylpenicillin"
+     ],
+     "line": "So can you give me antibiotics, or do I have to see a doctor?"
+    },
+    {
+     "triggers": [
+      "paracetamol",
+      "ibuprofen",
+      "lozenge",
+      "spray",
+      "gargle"
+     ],
+     "line": "I've already been taking paracetamol though — will that really be enough?"
+    },
+    {
+     "triggers": [
+      "refer",
+      "doctor",
+      "gp",
+      "urgent",
+      "same day"
+     ],
+     "line": "How quickly do I need to be seen? I've got an exam on Thursday."
+    }
+   ],
+   "jargon": [
+    "exudate",
+    "pharyngitis",
+    "centor",
+    "lymphadenopathy",
+    "analgesia",
+    "self-limiting"
+   ]
+  },
+  {
+   "id": "pat_bea",
+   "name": "Bea Nowak",
+   "age": 27,
+   "pronouns": "she/her",
+   "role": "Patient",
+   "mood": "worried",
+   "avatar": "amina",
+   "chiefComplaint": "Burning when passing urine",
+   "openingLine": "Hello — it stings when I go to the toilet. Is there something I can take for a bladder infection?",
+   "facts": [
+    {
+     "id": "bea_age",
+     "section": "basic",
+     "label": "Age",
+     "value": "27",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old"
+     ],
+     "patientLine": "I'm 27.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "bea_complaint",
+     "section": "basic",
+     "label": "Chief complaint",
+     "value": "Dysuria and urinary frequency",
+     "revealedAtStart": true,
+     "triggers": [
+      "what brings you",
+      "problem",
+      "complaint"
+     ],
+     "patientLine": "It burns when I wee, and I keep needing to go.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "bea_duration",
+     "section": "symptoms",
+     "label": "Duration",
+     "value": "2 days",
+     "revealedAtStart": false,
+     "triggers": [
+      "how long",
+      "when did it start",
+      "since when",
+      "duration",
+      "started"
+     ],
+     "patientLine": "It started two days ago.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "bea_severity",
+     "section": "symptoms",
+     "label": "Severity",
+     "value": "Moderate — uncomfortable but not disabling",
+     "revealedAtStart": false,
+     "triggers": [
+      "how bad",
+      "severity",
+      "scale of",
+      "how severe",
+      "how painful",
+      "rate the pain"
+     ],
+     "patientLine": "It's uncomfortable rather than unbearable. Maybe a five out of ten.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "bea_redflags",
+     "section": "symptoms",
+     "label": "Systemic red flags",
+     "value": "No fever, no flank or back pain, no rigors, no nausea",
+     "revealedAtStart": false,
+     "triggers": [
+      "fever",
+      "temperature",
+      "back pain",
+      "flank",
+      "loin",
+      "kidney",
+      "sick",
+      "vomit",
+      "shiver",
+      "rigor",
+      "chills",
+      "unwell"
+     ],
+     "patientLine": "No temperature, no back pain, nothing like that. Just the stinging.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "bea_haematuria",
+     "section": "symptoms",
+     "label": "Blood in urine",
+     "value": "No visible blood; urine cloudy",
+     "revealedAtStart": false,
+     "triggers": [
+      "blood",
+      "colour",
+      "cloudy",
+      "urine look",
+      "appearance"
+     ],
+     "patientLine": "It's cloudy, but I haven't seen any blood.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "bea_vaginal",
+     "section": "symptoms",
+     "label": "Vaginal symptoms",
+     "value": "No discharge or itch",
+     "revealedAtStart": false,
+     "triggers": [
+      "discharge",
+      "itch",
+      "vaginal",
+      "sexual",
+      "sti",
+      "partner"
+     ],
+     "patientLine": "No, nothing like that.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "bea_pregnancy",
+     "section": "other",
+     "label": "Pregnancy status",
+     "value": "10 weeks pregnant — first antenatal appointment next week",
+     "revealedAtStart": false,
+     "triggers": [
+      "pregnan",
+      "breastfeed",
+      "nursing",
+      "baby on the way",
+      "any chance you",
+      "could you be",
+      "contraception",
+      "periods"
+     ],
+     "patientLine": "Actually — yes. I'm ten weeks pregnant. My first midwife appointment is next week.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "bea_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "No known drug allergies",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
+     ],
+     "patientLine": "No, none that I know of.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "bea_meds",
+     "section": "medications",
+     "label": "Current medication",
+     "value": "Folic acid 400 micrograms daily; no other medicines",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "supplements",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "over the counter"
+     ],
+     "patientLine": "Just folic acid, 400 micrograms. Nothing else.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "bea_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "One previous UTI two years ago, treated with antibiotics",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
+     ],
+     "patientLine": "I had one of these about two years ago and got antibiotics for it.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "bea_tried",
+     "section": "other",
+     "label": "Tried so far",
+     "value": "Drinking more water; no medicines taken",
+     "revealedAtStart": false,
+     "triggers": [
+      "tried",
+      "taken anything",
+      "anything for it",
+      "so far"
+     ],
+     "patientLine": "Just drinking loads of water. I haven't taken anything.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "bea_context",
+     "section": "other",
+     "label": "Context",
+     "value": "Office worker, no recent catheter or hospital stay",
+     "revealedAtStart": false,
+     "triggers": [
+      "work",
+      "job",
+      "hospital",
+      "catheter",
+      "recent",
+      "travel",
+      "anything change"
+     ],
+     "patientLine": "Nothing unusual — I work in an office, I've not been in hospital or anything.",
+     "credits": "historyTaking"
+    }
+   ],
+   "deflections": [
+    "Sorry, I'm not sure what you're asking — could you put it another way?",
+    "I don't think so. Should I have mentioned something?",
+    "Hmm, I'm not sure that's relevant, but go ahead."
+   ],
+   "impatientLines": [
+    "Sorry, I don't mean to rush — I just need to get back to work.",
+    "Is there a lot more? I was hoping to just grab something."
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "trimethoprim",
+      "nitrofurantoin",
+      "antibiotic",
+      "cystitis sachet",
+      "potassium citrate",
+      "sodium citrate"
+     ],
+     "line": "Is that definitely safe for me to take? I'd rather not risk anything."
+    },
+    {
+     "triggers": [
+      "refer",
+      "doctor",
+      "gp",
+      "midwife",
+      "urgent",
+      "same day"
+     ],
+     "line": "Do I really need to see someone? I thought I could just get something here."
+    },
+    {
+     "triggers": [
+      "water",
+      "fluid",
+      "drink",
+      "cranberry"
+     ],
+     "line": "I've been drinking loads already. Is that enough on its own?"
+    }
+   ],
+   "jargon": [
+    "dysuria",
+    "cystitis",
+    "urinalysis",
+    "pyelonephritis",
+    "asymptomatic bacteriuria",
+    "empirical",
+    "urinary tract infection"
+   ]
+  },
+  {
+   "id": "pat_colin",
+   "name": "Colin Reeves",
+   "age": 58,
+   "pronouns": "he/him",
+   "role": "Patient",
+   "mood": "worried",
+   "avatar": "george",
+   "chiefComplaint": "Chest discomfort he believes is indigestion",
+   "openingLine": "Morning. I've had bad indigestion since last night — what's the strongest thing you've got?",
+   "facts": [
+    {
+     "id": "colin_age",
+     "section": "basic",
+     "label": "Age",
+     "value": "58",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old"
+     ],
+     "patientLine": "I'm 58.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "colin_complaint",
+     "section": "basic",
+     "label": "Chief complaint",
+     "value": "Central chest discomfort",
+     "revealedAtStart": true,
+     "triggers": [
+      "what brings you",
+      "problem",
+      "complaint"
+     ],
+     "patientLine": "It's this burning across my chest. Been there since last night.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "colin_duration",
+     "section": "symptoms",
+     "label": "Duration",
+     "value": "Started 14 hours ago, constant since",
+     "revealedAtStart": false,
+     "triggers": [
+      "how long",
+      "when did it start",
+      "since when",
+      "duration",
+      "started"
+     ],
+     "patientLine": "It came on about this time yesterday evening and it hasn't really gone.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "colin_severity",
+     "section": "symptoms",
+     "label": "Severity",
+     "value": "7/10, described as heavy and tight",
+     "revealedAtStart": false,
+     "triggers": [
+      "how bad",
+      "severity",
+      "scale of",
+      "how severe",
+      "how painful",
+      "rate the pain"
+     ],
+     "patientLine": "Maybe a seven. It's more of a heaviness than a burning, if I'm honest.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "colin_radiation",
+     "section": "symptoms",
+     "label": "Radiation",
+     "value": "Discomfort radiates to the left arm and jaw",
+     "revealedAtStart": false,
+     "triggers": [
+      "radiate",
+      "spread",
+      "anywhere else",
+      "arm",
+      "jaw",
+      "shoulder",
+      "back",
+      "move",
+      "travel"
+     ],
+     "patientLine": "Now you mention it, my left arm aches and my jaw feels odd.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "colin_autonomic",
+     "section": "symptoms",
+     "label": "Associated features",
+     "value": "Sweating, nausea and breathlessness on exertion",
+     "revealedAtStart": false,
+     "triggers": [
+      "sweat",
+      "clammy",
+      "nausea",
+      "sick",
+      "breathless",
+      "short of breath",
+      "dizzy",
+      "faint",
+      "pale"
+     ],
+     "patientLine": "I was sweating buckets last night and felt sick. Bit breathless on the stairs too.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "colin_exertion",
+     "section": "symptoms",
+     "label": "Relationship to exertion",
+     "value": "Worse walking uphill, eases with rest",
+     "revealedAtStart": false,
+     "triggers": [
+      "worse",
+      "better",
+      "exertion",
+      "walking",
+      "exercise",
+      "rest",
+      "activity",
+      "bring it on",
+      "trigger"
+     ],
+     "patientLine": "It's definitely worse when I walk up the hill home. Sitting down settles it.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "colin_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "No known drug allergies",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
+     ],
+     "patientLine": "None that I know of.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "colin_meds",
+     "section": "medications",
+     "label": "Current medication",
+     "value": "Amlodipine 5 mg daily; simvastatin 20 mg at night",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "supplements",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "over the counter"
+     ],
+     "patientLine": "I take amlodipine and a statin. For blood pressure and cholesterol.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "colin_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "Hypertension, high cholesterol, smoker 20/day for 30 years",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition",
+      "smoke",
+      "smoking",
+      "cigarette"
+     ],
+     "patientLine": "High blood pressure and cholesterol. And I smoke, about twenty a day.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "colin_family",
+     "section": "history",
+     "label": "Family history",
+     "value": "Father had a myocardial infarction at 60",
+     "revealedAtStart": false,
+     "triggers": [
+      "family",
+      "father",
+      "mother",
+      "relatives",
+      "runs in"
+     ],
+     "patientLine": "My dad had a heart attack at sixty, if that matters.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "colin_tried",
+     "section": "other",
+     "label": "Tried so far",
+     "value": "Antacid tablets last night with no relief",
+     "revealedAtStart": false,
+     "triggers": [
+      "tried",
+      "taken anything",
+      "anything for it",
+      "so far"
+     ],
+     "patientLine": "I took some indigestion tablets last night. Didn't touch it.",
+     "credits": "historyTaking"
+    }
+   ],
+   "deflections": [
+    "Sorry, not sure what you mean there.",
+    "I don't think so. Is that important?",
+    "Hmm, couldn't say. Ask me what you need."
+   ],
+   "impatientLines": [
+    "Can I just get something for it? I've got to get to work.",
+    "It's only indigestion, surely?"
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "antacid",
+      "omeprazole",
+      "ranitidine",
+      "famotidine",
+      "gaviscon",
+      "indigestion"
+     ],
+     "line": "So will that sort it? I've already tried the chalky tablets."
+    },
+    {
+     "triggers": [
+      "ambulance",
+      "999",
+      "emergency",
+      "hospital",
+      "a e",
+      "urgent"
+     ],
+     "line": "An ambulance? Really? Isn't that a bit much for indigestion?"
+    },
+    {
+     "triggers": [
+      "aspirin"
+     ],
+     "line": "Should I take an aspirin? My neighbour said that helps."
+    }
+   ],
+   "jargon": [
+    "myocardial",
+    "infarction",
+    "angina",
+    "ischaemia",
+    "radiating",
+    "acute coronary syndrome"
+   ]
+  },
+  {
+   "id": "pat_dana",
+   "name": "Dana Okafor",
+   "age": 31,
+   "pronouns": "she/her",
+   "role": "Patient",
+   "mood": "worried",
+   "avatar": "lena",
+   "chiefComplaint": "Red, painful right eye",
+   "openingLine": "Hi — my right eye's been red and sore for two days. Have you got drops for conjunctivitis?",
+   "facts": [
+    {
+     "id": "dana_age",
+     "section": "basic",
+     "label": "Age",
+     "value": "31",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old"
+     ],
+     "patientLine": "I'm 31.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "dana_complaint",
+     "section": "basic",
+     "label": "Chief complaint",
+     "value": "Red painful right eye",
+     "revealedAtStart": true,
+     "triggers": [
+      "what brings you",
+      "problem",
+      "complaint"
+     ],
+     "patientLine": "It's my right eye. Red, and it aches.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "dana_duration",
+     "section": "symptoms",
+     "label": "Duration",
+     "value": "2 days, worsening",
+     "revealedAtStart": false,
+     "triggers": [
+      "how long",
+      "when did it start",
+      "since when",
+      "duration",
+      "started"
+     ],
+     "patientLine": "Two days, and it's getting worse rather than better.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "dana_vision",
+     "section": "symptoms",
+     "label": "Visual acuity",
+     "value": "Blurred vision in the affected eye, not clearing on blinking",
+     "revealedAtStart": false,
+     "triggers": [
+      "vision",
+      "see",
+      "sight",
+      "blurred",
+      "blurry",
+      "reading",
+      "acuity",
+      "eyesight"
+     ],
+     "patientLine": "It's blurry on that side. Blinking doesn't clear it.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "dana_pain",
+     "section": "symptoms",
+     "label": "Pain character",
+     "value": "Deep aching pain, not surface grittiness; photophobia present",
+     "revealedAtStart": false,
+     "triggers": [
+      "how bad",
+      "severity",
+      "scale of",
+      "how severe",
+      "how painful",
+      "rate the pain",
+      "pain",
+      "ache",
+      "gritty",
+      "light",
+      "photophobia",
+      "sore",
+      "hurt"
+     ],
+     "patientLine": "It's a deep ache behind the eye, and bright light really hurts.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "dana_discharge",
+     "section": "symptoms",
+     "label": "Discharge",
+     "value": "Watery only; no purulent discharge or morning crusting",
+     "revealedAtStart": false,
+     "triggers": [
+      "discharge",
+      "sticky",
+      "pus",
+      "crust",
+      "gunk",
+      "weep",
+      "watery"
+     ],
+     "patientLine": "It waters a lot, but there's no gunk or crusting in the mornings.",
+     "credits": "clinicalReasoning"
+    },
+    {
+     "id": "dana_contacts",
+     "section": "other",
+     "label": "Contact lens use",
+     "value": "Wears monthly soft lenses; slept in them twice last week",
+     "revealedAtStart": false,
+     "triggers": [
+      "contact lens",
+      "lenses",
+      "glasses",
+      "wear anything",
+      "correction"
+     ],
+     "patientLine": "I wear monthlies. I did sleep in them a couple of nights last week.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "dana_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "No known drug allergies",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
+     ],
+     "patientLine": "No, nothing.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "dana_meds",
+     "section": "medications",
+     "label": "Current medication",
+     "value": "Combined oral contraceptive; no eye medicines",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "supplements",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "over the counter"
+     ],
+     "patientLine": "Just the pill. Nothing for my eyes.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "dana_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "No previous eye disease",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition"
+     ],
+     "patientLine": "Nothing. I've never had eye trouble before.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "dana_tried",
+     "section": "other",
+     "label": "Tried so far",
+     "value": "Bathed the eye with cooled boiled water; no drops used",
+     "revealedAtStart": false,
+     "triggers": [
+      "tried",
+      "taken anything",
+      "anything for it",
+      "so far"
+     ],
+     "patientLine": "Just bathed it with cooled boiled water. Haven't put anything in it.",
+     "credits": "historyTaking"
+    }
+   ],
+   "deflections": [
+    "Sorry, could you say that another way?",
+    "I don't think so — should I have noticed something?",
+    "Not sure. Ask me whatever helps."
+   ],
+   "impatientLines": [
+    "Can I just get the drops? I'm due back at work.",
+    "It's only conjunctivitis, isn't it?"
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "chloramphenicol",
+      "drops",
+      "conjunctivitis",
+      "antibiotic"
+     ],
+     "line": "So can I have the drops, or not?"
+    },
+    {
+     "triggers": [
+      "refer",
+      "optometrist",
+      "eye casualty",
+      "hospital",
+      "doctor",
+      "urgent",
+      "same day"
+     ],
+     "line": "Same day? Is my eye actually in danger?"
+    },
+    {
+     "triggers": [
+      "lens",
+      "lenses"
+     ],
+     "line": "Should I stop wearing my lenses then?"
+    }
+   ],
+   "jargon": [
+    "keratitis",
+    "photophobia",
+    "acuity",
+    "purulent",
+    "corneal",
+    "uveitis",
+    "ciliary"
+   ]
+  },
+  {
+   "id": "pat_erin",
+   "name": "Erin Walsh",
+   "age": 29,
+   "pronouns": "she/her",
+   "role": "Parent",
+   "mood": "tired",
+   "avatar": "amina",
+   "chiefComplaint": "Asking about teething remedies for her infant",
+   "openingLine": "Hi — my little one is teething and miserable. What can I give her? She's seven months.",
+   "facts": [
+    {
+     "id": "erin_age",
+     "section": "basic",
+     "label": "Age",
+     "value": "29 (parent)",
+     "revealedAtStart": true,
+     "triggers": [
+      "age",
+      "how old are you"
+     ],
+     "patientLine": "I'm 29 — it's my daughter who's unwell.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "erin_complaint",
+     "section": "basic",
+     "label": "Chief complaint",
+     "value": "Teething discomfort in a 7-month-old",
+     "revealedAtStart": true,
+     "triggers": [
+      "what brings you",
+      "problem",
+      "complaint"
+     ],
+     "patientLine": "She's seven months and she's been really unsettled. I think it's her teeth.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "erin_infant_weight",
+     "section": "other",
+     "label": "Infant weight",
+     "value": "8.2 kg, weighed at clinic last week",
+     "revealedAtStart": false,
+     "triggers": [
+      "weigh",
+      "weight",
+      "how heavy",
+      "kg",
+      "size"
+     ],
+     "patientLine": "She was 8.2 kilos at the clinic last week.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "erin_duration",
+     "section": "symptoms",
+     "label": "Duration",
+     "value": "3 days of unsettled behaviour",
+     "revealedAtStart": false,
+     "triggers": [
+      "how long",
+      "when did it start",
+      "since when",
+      "duration",
+      "started"
+     ],
+     "patientLine": "About three days now. She's just not herself.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "erin_redflags",
+     "section": "symptoms",
+     "label": "Red flags",
+     "value": "No fever, feeding normally, wet nappies, no rash, rousable and alert",
+     "revealedAtStart": false,
+     "triggers": [
+      "fever",
+      "temperature",
+      "feed",
+      "drink",
+      "nappy",
+      "rash",
+      "floppy",
+      "drowsy",
+      "alert",
+      "breathing",
+      "unwell",
+      "vomit"
+     ],
+     "patientLine": "No temperature, she's feeding fine, nappies are wet, no rash. She's alert enough.",
+     "credits": "clinicalReasoning",
+     "safetyCritical": true
+    },
+    {
+     "id": "erin_given",
+     "section": "medications",
+     "label": "Already given",
+     "value": "Infant paracetamol given twice yesterday; unsure of the dose used",
+     "revealedAtStart": false,
+     "triggers": [
+      "medication",
+      "medicine",
+      "medicines",
+      "taking any",
+      "tablets",
+      "prescription",
+      "supplements",
+      "what do you take",
+      "anything from the doctor",
+      "on any",
+      "currently take",
+      "regular medic",
+      "take anything regularly",
+      "over the counter",
+      "given",
+      "already given",
+      "what have you given"
+     ],
+     "patientLine": "I gave her some Calpol yesterday, twice. I'm not certain how much, I just used the spoon.",
+     "credits": "medicationSafety",
+     "safetyCritical": true
+    },
+    {
+     "id": "erin_allergy",
+     "section": "allergies",
+     "label": "Allergy",
+     "value": "No known allergies in the infant",
+     "revealedAtStart": false,
+     "triggers": [
+      "allerg",
+      "allergic",
+      "react to any",
+      "intolerance",
+      "sensitive to any drug",
+      "reaction to",
+      "anything you cannot take",
+      "anything you can t take",
+      "adverse reaction"
+     ],
+     "patientLine": "None that we know of.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "erin_history",
+     "section": "history",
+     "label": "Medical history",
+     "value": "Born at term, no medical problems, immunisations up to date",
+     "revealedAtStart": false,
+     "triggers": [
+      "medical history",
+      "medical condition",
+      "conditions",
+      "health problems",
+      "past illness",
+      "diagnosed",
+      "been treated",
+      "operations",
+      "surgery",
+      "any conditions",
+      "medical problem",
+      "seen a doctor",
+      "anything ongoing",
+      "other illness",
+      "long term condition",
+      "born",
+      "term",
+      "premature",
+      "immunis",
+      "vaccin"
+     ],
+     "patientLine": "She was full term, no problems, and she's had all her jabs.",
+     "credits": "medicationSafety"
+    },
+    {
+     "id": "erin_teething_signs",
+     "section": "symptoms",
+     "label": "Teething signs",
+     "value": "Drooling, gum rubbing, one tooth visible through the gum",
+     "revealedAtStart": false,
+     "triggers": [
+      "gum",
+      "tooth",
+      "teeth",
+      "drool",
+      "dribble",
+      "chew",
+      "mouth"
+     ],
+     "patientLine": "She's drooling loads and chewing everything. I can see a tooth coming through.",
+     "credits": "historyTaking"
+    },
+    {
+     "id": "erin_products",
+     "section": "other",
+     "label": "Products considered",
+     "value": "Was offered a teething gel by a friend; considering an amber necklace",
+     "revealedAtStart": false,
+     "triggers": [
+      "gel",
+      "necklace",
+      "granules",
+      "remedy",
+      "friend",
+      "advice",
+      "anyone else"
+     ],
+     "patientLine": "A friend gave me a teething gel, and someone suggested one of those amber necklaces.",
+     "credits": "counseling",
+     "safetyCritical": true
+    },
+    {
+     "id": "erin_context",
+     "section": "other",
+     "label": "Context",
+     "value": "First-time parent, limited sleep, anxious about doing the wrong thing",
+     "revealedAtStart": false,
+     "triggers": [
+      "first",
+      "other children",
+      "cope",
+      "sleep",
+      "support",
+      "how are you"
+     ],
+     "patientLine": "She's my first. I've barely slept and I'm scared of getting it wrong.",
+     "credits": "communication"
+    }
+   ],
+   "deflections": [
+    "Sorry, I'm not sure what you're asking.",
+    "I don't think so — should I have checked that?",
+    "I'm not sure. Sorry, I'm quite tired."
+   ],
+   "impatientLines": [
+    "Sorry, she's due a feed soon — is there something I can just take?",
+    "I've been up all night. Can you just tell me what to buy?"
+   ],
+   "followUps": [
+    {
+     "triggers": [
+      "paracetamol",
+      "calpol",
+      "ibuprofen",
+      "infant suspension"
+     ],
+     "line": "How much exactly, and how often? I don't want to give her too much."
+    },
+    {
+     "triggers": [
+      "gel",
+      "necklace",
+      "amber",
+      "granules"
+     ],
+     "line": "So is the gel no good then? And the necklace — is that dangerous?"
+    },
+    {
+     "triggers": [
+      "syringe",
+      "spoon",
+      "measure"
+     ],
+     "line": "I've just been using the spoon from the kitchen drawer. Is that wrong?"
+    }
+   ],
+   "jargon": [
+    "analgesia",
+    "antipyretic",
+    "weight-banded",
+    "paediatric",
+    "titrate",
+    "choking hazard"
+   ]
   }
  ],
  "scenarios": [
@@ -2626,6 +4081,146 @@
    ],
    "status": "not-started",
    "patientId": "pat_priya"
+  },
+  {
+   "id": "sc_sore_throat",
+   "title": "The Sore Throat",
+   "tagline": "A common request where the safe answer is not the one being asked for.",
+   "description": "A 19-year-old student asks for antibiotics for a five-day sore throat. Most sore throats are self-limiting — this one has features that change the answer.",
+   "mission": "A 19-year-old patient asks the pharmacy for antibiotics for a sore throat.\n\nAntibiotics are not a pharmacy supply decision here.\n\nYour job is to establish whether this is self-limiting, needs routine review, or needs same-day assessment.\n\nThe features that decide it will not be volunteered.",
+   "category": "Cough & Cold",
+   "setting": "Community Pharmacy",
+   "difficulty": "Intermediate",
+   "durationMinutes": [
+    8,
+    11
+   ],
+   "skills": [
+    "History Taking",
+    "Red Flag Detection",
+    "Referral Decisions"
+   ],
+   "objectives": [
+    "Establish duration, severity and fever rather than accepting the request at face value.",
+    "Examine or ask about throat appearance and cervical lymph nodes.",
+    "Screen actively for airway compromise: difficulty swallowing saliva, drooling, voice change.",
+    "Recognise that antibiotic supply is not a pharmacy decision, and explain why.",
+    "Refer with a clearly stated urgency and safety-net advice."
+   ],
+   "status": "not-started",
+   "patientId": "pat_amir"
+  },
+  {
+   "id": "sc_uti",
+   "title": "Burning When Passing Urine",
+   "tagline": "A routine request where one unasked question changes the whole answer.",
+   "description": "A 27-year-old asks for something for a bladder infection. Whether this can be managed in the pharmacy depends entirely on a question she has not been asked.",
+   "mission": "A 27-year-old patient asks for treatment for urinary symptoms.\n\nSome urinary symptoms can be managed in the pharmacy; others cannot.\n\nEstablish which this is before deciding anything.\n\nOne detail here moves the safe answer completely.",
+   "category": "Gastrointestinal",
+   "setting": "Community Pharmacy",
+   "difficulty": "Advanced",
+   "durationMinutes": [
+    9,
+    12
+   ],
+   "skills": [
+    "History Taking",
+    "Medication Safety",
+    "Referral Decisions"
+   ],
+   "objectives": [
+    "Characterise the urinary symptoms and their duration.",
+    "Screen for systemic features suggesting upper urinary tract involvement.",
+    "Establish pregnancy status before considering any treatment.",
+    "Recognise that pregnancy moves this out of pharmacy self-care entirely.",
+    "Refer appropriately and explain why, without alarming the patient."
+   ],
+   "status": "not-started",
+   "patientId": "pat_bea"
+  },
+  {
+   "id": "sc_chest_pain",
+   "title": "Indigestion, or Something Else",
+   "tagline": "The request is for an antacid. The presentation is not indigestion.",
+   "description": "A 58-year-old asks for something strong for indigestion that started last night. What he describes, once you ask, is not a gastrointestinal problem.",
+   "mission": "A 58-year-old patient asks for a stronger indigestion remedy.\n\nChest symptoms in this age group need to be actively characterised before anything is supplied.\n\nYour job is to decide whether this is a pharmacy matter at all.\n\nHe will not volunteer the features that decide it.",
+   "category": "Pain",
+   "setting": "Community Pharmacy",
+   "difficulty": "Advanced",
+   "durationMinutes": [
+    8,
+    11
+   ],
+   "skills": [
+    "Red Flag Detection",
+    "Clinical Reasoning",
+    "Referral Decisions"
+   ],
+   "objectives": [
+    "Characterise the chest discomfort rather than accepting the patient's own label for it.",
+    "Ask specifically about radiation to arm, jaw, neck or back.",
+    "Screen for sweating, nausea and breathlessness.",
+    "Establish cardiovascular risk factors: age, smoking, blood pressure, family history.",
+    "Recognise that this needs emergency assessment, not an antacid."
+   ],
+   "status": "not-started",
+   "patientId": "pat_colin"
+  },
+  {
+   "id": "sc_red_eye",
+   "title": "The Red Eye",
+   "tagline": "Most red eyes are minor. This one has the features that are not.",
+   "description": "A 31-year-old contact lens wearer asks for conjunctivitis drops. Reduced vision, deep pain and photophobia point somewhere else entirely.",
+   "mission": "A 31-year-old patient asks for eye drops for what she assumes is conjunctivitis.\n\nMost red eyes are self-limiting; a few threaten sight.\n\nDistinguish between them before supplying anything.\n\nOne question about how she corrects her vision changes the risk considerably.",
+   "category": "Minor Injuries",
+   "setting": "Community Pharmacy",
+   "difficulty": "Advanced",
+   "durationMinutes": [
+    8,
+    11
+   ],
+   "skills": [
+    "History Taking",
+    "Red Flag Detection",
+    "Referral Decisions"
+   ],
+   "objectives": [
+    "Establish whether vision is affected, and whether it clears on blinking.",
+    "Characterise the pain: surface grittiness versus deep ache with photophobia.",
+    "Ask about contact lens wear and overnight use.",
+    "Recognise the combination that makes this sight-threatening rather than self-limiting.",
+    "Refer for same-day assessment and advise on stopping lens wear."
+   ],
+   "status": "not-started",
+   "patientId": "pat_dana"
+  },
+  {
+   "id": "sc_teething",
+   "title": "A Parent Asking About Teething",
+   "tagline": "Reassurance, an accurate dose, and one product to advise against.",
+   "description": "A tired first-time parent asks what to give a seven-month-old who is teething. The child is well; the risks here are dosing accuracy and the products she has been offered.",
+   "mission": "A parent asks for something for a seven-month-old who is teething.\n\nEstablish that the child is genuinely well before treating anything.\n\nThen get the dose right, and address the products she has already been offered.\n\nHow much has already been given is not something she will state precisely.",
+   "category": "Medication Counseling",
+   "setting": "Community Pharmacy",
+   "difficulty": "Intermediate",
+   "durationMinutes": [
+    9,
+    12
+   ],
+   "skills": [
+    "History Taking",
+    "Medication Safety",
+    "Patient Counseling"
+   ],
+   "objectives": [
+    "Screen for paediatric red flags before accepting teething as the explanation.",
+    "Establish the child's current weight for accurate dosing.",
+    "Establish exactly what has already been given, and how it was measured.",
+    "Advise on the products the parent has been offered, including choking risk.",
+    "Counsel on dose, maximum in 24 hours, measurement and when to seek help."
+   ],
+   "status": "not-started",
+   "patientId": "pat_erin"
   }
  ]
 }

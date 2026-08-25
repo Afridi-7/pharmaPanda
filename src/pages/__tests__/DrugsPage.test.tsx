@@ -20,7 +20,9 @@ describe('DrugsPage', () => {
     await screen.findByText('Paracetamol')
     await user.type(screen.getByLabelText(/search drugs/i), 'paracetamol')
 
-    expect(await screen.findByText('Showing 1 of 7')).toBeInTheDocument()
+    // Asserted as a narrowing, not an exact count: adding a drug is content
+    // work and must not break the suite.
+    expect(await screen.findByText(/Showing 1 of \d+/)).toBeInTheDocument()
   })
 
   it('explains an empty search result', async () => {

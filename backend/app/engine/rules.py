@@ -261,6 +261,193 @@ RULES: dict[str, dict] = {'sc_headache': {'unsafeRecommendations': [{'choices': 
                                     'exactly right.'}}
 
 
+# --- Drafted cases ---------------------------------------------------------
+# Structure and teaching point are settled; clinical wording needs pharmacist
+# review before these reach students.
+
+RULES["sc_sore_throat"] = {
+    "unsafeRecommendations": [
+        {
+            "choices": ["Paracetamol", "Non-drug management", "NSAID"],
+            "requiresFacts": ["amir_exudate", "amir_breathing"],
+            "title": "Symptomatic treatment offered despite features needing assessment",
+            "what": (
+                "You treated a five-day sore throat with fever, tonsillar exudate, tender cervical "
+                "nodes and difficulty swallowing saliva as a self-limiting illness."
+            ),
+            "why": (
+                "That combination is what distinguishes a sore throat needing clinical assessment "
+                "from one that will settle on its own. Difficulty swallowing saliva in particular "
+                "is an airway concern and needs same-day review, not a lozenge. Analgesia is "
+                "reasonable alongside referral — not instead of it."
+            ),
+        },
+    ],
+    "preferredRecommendations": ["Routine physician referral", "Urgent referral", "No OTC treatment"],
+    "expectedReferrals": ["Urgent referral", "Routine physician referral"],
+    "criticalFactIds": ["amir_exudate", "amir_breathing", "amir_fever", "amir_allergy"],
+    "betterApproach": [
+        "Establish duration and whether it is improving or worsening.",
+        "Ask about fever and measure or confirm the temperature.",
+        "Ask what the throat looks like and about swollen neck glands.",
+        "Screen for airway concern: swallowing saliva, drooling, voice change, breathing.",
+        "Confirm allergy status before any treatment is discussed.",
+        "Explain that antibiotic supply is a prescriber decision, and why.",
+        "Refer with a stated urgency, and safety-net what would make it an emergency.",
+    ],
+    "nextScenarioId": "sc_uti",
+    "nextScenarioReason": (
+        "You handled a referral decision well. Next, a case where one unasked question changes "
+        "the answer entirely."
+    ),
+}
+
+RULES["sc_uti"] = {
+    "unsafeRecommendations": [
+        {
+            "choices": ["Other", "Non-drug management", "NSAID", "Paracetamol"],
+            "requiresFacts": ["bea_pregnancy"],
+            "title": "Pharmacy treatment considered for a urinary infection in pregnancy",
+            "what": (
+                "You treated urinary symptoms in a patient who is ten weeks pregnant as an "
+                "over-the-counter matter."
+            ),
+            "why": (
+                "Urinary infection in pregnancy is not a pharmacy self-care presentation. Untreated "
+                "or inadequately treated infection carries risk to the pregnancy, treatment choice "
+                "is constrained by trimester, and it needs prescriber assessment with a urine "
+                "sample. The correct action is prompt referral, with an explanation that does not "
+                "alarm her."
+            ),
+        },
+    ],
+    "preferredRecommendations": ["Routine physician referral", "Urgent referral", "No OTC treatment"],
+    "expectedReferrals": ["Urgent referral", "Routine physician referral"],
+    "criticalFactIds": ["bea_pregnancy", "bea_redflags", "bea_meds"],
+    "betterApproach": [
+        "Characterise the urinary symptoms and how long they have been present.",
+        "Screen for fever, flank pain and systemic upset suggesting upper tract involvement.",
+        "Ask directly about pregnancy before considering any treatment.",
+        "Establish current medication — folic acid alone is itself a clue.",
+        "Recognise that pregnancy moves this out of pharmacy self-care.",
+        "Refer promptly and say what to expect: a urine sample and a prescriber review.",
+        "Safety-net: what would make this urgent before that appointment.",
+    ],
+    "nextScenarioId": "sc_interaction",
+    "nextScenarioReason": (
+        "Your safety questioning is strong. Next, stress-test your interaction knowledge."
+    ),
+}
+
+RULES["sc_chest_pain"] = {
+    "unsafeRecommendations": [
+        {
+            "choices": ["Other", "Non-drug management", "Paracetamol", "NSAID", "No referral"],
+            "requiresFacts": ["colin_radiation", "colin_autonomic"],
+            "title": "Cardiac presentation treated as indigestion",
+            "what": (
+                "You supplied or advised symptomatic treatment for chest discomfort that radiates "
+                "to the arm and jaw, with sweating, nausea and breathlessness, in a 58-year-old "
+                "smoker with hypertension."
+            ),
+            "why": (
+                "That combination is an acute coronary syndrome until proven otherwise. It needs "
+                "emergency assessment, not an antacid. Supplying a remedy here delays definitive "
+                "care during the window when it matters most."
+            ),
+        },
+    ],
+    "preferredRecommendations": ["Urgent referral", "No OTC treatment"],
+    "expectedReferrals": ["Emergency referral", "Urgent referral"],
+    "criticalFactIds": ["colin_radiation", "colin_autonomic", "colin_history", "colin_meds"],
+    "betterApproach": [
+        "Characterise the discomfort yourself rather than accepting the label of indigestion.",
+        "Ask specifically whether it radiates to the arm, jaw, neck or back.",
+        "Screen for sweating, nausea and breathlessness.",
+        "Ask what brings it on and what relieves it.",
+        "Establish cardiovascular risk: age, smoking, blood pressure, family history.",
+        "Recognise that this is an emergency presentation and arrange immediate assessment.",
+        "Stay with the patient and explain calmly why you are not selling a remedy.",
+    ],
+    "nextScenarioId": "sc_red_eye",
+    "nextScenarioReason": (
+        "You recognised an emergency behind a routine request. Next, a case where the same skill "
+        "applies to sight."
+    ),
+}
+
+RULES["sc_red_eye"] = {
+    "unsafeRecommendations": [
+        {
+            "choices": ["Other", "Non-drug management", "No referral"],
+            "requiresFacts": ["dana_vision", "dana_contacts"],
+            "title": "Sight-threatening presentation treated as conjunctivitis",
+            "what": (
+                "You treated a red eye with reduced vision, deep pain and photophobia in a contact "
+                "lens wearer who has slept in her lenses."
+            ),
+            "why": (
+                "Reduced acuity and photophobia are not features of simple conjunctivitis. In a "
+                "lens wearer who has slept in lenses, microbial keratitis must be excluded the "
+                "same day. Chloramphenicol will not treat it and delay risks permanent visual loss."
+            ),
+        },
+    ],
+    "preferredRecommendations": ["Urgent referral", "Routine physician referral", "No OTC treatment"],
+    "expectedReferrals": ["Urgent referral", "Emergency referral"],
+    "criticalFactIds": ["dana_vision", "dana_pain", "dana_contacts"],
+    "betterApproach": [
+        "Ask whether vision is affected, and whether it clears on blinking.",
+        "Distinguish surface grittiness from deep ache with light sensitivity.",
+        "Ask about discharge: watery, or purulent with morning crusting.",
+        "Ask directly about contact lens wear, including sleeping in lenses.",
+        "Recognise that acuity loss plus photophobia excludes simple conjunctivitis.",
+        "Refer for same-day assessment and advise stopping lens wear immediately.",
+        "Tell her to take her lenses and solution with her to the appointment.",
+    ],
+    "nextScenarioId": "sc_teething",
+    "nextScenarioReason": (
+        "Strong red-flag recognition. Next, a case where the risk is dosing accuracy rather than "
+        "missed pathology."
+    ),
+}
+
+RULES["sc_teething"] = {
+    "unsafeRecommendations": [
+        {
+            "choices": ["NSAID"],
+            "requiresFacts": ["erin_given"],
+            "title": "Second agent added without establishing what was already given",
+            "what": (
+                "You added ibuprofen without first establishing how much paracetamol had already "
+                "been given, or how it was measured."
+            ),
+            "why": (
+                "A dose given with a kitchen spoon is an unknown dose. Quantifying what has already "
+                "been taken comes before adding anything, and the parent needs an oral syringe "
+                "either way. Sequencing matters here: establish, then dose, then safety-net."
+            ),
+        },
+    ],
+    "preferredRecommendations": ["Paracetamol", "Non-drug management"],
+    "expectedReferrals": ["No referral", "Routine physician referral"],
+    "criticalFactIds": ["erin_redflags", "erin_infant_weight", "erin_given", "erin_products"],
+    "betterApproach": [
+        "Screen for paediatric red flags before accepting teething as the cause.",
+        "Establish the child's current weight.",
+        "Establish exactly what has already been given, and how it was measured.",
+        "Calculate the weight-based dose and state the maximum in 24 hours.",
+        "Advise against amber necklaces explicitly: strangulation and choking risk.",
+        "Supply an oral syringe and demonstrate how to measure the dose.",
+        "Safety-net: say precisely what would mean seeking urgent help.",
+    ],
+    "nextScenarioId": "sc_interaction",
+    "nextScenarioReason": (
+        "Careful paediatric counselling. Next, stress-test your interaction knowledge."
+    ),
+}
+
+
 DEFAULT_RULE = {
     "unsafeRecommendations": [],
     "preferredRecommendations": ["Paracetamol", "Non-drug management"],

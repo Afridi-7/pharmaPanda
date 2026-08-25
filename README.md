@@ -287,6 +287,10 @@ vocabulary — with clinical fields left as `TODO`. `check_catalogue` refuses to
 pass on unfilled fields, a hidden fact no question can unlock, or a scenario
 with no scoring rule.
 
+**Review status.** `sc_sore_throat` and `sc_uti` are **drafted and awaiting
+pharmacist review** — structure and teaching points are settled, clinical
+wording is a starting position. Everything else has been in use longer.
+
 **How questions are matched.** Each hidden fact carries trigger keywords.
 Keywords longer than four characters match as a word prefix, so the authored
 stem `allerg` catches "allergy", "allergies" and "allergic". Shorter keywords

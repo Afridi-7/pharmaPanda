@@ -1,12 +1,15 @@
 import type { Drug } from '@/types'
+import { extraDrugs } from './drugsExtra'
 
 /**
- * A deliberately small, curated set of entries. This is *not* meant to grow into
- * a fake formulary — it exists to prove the layout and the data contract. In
- * production these fields are populated by the curated knowledge/RAG service
+ * Curated drug entries.
+ *
+ * Scoped to the agents the consultation cases turn on, so a student who meets a
+ * drug in a case can look it up here. This is a study aid, not a formulary. In
+ * production these fields would be populated by a curated knowledge service
  * (`GET /drugs/:id`), with provenance shown in `sourceNote`.
  */
-export const drugs: Drug[] = [
+const baseDrugs: Drug[] = [
   {
     id: 'drug_paracetamol',
     name: 'Paracetamol',
@@ -36,7 +39,7 @@ export const drugs: Drug[] = [
       'Warfarin — regular high-dose use may modestly raise INR; monitor if used continuously.',
       'Carbamazepine, phenytoin, rifampicin — enzyme induction increases hepatotoxic risk in overdose.',
     ],
-    sourceNote: 'Placeholder entry — production content is served from the curated knowledge base with citation metadata.',
+    sourceNote: 'Reference entry for study use.',
   },
   {
     id: 'drug_ibuprofen',
@@ -70,7 +73,7 @@ export const drugs: Drug[] = [
       'SSRIs — additive gastrointestinal bleeding risk.',
       'Methotrexate and lithium — reduced clearance.',
     ],
-    sourceNote: 'Placeholder entry — production content is served from the curated knowledge base with citation metadata.',
+    sourceNote: 'Reference entry for study use.',
   },
   {
     id: 'drug_warfarin',
@@ -98,7 +101,7 @@ export const drugs: Drug[] = [
       'Cranberry juice and high-dose vitamin E — reported INR effects.',
       'Miconazole oral gel — a common, easily missed interaction.',
     ],
-    sourceNote: 'Placeholder entry — production content is served from the curated knowledge base with citation metadata.',
+    sourceNote: 'Reference entry for study use.',
   },
   {
     id: 'drug_metformin',
@@ -129,7 +132,7 @@ export const drugs: Drug[] = [
       'Diuretics, ACE inhibitors and NSAIDs — indirectly, via renal function.',
       'Iodinated contrast — temporary suspension required.',
     ],
-    sourceNote: 'Placeholder entry — production content is served from the curated knowledge base with citation metadata.',
+    sourceNote: 'Reference entry for study use.',
   },
   {
     id: 'drug_amoxicillin',
@@ -161,7 +164,7 @@ export const drugs: Drug[] = [
       'Warfarin — INR may be altered; monitor if a course is started.',
       'Allopurinol — increased incidence of rash.',
     ],
-    sourceNote: 'Placeholder entry — production content is served from the curated knowledge base with citation metadata.',
+    sourceNote: 'Reference entry for study use.',
   },
   {
     id: 'drug_salbutamol',
@@ -187,7 +190,7 @@ export const drugs: Drug[] = [
       'Non-selective beta-blockers — may block the bronchodilator effect and provoke bronchospasm.',
       'Diuretics and corticosteroids — additive hypokalaemia at high salbutamol doses.',
     ],
-    sourceNote: 'Placeholder entry — production content is served from the curated knowledge base with citation metadata.',
+    sourceNote: 'Reference entry for study use.',
   },
   {
     id: 'drug_omeprazole',
@@ -219,9 +222,12 @@ export const drugs: Drug[] = [
       'Methotrexate — reduced clearance at high doses.',
       'Drugs needing gastric acid for absorption, e.g. some antifungals and HIV agents.',
     ],
-    sourceNote: 'Placeholder entry — production content is served from the curated knowledge base with citation metadata.',
+    sourceNote: 'Reference entry for study use.',
   },
 ]
+
+/** The full reference set. Split across two files purely for reviewability. */
+export const drugs: Drug[] = [...baseDrugs, ...extraDrugs]
 
 export function getDrug(id: string) {
   return drugs.find((d) => d.id === id)
