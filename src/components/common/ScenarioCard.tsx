@@ -87,7 +87,47 @@ const attemptStatusTone = {
 
 export function AttemptTable({ attempts, caption }: { attempts: AttemptSummary[]; caption?: string }) {
   return (
-    <div className="overflow-x-auto scroll-slim">
+    <>
+      {/*
+        Mobile: a 620px table forces horizontal scrolling on a phone, which
+        hides the score and status columns entirely. Cards show the same
+        fields stacked, so nothing needs sideways swiping.
+      */}
+      <ul className="space-y-2.5 sm:hidden">
+        {attempts.map((attempt) => {
+          const band = scoreBand(attempt.score)
+          return (
+            <li key={attempt.attemptId}>
+              <Link
+                to={`/results/${attempt.attemptId}`}
+                className="block rounded-xl border border-beige bg-cream px-3.5 py-3 transition-colors hover:border-sage"
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <span className="min-w-0 flex-1 text-sm font-medium leading-snug text-forest">
+                    {attempt.scenarioTitle}
+                  </span>
+                  <span className="shrink-0 text-right">
+                    <span className="font-display text-lg leading-none text-forest">
+                      {attempt.score}
+                    </span>
+                    <span className="mt-0.5 block text-[10px] text-ink-muted">{band.label}</span>
+                  </span>
+                </div>
+                <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-ink-muted">
+                  <Badge tone={attemptStatusTone[attempt.status]}>{attempt.status}</Badge>
+                  <span>{attempt.category}</span>
+                  <span aria-hidden>·</span>
+                  <span>{relativeDay(attempt.date)}</span>
+                  <span aria-hidden>·</span>
+                  <span>{attempt.durationLabel}</span>
+                </div>
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
+
+    <div className="hidden overflow-x-auto scroll-slim sm:block">
       <table className="w-full min-w-[620px] border-collapse text-sm">
         {caption && <caption className="sr-only">{caption}</caption>}
         <thead>
@@ -132,5 +172,6 @@ export function AttemptTable({ attempts, caption }: { attempts: AttemptSummary[]
         </tbody>
       </table>
     </div>
+    </>
   )
 }

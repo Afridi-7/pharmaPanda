@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react'
+import { screen, within } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import { HistoryPage } from '@/pages/HistoryPage'
 import { makeAttemptSummary } from '@/test/fixtures'
@@ -18,8 +18,9 @@ describe('HistoryPage', () => {
     mockApi({ 'GET /attempts': [makeAttemptSummary()] })
     renderPage(<HistoryPage />)
 
-    expect(await screen.findByText(/The Headache/)).toBeInTheDocument()
-    expect(screen.getAllByRole('link', { name: /view results/i })[0]).toHaveAttribute(
+    const table = await screen.findByRole('table')
+    expect(within(table).getByText(/The Headache/)).toBeInTheDocument()
+    expect(within(table).getAllByRole('link', { name: /view results/i })[0]).toHaveAttribute(
       'href',
       '/results/22222222-2222-4222-8222-222222222222',
     )
@@ -29,9 +30,9 @@ describe('HistoryPage', () => {
     mockApi({ 'GET /attempts': [makeAttemptSummary({ date: new Date().toISOString() })] })
     const { container } = renderPage(<HistoryPage />)
 
-    await screen.findByText(/The Headache/)
+    const table = await screen.findByRole('table')
     expect(container.textContent).not.toMatch(/\d{4}-\d{2}-\d{2}T/)
-    expect(screen.getByText('Today')).toBeInTheDocument()
+    expect(within(table).getByText('Today')).toBeInTheDocument()
   })
 
   it('filters the list without refetching', async () => {
@@ -43,13 +44,15 @@ describe('HistoryPage', () => {
     })
     renderPage(<HistoryPage />)
 
-    await screen.findByText('Completed case')
+    const table = await screen.findByRole('table')
+    expect(within(table).getByText('Completed case')).toBeInTheDocument()
     const before = api.countOf('GET /attempts')
 
     await user.click(screen.getByRole('tab', { name: /needs review/i }))
 
-    expect(await screen.findByText('Weak case')).toBeInTheDocument()
-    expect(screen.queryByText('Completed case')).not.toBeInTheDocument()
+    const filtered = await screen.findByRole('table')
+    expect(within(filtered).getByText('Weak case')).toBeInTheDocument()
+    expect(within(filtered).queryByText('Completed case')).not.toBeInTheDocument()
     expect(api.countOf('GET /attempts')).toBe(before)
   })
 
@@ -57,7 +60,7 @@ describe('HistoryPage', () => {
     mockApi({ 'GET /attempts': [makeAttemptSummary({ status: 'Completed', score: 60 })] })
     renderPage(<HistoryPage />)
 
-    await screen.findByText(/The Headache/)
+    await screen.findByRole('table')
     await user.click(screen.getByRole('tab', { name: /high scores/i }))
 
     expect(await screen.findByText(/nothing matches that filter/i)).toBeInTheDocument()

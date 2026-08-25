@@ -79,16 +79,18 @@ export function StatCard({ label, value, suffix = '%', trend, icon, className }:
   const band = scoreBand(value)
   const improving = trend?.trim().startsWith('+')
   return (
-    <div className={cn('rounded-2xl border border-beige bg-cream-light p-4 shadow-soft sm:p-5', className)}>
+    <div className={cn('rounded-2xl border border-beige bg-cream-light p-3.5 shadow-soft sm:p-5', className)}>
       <div className="flex items-start justify-between gap-2">
-        <p className="text-xs font-medium uppercase tracking-[0.1em] text-ink-muted">{label}</p>
+        <p className="text-[10.5px] font-medium uppercase leading-tight tracking-[0.08em] text-ink-muted sm:text-xs sm:tracking-[0.1em]">
+          {label}
+        </p>
         {icon && <span className="text-sage">{icon}</span>}
       </div>
-      <p className="mt-2 font-display text-[26px] leading-none text-forest">
+      <p className="mt-1.5 font-display text-[22px] leading-none text-forest sm:mt-2 sm:text-[26px]">
         {Math.round(shown)}
         <span className="text-base text-ink-muted">{suffix}</span>
       </p>
-      <div className="mt-2 flex items-center gap-2">
+      <div className="mt-2 flex flex-wrap items-center gap-1.5 sm:gap-2">
         <span className={cn('rounded-full border px-2 py-0.5 text-[11px] font-medium', bandTone[band.tone].chip)}>
           {band.label}
         </span>

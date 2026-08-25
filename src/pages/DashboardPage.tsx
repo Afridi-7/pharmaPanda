@@ -22,7 +22,7 @@ export function DashboardPage() {
   const { continueScenario, recommendedScenario } = data
 
   return (
-    <div className="space-y-7">
+    <div className="space-y-5 sm:space-y-7">
       <PageHeader
         title={user?.firstName ? `${data.greeting}, ${user.firstName}` : data.greeting}
         subtitle="Pick up where you left off, or start a new case."
@@ -34,14 +34,19 @@ export function DashboardPage() {
         }
       />
 
-      <section aria-label="Your current scores" className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
-        {data.metrics.map((metric) => (
-          <StatCard key={metric.label} label={metric.label} value={metric.value} />
+      <section aria-label="Your current scores" className="grid grid-cols-2 gap-2.5 sm:gap-3 xl:grid-cols-5">
+        {data.metrics.map((metric, index) => (
+          <StatCard
+            key={metric.label}
+            label={metric.label}
+            value={metric.value}
+            className={index === 0 ? 'col-span-2 xl:col-span-1' : undefined}
+          />
         ))}
       </section>
 
-      <div className="grid gap-4 lg:grid-cols-[1.25fr_1fr]">
-        <article className="flex flex-col rounded-2xl border border-beige bg-cream-light p-5 shadow-soft sm:p-6">
+      <div className="grid gap-3 sm:gap-4 lg:grid-cols-[1.25fr_1fr]">
+        <article className="flex flex-col rounded-2xl border border-beige bg-cream-light p-4 shadow-soft sm:p-6">
           <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-muted">Continue training</p>
           <h2 className="mt-2 font-display text-xl text-forest">{continueScenario.title}</h2>
           <p className="mt-2 text-sm leading-relaxed text-ink-muted">{continueScenario.description}</p>
@@ -72,7 +77,7 @@ export function DashboardPage() {
           </Link>
         </article>
 
-        <article className="flex flex-col rounded-2xl border border-sage/60 bg-sage-100/60 p-5 shadow-soft sm:p-6">
+        <article className="flex flex-col rounded-2xl border border-sage/60 bg-sage-100/60 p-4 shadow-soft sm:p-6">
           <div>
             <h2 className="font-display text-lg text-forest">Recommended next</h2>
             <p className="mt-1 text-sm leading-relaxed text-ink">{data.recommendationReason}</p>
@@ -95,8 +100,8 @@ export function DashboardPage() {
         </article>
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">
-        <section className="rounded-2xl border border-beige bg-cream-light p-5 shadow-soft sm:p-6">
+      <div className="grid gap-3 sm:gap-4 lg:grid-cols-[1fr_1fr]">
+        <section className="rounded-2xl border border-beige bg-cream-light p-4 shadow-soft sm:p-6">
           <div className="flex items-baseline justify-between gap-3">
             <h2 className="font-display text-lg text-forest">Competency profile</h2>
             <Link to="/progress" className="text-xs font-medium text-moss-600 hover:underline">
@@ -123,7 +128,7 @@ export function DashboardPage() {
           </ul>
         </section>
 
-        <section className="rounded-2xl border border-beige bg-cream-light p-5 shadow-soft sm:p-6">
+        <section className="rounded-2xl border border-beige bg-cream-light p-4 shadow-soft sm:p-6">
           <h2 className="font-display text-lg text-forest">Consultations this week</h2>
           <p className="mt-1 text-sm text-ink-muted">
             {user?.streakDays ?? 0}-day streak
@@ -140,7 +145,7 @@ export function DashboardPage() {
         </section>
       </div>
 
-      <section className="rounded-2xl border border-beige bg-cream-light p-5 shadow-soft sm:p-6">
+      <section className="rounded-2xl border border-beige bg-cream-light p-4 shadow-soft sm:p-6">
         <div className="flex items-baseline justify-between gap-3">
           <h2 className="font-display text-lg text-forest">Recent simulations</h2>
           <Link to="/history" className="text-xs font-medium text-moss-600 hover:underline">

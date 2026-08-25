@@ -1,0 +1,66 @@
+# Render service definitions.
+#
+# Committing this keeps deploy configuration in the repo rather than only in
+# the dashboard. Render reads it on deploy; settings changed in the UI for an
+# existing service still win, so treat this as the source of truth for new
+# environments and as documentation for existing ones.
+
+services:
+  # --- Frontend -----------------------------------------------------------
+  - type: web
+    name: pharmapanda
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      # Must point at the API service, including the /api suffix. Baked in at
+      # build time, so changing it requires a rebuild.
+      - key: VITE_API_BASE_URL
+        sync: false
+
+    headers:
+      # Hashed filenames change whenever their contents change, so they can be
+      # cached indefinitely.
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+
+      # index.html must never be cached: it is what points at the current
+      # bundle. A cached copy keeps serving the previous deploy's assets, so a
+      # refresh appears to do nothing after a push.
+      - path: /*
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate
+
+    routes:
+      # Single-page app: every path is served by index.html so that deep links
+      # and refreshes work instead of 404ing.
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+  # --- API ----------------------------------------------------------------
+  - type: web
+    name: pharmapanda-api
+    runtime: python
+    rootDir: backend
+    buildCommand: ./render_build.sh
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DEBUG
+        value: "false"
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      # Generate with: python -c "import secrets; print(secrets.token_urlsafe(64))"
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      # Must use the postgresql+psycopg:// prefix, not Render's default
+      # postgresql:// — SQLAlchemy needs the driver named explicitly.
+      - key: DATABASE_URL
+        sync: false
+      # The static site's URL. This is the CORS allow-list.
+      - key: FRONTEND_URL
+        sync: false
