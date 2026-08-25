@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Field'
 import { useAuth } from '@/hooks/useAuth'
 import { ApiError } from '@/services/api'
-import { demoCredentials } from '@/services/demo'
 
 function GoogleMark() {
   return (
@@ -119,36 +118,13 @@ export function LoginPage() {
             <button
               type="button"
               className="text-ink-muted hover:text-forest"
-              onClick={() => setError('Password reset isn’t available yet. Create a new account, or use the development demo account below.')}
+              onClick={() => setError('Password reset isn’t available yet. Please create a new account.')}
             >
               Forgot password?
             </button>
             <Link to="/register" className="font-medium text-moss-600 hover:underline">
               Create account
             </Link>
-          </div>
-
-          <div className="mt-8 rounded-xl border border-beige bg-cream px-3.5 py-3 text-xs leading-relaxed text-ink-muted">
-            <p>
-              Development demo account:{' '}
-              <span className="font-medium text-forest">{demoCredentials.email}</span>
-            </p>
-            <button
-              type="button"
-              onClick={() => {
-                setEmail(demoCredentials.email)
-                setPassword(demoCredentials.password)
-                setError(null)
-              }}
-              className="mt-1 font-medium text-moss-600 hover:underline"
-            >
-              Fill demo credentials
-            </button>
-            <p className="mt-1.5">
-              Not working? Seed it with{' '}
-              <span className="font-medium text-forest">python -m scripts.seed_demo_user</span> in{' '}
-              <span className="font-medium text-forest">backend/</span>.
-            </p>
           </div>
         </div>
       </section>
